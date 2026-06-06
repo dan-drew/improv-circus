@@ -1,0 +1,24 @@
+{
+  "name": "improv-circus",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "pnpx @11ty/eleventy --serve --watch --port=8111",
+    "prebuild": "rm -rf dist",
+    "build": "pnpx @11ty/eleventy",
+    "predeploy": "pnpm build",
+    "deploy": "cd terraform && terraform init && terraform apply -auto-approve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "dan.drew@hotmail.com",
+  "license": "MIT",
+  "packageManager": "pnpm@11.5.1",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-plugin-pug": "^1.0.0",
+    "pug": "^3.0.4",
+    "yaml": "^2.9.0"
+  }
+}

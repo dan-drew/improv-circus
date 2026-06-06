@@ -1,0 +1,5 @@
+include person_card
+
+mixin people_list
+  each person in Object.values(people)
+    +person_card(person)

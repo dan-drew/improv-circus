@@ -1,0 +1,12 @@
+dan:
+  name: Dan Drew
+  location: Oakland, CA
+  theaters: [all_out, csz_san_jose]
+  image: dan.png
+  social:
+    instagram: '@ddrew555'
+
+ray:
+  name: Ray Cornell
+  location: San Jose, CA
+  theaters: [csz_san_jose]

@@ -1,0 +1,5 @@
+mixin theater_logo(theater, size='normal')
+  - const $theater = theaters[theater]
+  .theater_logo(class="theater_logo_" + size)
+    a(target="_blank", href=$theater.link)
+      img(src="/images/theaters/" + theater + ".png", alt=$theater.name)

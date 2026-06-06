@@ -1,0 +1,14 @@
+extends /layout.pug
+include /show_list.pug
+include _includes/people_list
+
+block content
+  div.home
+    img.logo(src="/images/improv-circus.png", alt=site.title)
+
+    h1.text-shadow ~ Shows ~
+    +show_list(5)
+
+    h1.text-shadow ~ Players ~
+    .person_gallery
+      +people_list

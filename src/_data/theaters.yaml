@@ -1,0 +1,14 @@
+mut:
+  name: "Made Up Theater"
+  location: "Fremont, CA"
+  link: "https://www.madeuptheater.com"
+
+csz_san_jose:
+  name: "ComedySportz San Jose"
+  location: "San Jose, CA"
+  link: "https://cszsanjose.com"
+
+all_out:
+  name: "All Out Comedy Theater"
+  location: "Oakland, CA"
+  link: "https://www.alloutcomedytheater.com"
