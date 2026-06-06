@@ -3,12 +3,11 @@ include social
 
 mixin person_card(person)
   .card.person_card
-    if person.image
-      img.person_image(alt=person.name, src='/images/people/' + person.image)
+    img.person_image(alt=person.name, src='/images/people/' + (person.image || 'default.png'))
 
-    h2.person_name= person.name
+    h2.person_name= person.nickname || person.name.split(' ')[0]
 
-    if person.location || person.social
+    if person.social || person.theaters
       .person_links
         if person.social
           .link_group
@@ -19,8 +18,5 @@ mixin person_card(person)
             each theater in person.theaters
               +theater_logo(theater, size='small')
 
-        if person.location
-          .link_group= person.location
-
     if person.bio
-      .person_content= person.bio
+      .person_content!= person.bio

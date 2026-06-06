@@ -1,14 +1,25 @@
 extends /layout.pug
 include /show_list.pug
-include _includes/people_list
+include /people_list.pug
+include /circus_heading
 
 block content
   div.home
     img.logo(src="/images/improv-circus.png", alt=site.title)
 
-    h1.text-shadow ~ Shows ~
+    .about-hero.
+      Improv Circus is a travelling troupe of hilarious improvisers with decades of experience
+      performing across the nation. We do it all: short form games in &ldquo;Who's Line Is It Anyway?&rdquo; tradition,
+      competitive short form, long form and musical.
+
+    //+circus_heading('~ Shows ~')
+    h1.text-shadow
+      a.anchor(id='shows')
+      | ~ Shows ~
     +show_list(5)
 
-    h1.text-shadow ~ Players ~
+    h1.text-shadow
+      a.anchor(id='players')
+      | ~ Players ~
     .person_gallery
       +people_list

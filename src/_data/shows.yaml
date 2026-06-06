@@ -5,3 +5,4 @@
   theater: all_out
   description: "A show about <b>wry vs dry</b>"
   image: "wry_vs_dry_2026_03_22.png"
+  players: [dan, tim, yap, dylan, matt, christian, karen, mark]

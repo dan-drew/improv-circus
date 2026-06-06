@@ -1,0 +1,65 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+    - uses: pnpm/action-setup@v6
+    - run: pnpm run build
+
+    - id: timestamp
+      name: Build timestamp
+      run: echo "cleaned=$( echo ${{ github.event.head_commit.timestamp }} | tr -cd '[:alnum:]')" >> $GITHUB_OUTPUT
+
+    - uses: actions/upload-artifact@v4
+      name: Create deployment artifact
+      with:
+        name: "site-${{ steps.timestamp.outputs.cleaned }}"
+        path: dist/
+        if-no-files-found: error
+        overwrite: true
+
+    - name: Upload pages
+      if: ${{ github.repository_owner == 'dan-drew' }}
+      id: deployment
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: dist/
+
+  deploy_pages:
+    if: ${{ github.repository_owner == 'dan-drew' }}
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

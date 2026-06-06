@@ -1,12 +1,53 @@
 dan:
   name: Dan Drew
-  location: Oakland, CA
   theaters: [all_out, csz_san_jose]
   image: dan.png
+  bio: |
+    Blah blah blah blah...
+    Blah blah blah blah...
+    Blah blah blah blah...
+    Blah blah blah blah...
+    Blah blah blah blah...
   social:
     instagram: '@ddrew555'
 
 ray:
   name: Ray Cornell
-  location: San Jose, CA
+  image: gobo.png
   theaters: [csz_san_jose]
+
+tim:
+  name: Tim Whetham
+  image: wembley.png
+  theaters: [csz_san_jose]
+
+dylan:
+  name: Dylan
+  image: gobo.png
+  theaters: [all_out]
+
+yap:
+  name: William Yap
+  image: gobo.png
+  nickname: Yap
+  theaters: [csz_san_jose, mut]
+
+mark:
+  name: Mark Gardiner
+  image: wembley.png
+  theaters: [mut]
+
+matt:
+  name: Matt Greene
+  image: gobo.png
+  theaters: [csz_san_jose]
+
+karen:
+  name: Karen
+  image: red.png
+  theaters: [all_out]
+
+christian:
+  name: Christian Hill
+  image: gobo.png
+  theaters: [all_out]
