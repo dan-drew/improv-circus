@@ -115,7 +115,7 @@ body {
   min-height: 100vh;
   padding-bottom: 100px;
 
-  background-image: url("/images/background.png");
+  background-image: url("../images/background.png");
   background-attachment: fixed;
   background-size: cover;
 }
