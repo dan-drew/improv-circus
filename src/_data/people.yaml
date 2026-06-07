@@ -21,6 +21,11 @@ tim:
   image: wembley.png
   theaters: [csz_san_jose]
 
+katy:
+  name: Kathy
+  image: red.png
+  theaters: [all_out]
+
 dylan:
   name: Dylan
   image: gobo.png
@@ -42,12 +47,12 @@ matt:
   image: gobo.png
   theaters: [csz_san_jose]
 
-karen:
-  name: Karen
-  image: red.png
-  theaters: [all_out]
-
 christian:
   name: Christian Hill
   image: gobo.png
   theaters: [all_out]
+
+sara:
+  name: Sara
+  image: red.png
+  theaters: [csz_san_jose]
