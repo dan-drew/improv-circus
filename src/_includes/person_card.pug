@@ -1,14 +1,15 @@
 include theater_logo
 include social
+include card
 
 mixin person_card(person)
-  .card.person_card
-    img.person_image(alt=person.name, src='/images/people/' + (person.image || 'default.png'))
+  +card('person_card')
+    img.card_image(alt=person.name, src='/images/people/' + (person.image || 'default.png'))
 
-    h2.person_name= person.nickname || person.name.split(' ')[0]
+    h2.card_header= person.nickname || person.name.split(' ')[0]
 
     if person.social || person.theaters
-      .person_links
+      .card_footer
         if person.social
           .link_group
             +social_list(person.social)
@@ -19,4 +20,4 @@ mixin person_card(person)
               +theater_logo(theater, size='small')
 
     if person.bio
-      .person_content!= person.bio
+      .card_content!= utils.markdown(person.bio)

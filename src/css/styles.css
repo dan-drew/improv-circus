@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Mystery+Quest&family=Unkempt:wght@400;700&family=PT+Sans+Narrow:wght@400;700&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
 :root {
@@ -42,15 +43,16 @@
 
   /* Typography - Font Families */
   --font-heading: 'Mystery Quest', sans-serif;
-  --font-sans: 'Unkempt', sans-serif;
+  --font-main: 'Unkempt', sans-serif;
+  --font-sans: 'PT Sans Narrow', sans-serif;
   --font-mono: 'Monaco', 'Courier New', monospace;
 
   /* Typography - Font Sizes */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
+  --font-size-base: 1.2rem;
+  --font-size-lg: 1.3rem;
+  --font-size-xl: 1.4rem;
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 1.75rem;
   --font-size-4xl: 2.25rem;
@@ -102,7 +104,7 @@ html {
 
 body {
   /*noinspection CssNoGenericFontName*/
-  font-family: var(--font-sans);
+  font-family: var(--font-main);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-relaxed);
@@ -216,22 +218,6 @@ a.anchor {
 .section-dark {
   background-color: var(--bg-dark);
   color: var(--text-inverse);
-}
-
-.card {
-  background: rgba(0, 0, 0, 0.2);
-  padding: var(--space-lg);
-  border-radius: var(--space-sm);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
-  transition: all 0.5s ease;
-
-  /*&:hover {*/
-  /*  box-shadow: 0 8px 24px var(--primary-color);*/
-  /*  transform: translateY(-4px);*/
-  /*}*/
 }
 
 /* ===================================
@@ -363,8 +349,11 @@ header, footer {
 
 .about-hero {
   font-size: var(--font-size-3xl);
-  padding: var(--space-xl) var(--space-4xl);
+  max-width: 900px;
+  text-align: center;
+  padding: var(--space-xl) var(--space-xl);
   text-shadow: var(--text-shadow);
+  justify-self: center;
   /*background: linear-gradient(135deg, var(--gray-50) 0%, var(--bg-primary) 100%);*/
 }
 
@@ -383,6 +372,7 @@ footer {
   /*color: var(--text-inverse);*/
   /*padding: var(--space-2xl) 0 var(--space-lg);*/
   padding: var(--space-sm) var(--space-xl);
+  font-family: var(--font-sans);
 }
 
 .footer-content {
@@ -570,39 +560,16 @@ footer {
   }
 }
 
-/***********************************************
-  SHOW
-************************************************/
-
-.show_card {
+.theater_info {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: auto auto 1fr auto;
-  grid-template-areas: "image title" "image date" "image content" "image footer";
-  gap: var(--space-md);
+  grid-template-columns: auto 1fr;
+  gap: var(--space-xs) var(--space-sm);
+  /*noinspection CssNoGenericFontName*/
+  font-family: var(--font-sans);
+  align-items: center;
 
-  .show_title {
-    grid-area: title;
-  }
-
-  .show_date {
-    grid-area: date;
-  }
-
-  .show_content {
-    grid-area: content;
-  }
-
-  .show_image {
-    grid-area: image;
-    object-fit: contain;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: var(--space-xs);
-  }
-
-  .show_theater {
-    grid-area: footer;
+  .theater_name {
+    font-weight: var(--font-weight-bold);
   }
 }
 
@@ -610,10 +577,136 @@ footer {
   CARD
 ************************************************/
 
+.card_container {
+  display: block;
+  container: card / inline-size;
+}
+
 .card {
+  --card-padding: var(--space-md);
+  --card-radius: var(--space-md);
+
   background: #00000088;
-  border-radius: var(--space-sm);
-  padding: var(--space-md);
+  /*background: rgba(0, 0, 0, 0.2);*/
+  border-radius: var(--card-radius);
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "image header right" "image content right" "image footer right";
+  /*gap: var(--space-md);*/
+  align-items: start;
+  justify-items: start;
+
+  &:not(> .card_right) {
+    grid-template-areas: "image header header" "image content content" "image footer footer";
+  }
+
+  & > *:not(.card_right) {
+    padding-right: var(--card-padding);
+    padding-top: var(--card-padding);
+  }
+
+  .card_footer, .card_image {
+    padding-bottom: var(--card-padding);
+  }
+
+  .card_image {
+    grid-area: image;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: var(--card-radius);
+    padding-left: var(--card-padding);
+    justify-self: center;
+  }
+
+  .card_header {
+    grid-area: header;
+  }
+
+  .card_content {
+    grid-area: content;
+    /*padding: var(--space-md);*/
+  }
+
+  .card_footer {
+    grid-area: footer;
+  }
+
+  .card_right {
+    grid-area: right;
+    padding: 0 0 var(--card-padding) 0;
+  }
+}
+
+@container card (width < 600px) {
+  .card {
+    grid-template-areas: "image image" "header right" "content content" "footer footer";
+    grid-template-rows: auto;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: var(--card-padding);
+    padding: var(--card-padding);
+
+    .card_header, .card_content, .card_footer, .card_right, .card_image {
+      padding: 0;
+    }
+
+    .card_image {
+      max-height: 25vh;
+    }
+  }
+}
+
+/***********************************************
+  SHOW
+************************************************/
+
+.show_card {
+  .card_right {
+    /*noinspection CssNoGenericFontName*/
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-4xl);
+    text-transform: uppercase;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-auto-flow: column;
+    gap: var(--space-xs);
+    justify-items: end;
+    line-height: 1;
+    height: 100%;
+    background: linear-gradient(to right, #0000, #000 var(--card-padding), #000);
+    padding: var(--card-padding);
+
+    .show_day {
+      color: #bbb;
+    }
+
+    .show_time {
+      color: white;
+      font-size: var(--font-size-6xl);
+    }
+  }
+}
+
+@container card (width < 600px) {
+  .show_card .card_right {
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    gap: var(--space-xs);
+    justify-items: start;
+    height: 100%;
+    background: none;
+    padding: 0;
+    font-size: inherit;
+
+    .show_time {
+      font-size: inherit;
+    }
+  }
 }
 
 /***********************************************
@@ -621,18 +714,7 @@ footer {
 ************************************************/
 
 .person_card {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: "image name" "image content" "image links";
-  gap: var(--space-sm);
-
-  .person_name {
-    grid-area: name;
-  }
-
-  .person_links {
-    grid-area: links;
+  .card_footer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -655,29 +737,27 @@ footer {
     }
   }
 
-  .person_content {
-    grid-area: content;
-    align-self: start;
+  .card_content {
     color: var(--text-secondary);
   }
 
-  .person_image {
-    grid-area: image;
-    object-fit: cover;
-    aspect-ratio: 3 / 4;
-    width: 100%;
-    max-height: 100%;
-    border-radius: var(--space-xs);
-    background-color: var(--bg-secondary);
-    align-self: start;
-  }
+  /*.person_image {*/
+  /*  grid-area: image;*/
+  /*  object-fit: cover;*/
+  /*  aspect-ratio: 3 / 4;*/
+  /*  width: 100%;*/
+  /*  max-height: 100%;*/
+  /*  border-radius: var(--space-xs);*/
+  /*  background-color: var(--bg-secondary);*/
+  /*  align-self: start;*/
+  /*}*/
 
-  .person_footer {
-    grid-area: footer;
-    display: flex;
-    flex-direction: row;
-    gap: var(--space-xs);
-  }
+  /*.person_footer {*/
+  /*  grid-area: footer;*/
+  /*  display: flex;*/
+  /*  flex-direction: row;*/
+  /*  gap: var(--space-xs);*/
+  /*}*/
 }
 
 .person_gallery {

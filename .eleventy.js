@@ -18,7 +18,7 @@ export default function (eleventyConfig) {
   // eleventyConfig.setPathPrefix(pagePrefix());
   eleventyConfig.addPassthroughCopy('src/css')
   eleventyConfig.addPassthroughCopy('src/images')
-  eleventyConfig.addPassthroughCopy('src/js')
+  eleventyConfig.addPassthroughCopy('src/scripts')
   eleventyConfig.setOutputDirectory('dist')
 	eleventyConfig.addDataExtension("yaml", (contents) => YAML.parse(contents));
 }

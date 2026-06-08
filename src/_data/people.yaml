@@ -21,7 +21,7 @@ tim:
   image: wembley.png
   theaters: [csz_san_jose]
 
-katy:
+kathy:
   name: Kathy
   image: red.png
   theaters: [all_out]
