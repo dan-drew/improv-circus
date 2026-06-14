@@ -1,0 +1,8 @@
+include theater_logo
+
+mixin theater_info(theater)
+  .theater_info
+    +theater_logo(theater)
+    .theater_content
+      .theater_name= theater.name
+      .theater_location= theater.location

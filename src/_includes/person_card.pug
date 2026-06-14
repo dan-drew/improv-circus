@@ -4,9 +4,9 @@ include card
 
 mixin person_card(person)
   +card('person_card')
-    img.card_image(alt=person.name, src='/images/people/' + (person.image || 'default.png'))
+    img.card_image(alt=person.name, src=person.image)
 
-    h2.card_header= person.nickname || person.name.split(' ')[0]
+    h2.card_header= person.nickname
 
     if person.social || person.theaters
       .card_footer
@@ -20,4 +20,4 @@ mixin person_card(person)
               +theater_logo(theater, size='small')
 
     if person.bio
-      .card_content!= utils.markdown(person.bio)
+      .card_content!= person.bio

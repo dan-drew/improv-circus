@@ -54,15 +54,11 @@ function updateShowInfo(target) {
     timeElement.textContent = `${show.hour}:${show.minute}${show.ampm}`
   }
 
-  if (daysDelta < 0) {
-    target.classList.add('show_past')
-  } else {
-    target.classList.add('show_active')
-  }
+  target.dataset.showStatus = daysDelta >= 0 ? 'active' : 'past'
 }
 
 function initPage() {
-  document.querySelectorAll('.show_card').forEach(updateShowInfo)
+  document.querySelectorAll('[data-show-time]').forEach(updateShowInfo)
 }
 
 document.addEventListener('DOMContentLoaded', initPage);

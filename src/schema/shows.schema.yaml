@@ -1,0 +1,42 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+type: array
+items:
+  type: object
+  additionalProperties: false
+  required: [type, slug, when, theater, tickets]
+  properties:
+    name:
+      type: string
+    type:
+      type: string
+      pattern: ^[a-z_]*$
+    slug:
+      type: string
+      pattern: ^[a-z0-9-]*$
+    link:
+      type: string
+      format: uri
+    when:
+      type: string
+      format: date-time
+    theater:
+      type: string
+      pattern: ^[a-z_]*$
+    tickets:
+      type: object
+      properties:
+        cost:
+          type: string
+        link:
+          type: string
+          format: uri
+    description: 
+      type: string
+    image:
+      type: string
+      pattern: ^.*\.(png|jpg|jpeg)$
+    players:
+      type: array
+      items:
+        type: string
+        pattern: ^[a-z_]*$

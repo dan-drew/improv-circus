@@ -3,18 +3,19 @@ html
         title= site.title
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/css/styles.css")
+        block meta
         //link(rel="preconnect", href="https://fonts.googleapis.com")
         //link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
         script(src='/scripts/page.js')
     body
-        header.header
+        header
           nav.container.nav-container
-            a.logo(href="/index.html")
+            a.logo(href="/")
               img(src="/images/improv-circus.png", alt=site.title)
               span= site.title
             ul.nav-links
-              li: a(href="#shows") Shows
-              li: a(href="#players") Players
+              li: a(href="/#shows") Shows
+              li: a(href="/#players") Players
 
         div.container
           block content

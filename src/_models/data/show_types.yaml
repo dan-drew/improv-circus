@@ -1,0 +1,10 @@
+# $schema: ../schema/show_types.schema.yaml
+wry_vs_dry:
+  name: Wry vs. Dry
+  description: |
+    **Come and join us for head-to-head improv mayhem!** 
+
+    Watch two hilarious improv teams battle it out for laughs and points based on your suggestions! 
+    Games! Singing! Puns! Crazy characters! Who will win? You decide!
+  image: wry_vs_dry.png
+  banner_image: wry_vs_dry_banner.png

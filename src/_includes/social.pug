@@ -1,7 +1,7 @@
-mixin social(app, username)
-  a.social_link(target='_blank', href=utils.socialLink(app, username))
-    i.bi(class='bi-' + app, title=username)
+mixin social(info)
+  a.social_link(target='_blank', href=info.link)
+    i.bi(class='bi-' + info.app, title=info.username)
 
 mixin social_list(socials)
-  for it in Object.entries(socials)
-    +social(it[0], it[1])
+  for it in socials
+    +social(it)

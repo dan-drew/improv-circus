@@ -1,19 +1,14 @@
-include theater_logo
 include card
+include theater_info
 
 mixin show_card(show)
   +card('show_card')(data-show-time=show.when)
-    h2.card_header: a(href=show.link, target="_blank")=  show.name
-    img.card_image(src="/images/shows/" + show.image)
-    .card_right
+    h2.card_header: a(href=show.pageLink)= (show.name)
+    img.card_image(src=show.image, alt=show.name)
+    .card_right.show_when
       .show_day
       .show_time
     .card_content
-      != utils.markdown(show.description)
+      != show.description
     .card_footer
-      .theater_info
-        - const $theater = theaters[show.theater]
-        +theater_logo(show.theater)
-        .theater_content
-          .theater_name= $theater.name
-          .theater_location= $theater.location
+      +theater_info(show.theater)

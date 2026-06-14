@@ -1,0 +1,25 @@
+extends /layout
+include /theater_info
+include /people_list
+include /show_tickets
+
+block content
+  .show_page(data-show-time=show.when)
+    .show_image(style=`background-image: url(${show.bannerImage})`)
+      img.show_image(src=show.bannerImage)
+
+    h1= show.name
+
+    +theater_info(show.theater)
+
+    .show_when
+      .show_day
+      .show_time
+
+    +show_tickets(show)
+
+    .show_description
+      != show.description
+
+    .person_gallery
+      +people_list(show.players)

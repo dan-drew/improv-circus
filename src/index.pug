@@ -4,7 +4,7 @@ include /people_list.pug
 include /circus_heading
 
 block content
-  div.home
+  .home
     img.logo(src="/images/improv-circus.png", alt=site.title)
 
     .about-hero.
@@ -16,7 +16,7 @@ block content
     h1.text-shadow
       a.anchor(id='shows')
       | ~ Shows ~
-    +show_list(5)
+    +show_list(shows, 5)
 
     h1.text-shadow
       a.anchor(id='players')

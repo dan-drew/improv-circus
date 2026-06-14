@@ -1,5 +1,5 @@
 include show_card
 
-mixin show_list(limit=50)
+mixin show_list(shows, limit=50)
   each show in shows.slice(0, limit)
     +show_card(show)

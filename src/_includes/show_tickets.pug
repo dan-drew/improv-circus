@@ -1,0 +1,13 @@
+mixin show_tickets(show, showOver=true)
+  .show_tickets
+    a.tickets.show_active(href=show.tickets.link)
+      | Buy Tickets
+
+    if showOver
+      a.tickets.show_past(href='/#shows')
+        | This show is over
+        br
+        | Click for more shows!
+    else
+      .tickets.show_past
+        | This show is over
