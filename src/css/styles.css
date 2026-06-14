@@ -123,7 +123,8 @@ body {
 }
 
 body > .container {
-  padding-top: var(--header-height);
+  width: clamp(500px, 100% - 2 * var(--space-lg), 900px);
+  padding-top: calc(var(--header-height) + var(--space-md));
 }
 
 /* ===================================
@@ -224,7 +225,7 @@ a.anchor {
    Header & Navigation
    =================================== */
 
-.header {
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -664,31 +665,34 @@ footer {
   SHOW
 ************************************************/
 
+.show_when {
+  /*noinspection CssNoGenericFontName*/
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-4xl);
+  text-transform: uppercase;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-auto-flow: column;
+  gap: var(--space-xs);
+  justify-items: end;
+  line-height: 1;
+  height: 100%;
+
+  .show_day {
+    color: #bbb;
+  }
+
+  .show_time {
+    color: white;
+    font-size: var(--font-size-6xl);
+  }
+}
+
 .show_card {
-  .card_right {
-    /*noinspection CssNoGenericFontName*/
-    font-family: var(--font-sans);
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-4xl);
-    text-transform: uppercase;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-auto-flow: column;
-    gap: var(--space-xs);
-    justify-items: end;
-    line-height: 1;
-    height: 100%;
+  .show_when {
     background: linear-gradient(to right, #0000, #000 var(--card-padding), #000);
     padding: var(--card-padding);
-
-    .show_day {
-      color: #bbb;
-    }
-
-    .show_time {
-      color: white;
-      font-size: var(--font-size-6xl);
-    }
   }
 }
 
@@ -740,30 +744,9 @@ footer {
   .card_content {
     color: var(--text-secondary);
   }
-
-  /*.person_image {*/
-  /*  grid-area: image;*/
-  /*  object-fit: cover;*/
-  /*  aspect-ratio: 3 / 4;*/
-  /*  width: 100%;*/
-  /*  max-height: 100%;*/
-  /*  border-radius: var(--space-xs);*/
-  /*  background-color: var(--bg-secondary);*/
-  /*  align-self: start;*/
-  /*}*/
-
-  /*.person_footer {*/
-  /*  grid-area: footer;*/
-  /*  display: flex;*/
-  /*  flex-direction: row;*/
-  /*  gap: var(--space-xs);*/
-  /*}*/
 }
 
 .person_gallery {
-  /*display: grid;*/
-  /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
-  /*gap: var(--space-sm);*/
   column-width: 300px;
   column-gap: var(--space-sm);
 
@@ -804,5 +787,78 @@ svg.circus_heading {
   .heading_outline_2 {
     stroke: black;
     stroke-width: 20px;
+  }
+}
+
+/***********************************************
+  SHOW PAGE
+************************************************/
+
+a.tickets {
+  display: block;
+  text-align: center;
+  background: #aa5500;
+  color: white;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-2xl);
+  padding: var(--space-xs) var(--space-xs);
+  border-radius: var(--space-xs);
+  text-shadow: 1px 1px 3px black;
+}
+
+.show_page {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "image image" "name when" "where when" "content tickets" "team team";
+  row-gap: var(--space-md);
+  column-gap: var(--space-sm);
+
+  .show_image {
+    grid-area: image;
+    border-radius: var(--space-xs);
+    overflow: hidden;
+    background-size: cover;
+    backdrop-filter: blur(10px) brightness(0.4);
+    width: 100%;
+    height: 30vh;
+
+    img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  h1 {
+    grid-area: name;
+    text-align: start;
+    margin: 0;
+  }
+
+  .show_when {
+    grid-area: when;
+    background: #000a;
+    padding: var(--space-sm);
+    border-radius: var(--space-xs);
+  }
+
+  .show_tickets {
+    grid-area: tickets;
+  }
+
+  .theater_info {
+    grid-area: where;
+  }
+
+  .show_description {
+    grid-area: content;
+    /*font-family: var(--font-sans);*/
+    font-size: var(--font-size-2xl);
+  }
+
+  .person_gallery {
+    grid-area: team;
   }
 }

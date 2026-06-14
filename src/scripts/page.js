@@ -62,7 +62,7 @@ function updateShowInfo(target) {
 }
 
 function initPage() {
-  document.querySelectorAll('.show_card').forEach(updateShowInfo)
+  document.querySelectorAll('[data-show-time]').forEach(updateShowInfo)
 }
 
 document.addEventListener('DOMContentLoaded', initPage);

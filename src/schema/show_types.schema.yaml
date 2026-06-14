@@ -1,0 +1,16 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+type: object
+additionalProperties:
+  type: object
+  required: [name, description, image]
+  properties:
+    name:
+      type: string
+    image:
+      type: string
+      pattern: "^[a-zA-Z0-9_-]+.(png|jpg|jpeg)$"
+    banner_image:
+      type: string
+      pattern: "^[a-zA-Z0-9_-]+.(png|jpg|jpeg)$"
+    description:
+      type: string

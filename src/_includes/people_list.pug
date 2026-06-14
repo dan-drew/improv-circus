@@ -1,5 +1,6 @@
 include person_card
 
-mixin people_list
-  each person in Object.values(people)
+mixin people_list(peopleKeys = null)
+  - const peopleInfo = peopleKeys ? peopleKeys.map(k => people[k]).filter(x => !!x) : Object.values(people)
+  each person in peopleInfo
     +person_card(person)

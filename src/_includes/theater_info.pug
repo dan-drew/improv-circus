@@ -1,0 +1,9 @@
+include theater_logo
+
+mixin theater_info(theaterKey)
+  - const theater = theaters[theaterKey]
+  .theater_info
+    +theater_logo(theaterKey)
+    .theater_content
+      .theater_name= theater.name
+      .theater_location= theater.location

@@ -13,5 +13,8 @@ export default {
   },
   markdown(val) {
     return markdown.render(val)
+  },
+  image(...parts) {
+    return `/images/${parts.join('/')}`
   }
 }

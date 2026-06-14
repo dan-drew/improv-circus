@@ -1,15 +1,11 @@
+# $schema: ../schema/shows.schema.yaml
 -
-  name: "Wry vs. Dry"
+  type: wry_vs_dry
   link: "https://www.alloutcomedytheater.com/calendarcomedyshowsandimprovclasses/2026/3/22/wry-vs-dry"
   when: "2026-03-22T19:00:00-07:00"
+  slug: wry-vs-dry-2026-03-22
   theater: all_out
   tickets:
     cost: $10 online, $12 at the door
     link: https://example.com/notvalid
-  description: |
-    **Come and join us for head-to-head improv mayhem!** 
-
-    Watch two hilarious improv teams battle it out for laughs and points based on your suggestions! 
-    Games! Singing! Puns! Crazy characters! Who will win? You decide!
-  image: "wry_vs_dry_2026_03_22.png"
-  players: [dan, tim, yap, dylan, matt, christian, karen, mark]
+  players: [dan, tim, yap, dylan, matt, christian, kathy, mark, sara]
