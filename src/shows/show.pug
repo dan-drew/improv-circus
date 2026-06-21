@@ -5,7 +5,7 @@ include /show_tickets
 
 block content
   .show_page(data-show-time=show.when)
-    .show_image(style=`background-image: url(${show.bannerImage})`)
+    .show_image(style=`background-image: url("${show.bannerImage}")`)
       img.show_image(src=show.bannerImage)
 
     h1= show.name
