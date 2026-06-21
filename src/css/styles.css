@@ -351,7 +351,7 @@ header, footer {
   font-size: var(--font-size-3xl);
   max-width: 900px;
   text-align: center;
-  padding: var(--space-xl) var(--space-xl);
+  padding: var(--space-md) var(--space-xl);
   text-shadow: var(--text-shadow);
   justify-self: center;
   /*background: linear-gradient(135deg, var(--gray-50) 0%, var(--bg-primary) 100%);*/
@@ -525,6 +525,11 @@ footer {
 ************************************************/
 
 .home {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-lg);
+
   img.logo {
     margin-left: auto;
     margin-right: auto;
@@ -665,6 +670,8 @@ footer {
 ************************************************/
 
 .show_when {
+  --dim-color: #888;
+
   /*noinspection CssNoGenericFontName*/
   font-family: var(--font-sans);
   font-weight: var(--font-weight-bold);
@@ -679,12 +686,43 @@ footer {
   height: 100%;
 
   .show_day {
-    color: #bbb;
+    color: var(--dim-color);
   }
 
   .show_time {
+    display: grid;
+    grid-template-columns: 1fr 1px auto;
+    grid-template-areas: "hour divider minutes" "ampm ampm ampm";
+    align-items: start;
     color: white;
     font-size: var(--font-size-6xl);
+    align-self: start;
+    justify-items: end;
+    baseline-shift: top;
+    gap: calc(var(--space-xs) / 2);
+
+    .hour {
+      grid-area: hour;
+    }
+
+    .divider {
+      grid-area: divider;
+      background: var(--dim-color);
+      height: 75%;
+      width: 1px;
+      overflow: hidden;
+      align-self: center;
+    }
+
+    .minutes {
+      grid-area: minutes;
+      /*color: var(--dim-color);*/
+    }
+
+    .ampm {
+      grid-area: ampm;
+      font-size: var(--font-size-2xl);
+    }
   }
 }
 

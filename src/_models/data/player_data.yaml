@@ -56,3 +56,8 @@ sara:
   name: Sara
   image: red.png
   theaters: [csz_san_jose]
+
+brendan:
+  name: Brendan
+  image: wembley.png
+  theaters: [all_out]

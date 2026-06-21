@@ -21,3 +21,11 @@ export function markdown(val) {
 export function loadYaml(relativePath) {
   return YAML.parse(readFileSync(new URL(relativePath, import.meta.url), "utf8"));
 }
+
+function padZero(num, size) {
+  return String(num).padStart(size, '0')
+}
+
+export function isoDate(date) {
+  return `${date.getFullYear()}-${padZero(date.getMonth() + 1, 2)}-${padZero(date.getDate(), 2)}`
+}

@@ -1,6 +1,6 @@
 import { Player } from "./player.js";
 import { Theater } from "./theater.js";
-import {imageUrl, markdown} from "./modelUtils.js";
+import {imageUrl, isoDate, markdown} from "./modelUtils.js";
 
 /**
  * @typedef {Object} ShowType
@@ -19,7 +19,7 @@ import {imageUrl, markdown} from "./modelUtils.js";
 /**
  * @typedef {Object} ShowData
  * @property {string} type
- * @property {string} slug
+ * @property {string} [slug]
  * @property {string} [name]
  * @property {string} [description]
  * @property {string} [image]
@@ -41,17 +41,27 @@ export class Show {
    */
   constructor(data, {showTypes, theaters, players}) {
     const type = showTypes[data.type];
-    this.slug = data.slug;
+    this.when = new Date(data.when);
+    this.slug = data.slug ?? Show.slug(data.type, this.when);
     this.name = data.name ?? type.name;
     this.description = markdown(data.description ?? type.description ?? '');
     this.image = imageUrl('shows', data.image ?? type.image);
     this.bannerImage = imageUrl('shows', data.banner_image ?? type.banner_image ?? data.image ?? type.image);
-    this.when = new Date(data.when);
     this.theater = theaters[data.theater];
     this.theaterShowLink = data.theater_show_link;
     this.tickets = data.tickets;
     this.players = data.players.map(key => players[key]);
     this.pageLink = `/shows/${this.slug}`;
     this.permaLink = `${this.pageLink}/index.html`;
+  }
+
+  /**
+   * Create a slug for a show
+   * @param {string} type
+   * @param {Date} when
+   * @return {string}
+   */
+  static slug(type, when) {
+    return `${type.replaceAll('_', '-')}-${isoDate(when)}`
   }
 }

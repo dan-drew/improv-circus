@@ -48,11 +48,10 @@ function updateShowInfo(target) {
     dayElement.textContent = `${MONTHS[show.month]} ${show.day}`
   }
 
-  if (show.minute === 0) {
-    timeElement.textContent = `${show.hour}${show.ampm}`
-  } else {
-    timeElement.textContent = `${show.hour}:${show.minute}${show.ampm}`
-  }
+  const hourHtml = `<div class="hour">${show.hour}</div>`
+  const minutesHtml = `<div class="divider">&nbsp;</div><div class="minutes">${show.minute.toString().padStart(2, '0')}</div>`
+  const ampmHtml = `<div class="ampm">${show.ampm}</div>`
+  timeElement.innerHTML = hourHtml + minutesHtml + ampmHtml
 
   target.dataset.showStatus = daysDelta >= 0 ? 'active' : 'past'
 }
