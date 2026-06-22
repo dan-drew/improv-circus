@@ -5,4 +5,5 @@ mixin theater_info(theater)
     +theater_logo(theater)
     .theater_content
       .theater_name= theater.name
-      .theater_location= theater.location
+      .theater_location
+        = `${theater.location.street}, ${theater.location.city} ${theater.location.state}, ${theater.location.zip}`
