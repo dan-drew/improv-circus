@@ -1,4 +1,6 @@
 mixin meta(data)
-  if data.title
-    meta(name='title', content=data.title)
-    meta(name='og:title', content=data.title)
+  if data.meta
+    script(async)
+      != `const pageMeta = ${JSON.stringify(data.meta)};`
+      != `const pageUrl = ${JSON.stringify(page.url)};`
+      | window.page.setMeta(pageUrl, pageMeta);

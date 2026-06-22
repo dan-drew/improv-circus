@@ -11,6 +11,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/images')
   eleventyConfig.addPassthroughCopy('src/scripts')
   eleventyConfig.setOutputDirectory('dist')
-  eleventyConfig.addWatchTarget('src/_models/**/*', { resetConfig: true })
+  eleventyConfig.addWatchTarget('src/_models', { resetConfig: true })
+  eleventyConfig.addWatchTarget('src/_models/data', { resetConfig: true })
 	// eleventyConfig.addDataExtension("yaml", (contents) => YAML.parse(contents));
 }

@@ -2,6 +2,14 @@ extends /layout
 include /theater_info
 include /people_list
 include /show_tickets
+include /meta
+
+block title
+  =show.title
+
+block meta
+  - console.info(show)
+  +meta(show)
 
 block content
   .show_page(data-show-time=show.when)
@@ -19,7 +27,8 @@ block content
     +show_tickets(show)
 
     .show_description
-      != show.description
+      p: strong= show.headline
+      p= show.description
 
     .person_gallery
       +people_list(show.players)

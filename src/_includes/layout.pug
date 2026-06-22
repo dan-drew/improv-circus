@@ -1,10 +1,11 @@
 html
     head
-        title= site.title
+        title
+          block title
+            = site.title
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/css/styles.css")
         link(rel="icon" href="/images/improv-circus.png")
-        block meta
         //link(rel="preconnect", href="https://fonts.googleapis.com")
         //link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
         script(src='/scripts/page.js')
@@ -19,7 +20,10 @@ html
               li: a(href="/#players") Players
 
         div.container
+          include share
           block content
 
         footer
           div &copy; 2026 Improv Circus
+
+        block meta

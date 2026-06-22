@@ -1,7 +1,17 @@
 /**
+ * @typedef {Object} LocationData
+ * @property {string} city
+ * @property {string} state
+ * @property {string} [street]
+ * @property {string} [zip]
+ * @property {number} [lat]
+ * @property {number} [lng]
+ */
+
+/**
  * @typedef {Object} TheaterData
  * @property {string} name
- * @property {string} location
+ * @property {LocationData} location
  * @property {string} link
  */
 import {imageUrl} from "./modelUtils.js";

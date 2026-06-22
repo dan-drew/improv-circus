@@ -28,6 +28,6 @@ export class Player {
     this.image = imageUrl('people', data.image ?? 'default.png');
     this.theaters = data.theaters ? data.theaters.map(key => theaters[key]) : [];
     this.social = Social.fromData(data.social)
-    console.info(this.name, ' social ', data.social, this.social)
+    // console.info(this.name, ' social ', data.social, this.social)
   }
 }

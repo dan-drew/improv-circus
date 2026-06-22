@@ -1,14 +1,24 @@
 mut:
   name: "Made Up Theater"
-  location: "Fremont, CA"
+  location:
+    city: Fremont
+    state: CA
   link: "https://www.madeuptheater.com"
 
 csz_san_jose:
   name: "ComedySportz San Jose"
-  location: "San Jose, CA"
+  location:
+    city: San Jose
+    state: CA
   link: "https://cszsanjose.com"
 
 all_out:
   name: "All Out Comedy Theater"
-  location: "2550 Telegraph Avenue, Oakland CA 94612"
+  location:
+    street: 2550 Telegraph Avenue
+    city: Oakland
+    state: CA
+    zip: "94612"
+    lat: 37.804444
+    lng: -122.271111
   link: "https://www.alloutcomedytheater.com"

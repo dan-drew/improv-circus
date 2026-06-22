@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import YAML from "yaml";
 
 const _markdown = markdownIt('commonmark')
+const shortDateTime = new Intl.DateTimeFormat(navigator.languages, { dateStyle: 'medium', timeStyle: 'short' })
 
 /**
  *
@@ -28,4 +29,13 @@ function padZero(num, size) {
 
 export function isoDate(date) {
   return `${date.getFullYear()}-${padZero(date.getMonth() + 1, 2)}-${padZero(date.getDate(), 2)}`
+}
+
+export function shortDateParts(date) {
+  return Object.fromEntries(shortDateTime.formatToParts(date).map(part => [part.type, part.value]))
+}
+
+export function shortDate(date) {
+  const parts = shortDateParts(date)
+  return `${parts.month} ${parts.day} ${parts.hour}:${parts.minute}${parts.dayPeriod}`
 }

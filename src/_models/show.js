@@ -1,11 +1,13 @@
 import { Player } from "./player.js";
 import { Theater } from "./theater.js";
-import {imageUrl, isoDate, markdown} from "./modelUtils.js";
+import { Social } from "./social.js";
+import {imageUrl, isoDate, shortDate} from "./modelUtils.js";
 
 /**
  * @typedef {Object} ShowType
  * @property {string} name
  * @property {string} description
+ * @property {string} headline
  * @property {string} image
  * @property {string} banner_image
  */
@@ -22,12 +24,14 @@ import {imageUrl, isoDate, markdown} from "./modelUtils.js";
  * @property {string} [slug]
  * @property {string} [name]
  * @property {string} [description]
+ * @property {string} [headline]
  * @property {string} [image]
  * @property {string} [banner_image]
  * @property {string} [when]
  * @property {string} theater
  * @property {string} [theater_show_link]
  * @property {string[]} players
+ * @property {TicketData} [tickets]
  */
 
 export class Show {
@@ -44,7 +48,8 @@ export class Show {
     this.when = new Date(data.when);
     this.slug = data.slug ?? Show.slug(data.type, this.when);
     this.name = data.name ?? type.name;
-    this.description = markdown(data.description ?? type.description ?? '');
+    this.headline = data.headline ?? type.headline
+    this.description = data.description ?? type.description ?? '';
     this.image = imageUrl('shows', data.image ?? type.image);
     this.bannerImage = imageUrl('shows', data.banner_image ?? type.banner_image ?? data.image ?? type.image);
     this.theater = theaters[data.theater];
@@ -53,6 +58,16 @@ export class Show {
     this.players = data.players.map(key => players[key]);
     this.pageLink = `/shows/${this.slug}`;
     this.permaLink = `${this.pageLink}/index.html`;
+
+    this.meta = Social.meta(this, {
+      title: `Improv Circus presents: ${this.name} - ${shortDate(this.when)} - ${this.theater.name}`,
+      location: this.theater.location,
+      description: [
+        this.description,
+        this.tickets?.cost ? `🎟️ ${this.tickets.cost}` : undefined,
+        `📍 ${this.theater.location.street}, ${this.theater.location.city}`,
+      ].filter(it => !!it).join("\n"),
+    })
   }
 
   /**

@@ -20,11 +20,11 @@ export function getSiteData() {
   const players = mapFactory({ playerData, theaters }, "playerData", Player);
   const shows = listFactory({ showData, showTypes, theaters, players }, "showData", Show);
 
-  cached = JSON.parse(JSON.stringify({
+  cached = {
     theaters,
     players,
     shows,
-  }));
+  };
 
   cached.allPlayers = Object.values(cached.players)
 

@@ -9,6 +9,7 @@ mixin show_card(show)
       .show_day
       .show_time
     .card_content
-      != show.description
+      p: strong= show.headline
+      p= show.description
     .card_footer
       +theater_info(show.theater)
