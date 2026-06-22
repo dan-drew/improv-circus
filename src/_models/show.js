@@ -1,6 +1,7 @@
 import { Player } from "./player.js";
 import { Theater } from "./theater.js";
 import { Social } from "./social.js";
+import { DateWithZone } from "./dateWithZone.js";
 import {imageUrl, isoDate, shortDate} from "./modelUtils.js";
 
 /**
@@ -45,7 +46,8 @@ export class Show {
    */
   constructor(data, {showTypes, theaters, players}) {
     const type = showTypes[data.type];
-    this.when = new Date(data.when);
+    /** @type {DateWithZone} */
+    this.when = new DateWithZone(data.when);
     this.slug = data.slug ?? Show.slug(data.type, this.when);
     this.name = data.name ?? type.name;
     this.headline = data.headline ?? type.headline
@@ -58,14 +60,15 @@ export class Show {
     this.players = data.players.map(key => players[key]);
     this.pageLink = `/shows/${this.slug}`;
     this.permaLink = `${this.pageLink}/index.html`;
+    this.title = `Improv Circus presents: ${this.name} - ${this.when.shortDateTime}`;
 
     this.meta = Social.meta(this, {
-      title: `Improv Circus presents: ${this.name} - ${shortDate(this.when)} - ${this.theater.name}`,
+      title: this.title,
       location: this.theater.location,
       description: [
         this.description,
         this.tickets?.cost ? `🎟️ ${this.tickets.cost}` : undefined,
-        `📍 ${this.theater.location.street}, ${this.theater.location.city}`,
+        `📍 ${this.theater.name}`,
       ].filter(it => !!it).join("\n"),
     })
   }
@@ -73,10 +76,10 @@ export class Show {
   /**
    * Create a slug for a show
    * @param {string} type
-   * @param {Date} when
+   * @param {DateWithZone} when
    * @return {string}
    */
   static slug(type, when) {
-    return `${type.replaceAll('_', '-')}-${isoDate(when)}`
+    return `${type.replaceAll('_', '-')}-${when.isoDate}`
   }
 }

@@ -4,9 +4,9 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "pnpx @11ty/eleventy --serve --watch --port=8111",
+    "start": "TZ=UTC pnpx @11ty/eleventy --serve --watch --port=8111",
     "prebuild": "rm -rf dist",
-    "build": "pnpx @11ty/eleventy",
+    "build": "TZ=UTC pnpx @11ty/eleventy",
     "predeploy": "pnpm build",
     "deploy": "cd terraform && terraform init && terraform apply -auto-approve",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -12,7 +12,7 @@ block meta
   +meta(show)
 
 block content
-  .show_page(data-show-time=show.when)
+  .show_page(data-show-time=show.when.iso, data-show-tz=show.when.timeZone)
     .show_image(style=`background-image: url("${show.bannerImage}")`)
       img.show_image(src=show.bannerImage)
 

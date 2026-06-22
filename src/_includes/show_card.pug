@@ -2,7 +2,7 @@ include card
 include theater_info
 
 mixin show_card(show)
-  +card('show_card')(data-show-time=show.when)
+  +card('show_card')(data-show-time=show.when.iso, data-show-tz=show.when.timeZone)
     h2.card_header: a(href=show.pageLink)= (show.name)
     img.card_image(src=show.image, alt=show.name)
     .card_right.show_when
