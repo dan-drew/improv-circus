@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: 22.x
     - uses: pnpm/action-setup@v6
-    - run: pnpm run build --pathprefix=improv-circus
+    - run: pnpm run build
 
     - id: timestamp
       name: Build timestamp
