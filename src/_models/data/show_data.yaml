@@ -1,13 +1,5 @@
 -
   type: wry_vs_dry
-  when: { date: "2026-06-23", time: "18:30" }
-  theater: all_out
-  tickets:
-    cost: $10 online, $12 at the door
-#    link: https://example.com/notvalid
-  players: [dan, yap, dylan, christian, mark, brendan, ray]
--
-  type: wry_vs_dry
   when: { date: "2026-08-15", time: "18:30" }
   theater: all_out
   tickets:
