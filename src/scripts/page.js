@@ -57,42 +57,6 @@ class Page {
     target.dataset.showStatus = daysDelta >= 0 ? 'active' : 'past'
   }
 
-  /**
-   * Set the metadata for the page
-   * @param {string} pageUrl
-   * @param {Record<string, string>} metaData
-   */
-  setMeta(pageUrl, metaData) {
-    const metaTags = Object.fromEntries(Array.from(document.querySelectorAll('head meta')).map(node => [node.name, node]))
-    const href = this._stripSlash(String(window.location.href))
-    const baseUri  = href.replace(this._stripSlash(pageUrl), '')
-
-    metaData['og:url'] = href
-
-    for (const [name, value] of Object.entries(metaData)) {
-      const content = value.replace('baseUri:', baseUri)
-
-      if (name in metaTags) {
-        metaTags[name].content = content
-        delete metaTags[name]
-      } else {
-        const metaTag = document.createElement('meta')
-        metaTag.name = name
-        metaTag.content = content
-        document.head.appendChild(metaTag)
-      }
-    }
-
-    delete metaTags['viewport']
-    for (const metaTag of Object.values(metaTags)) {
-      metaTag.remove()
-    }
-  }
-
-  _stripSlash(str) {
-    return str.replace(/\/+$/, '')
-  }
-
   initPage() {
     document.querySelectorAll('[data-show-time]').forEach(target => this.updateShowInfo(target))
   }

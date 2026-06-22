@@ -23,6 +23,9 @@ const socialUserToLink = {
   tiktok: (username) => `https://www.tiktok.com/@${username}`
 }
 
+const DEFAULT_META_TITLE = 'Improv Circus'
+const DEFAULT_META_IMAGE = '/images/improv-circus.png'
+
 export class Social {
   constructor(app, username) {
     this.app = app;
@@ -50,14 +53,14 @@ export class Social {
     let result = {
       'og:type': 'website',
       'og:locale': 'en_US',
-      'geo.region': 'US-CA',
+      'geo.region': 'us-CA',
       'twitter:card': 'summary_large_image'
     }
 
     for (const prefix of ['og:', 'twitter:']) {
-      result[`${prefix}title`] = metaData.title || target.title || 'Improv Circus'
+      result[`${prefix}title`] = metaData.title || target.title || DEFAULT_META_TITLE
       result[`${prefix}description`] = metaData.description || target.description
-      result[`${prefix}image`] = `baseUri:${metaData.image || target.image || '/images/improv-circus.png'}`
+      result[`${prefix}image`] = metaData.image || target.image || DEFAULT_META_IMAGE
     }
 
     Object.assign(result, Social._locationMeta(metaData.location || target.location))

@@ -1,6 +1,4 @@
 mixin meta(data)
   if data.meta
-    script(async)
-      != `const pageMeta = ${JSON.stringify(data.meta)};`
-      != `const pageUrl = ${JSON.stringify(page.url)};`
-      | window.page.setMeta(pageUrl, pageMeta);
+    for it in Object.entries(data.meta)
+      meta(name=it[0], content=it[1])
