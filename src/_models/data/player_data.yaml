@@ -1,3 +1,4 @@
+# $schema: ./player_data.schema.yaml
 dan:
   name: Dan Drew
   theaters: [all_out, csz_san_jose]
@@ -8,6 +9,9 @@ dan:
     Blah blah blah blah...
     Blah blah blah blah...
     Blah blah blah blah...
+  location: Oakland
+  home_town: Toronto
+  improv_since: 2001
   social:
     instagram: '@ddrew555'
 
@@ -28,8 +32,19 @@ kathy:
 
 dylan:
   name: Dylan
-  image: gobo.png
-  theaters: [all_out]
+  bio: |
+    Dylan is a comedian, educator, and musician in the Bay Area. 
+    His offbeat sense of humor can be seen in his improv, standup 
+    and often absurd sketches. And while he now spends his days 
+    producing and coaching, his past is marked by a stint as a 
+    tsunami hunter – a job that was as unpredictable as his shows.
+  image: dylan.jpeg
+  theaters: [all_out, endgames]
+  location: Oakland
+  home_town: Los Angeles
+  improv_since: 2016
+  social:
+    instagram: '@dylanraycalypso'
 
 yap:
   name: William Yap

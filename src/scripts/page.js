@@ -57,6 +57,16 @@ class Page {
     }
   }
 
+  shuffleChildren(parent) {
+    const children = Array.from(parent.children);
+    let i = children.length;
+
+    while (i > 1) {
+      const j = Math.floor(Math.random() * i--);
+      parent.appendChild(children[j]);
+      children[j] = children[i];
+    }
+  }
 
   /**
    * Update the show info
@@ -90,6 +100,7 @@ class Page {
 
   initPage() {
     document.querySelectorAll('[data-show-time]').forEach(target => this.updateShowInfo(target))
+    document.querySelectorAll('.person_gallery').forEach(target => this.shuffleChildren(target))
   }
 }
 

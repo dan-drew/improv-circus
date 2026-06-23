@@ -1,6 +1,7 @@
 include theater_logo
 include social
 include card
+include icon
 
 mixin person_card(person)
   +card('person_card')
@@ -18,6 +19,23 @@ mixin person_card(person)
           .link_group
             each theater in person.theaters
               +theater_logo(theater, size='small')
+
+        if person.location || person.homeTown || person.improvSince
+          .link_group
+            if person.location
+              .icon_text(title='Current Town')
+                +icon('geo')
+                span=person.location
+
+            if person.homeTown
+              .icon_text(title='Home Town')
+                +icon('house')
+                span=person.homeTown
+
+            if person.improvSince
+              .icon_text(title='Improving Since')
+                +icon('clock-history')
+                span=person.improvSince
 
     if person.bio
       .card_content!= person.bio

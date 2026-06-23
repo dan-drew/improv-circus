@@ -1,0 +1,32 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+type: array
+items:
+  type: object
+  additionalProperties: false
+  required: [name, image]
+  properties:
+    name:
+      type: string
+    theaters:
+      type: array
+      items:
+        type: string
+    image:
+      type: string
+    bio:
+      type: string
+    location:
+      type: string
+    home_town:
+      type: string
+    improv_since:
+      type: number
+    social:
+      type: object
+      properties:
+        instagram:
+          type: string
+        facebook:
+          type: string
+        x:
+          type: string

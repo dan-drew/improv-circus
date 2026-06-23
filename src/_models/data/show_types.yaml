@@ -1,4 +1,4 @@
-# $schema: ../schema/show_types.schema.yaml
+# $schema: ./show_types.schema.yaml
 wry_vs_dry:
   name: Wry vs. Dry
   headline: Come and join us for head-to-head improv mayhem!

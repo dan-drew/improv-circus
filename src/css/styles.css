@@ -594,7 +594,7 @@ footer {
 
 .card {
   --card-padding: var(--space-md);
-  --card-radius: var(--space-md);
+  --card-radius: var(--space-xl);
 
   background: #00000088;
   /*background: rgba(0, 0, 0, 0.2);*/
@@ -630,6 +630,7 @@ footer {
     border-radius: var(--card-radius);
     padding-left: var(--card-padding);
     justify-self: center;
+    overflow: hidden;
   }
 
   .card_header {
@@ -770,6 +771,7 @@ footer {
       flex-direction: row;
       align-items: center;
       gap: var(--space-sm);
+      font-family: var(--font-sans);
 
       &:not(:first-child) {
         padding-left: var(--space-sm);
@@ -788,8 +790,15 @@ footer {
   }
 }
 
+.icon_text {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
 .person_gallery {
-  column-width: 250px;
+  column-width: clamp(350px, 500px);
   column-gap: var(--space-sm);
 
   .person_card {

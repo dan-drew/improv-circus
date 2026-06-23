@@ -1,6 +1,8 @@
+include icon
+
 mixin social(info)
   a.social_link(target='_blank', href=info.link)
-    i.bi(class='bi-' + info.app, title=info.username)
+    +icon(info.app, info.username)
 
 mixin social_list(socials)
   for it in socials

@@ -8,6 +8,9 @@ import {imageUrl, markdown} from "./modelUtils.js";
  * @property {string} [nickname]
  * @property {string} [bio]
  * @property {string} [image]
+ * @property {string} [location]
+ * @property {string} [home_town]
+ * @property {number} [improv_since]
  * @property {string[]} [theaters]
  * @property {SocialData} [social]
  */
@@ -26,6 +29,9 @@ export class Player {
     this.nickname = data.nickname ?? data.name.split(' ')[0];
     this.bio = data.bio ? markdown(data.bio) : undefined;
     this.image = imageUrl('people', data.image ?? 'default.png');
+    this.location = data.location
+    this.homeTown = data.home_town
+    this.improvSince = data.improv_since
     this.theaters = data.theaters ? data.theaters.map(key => theaters[key]) : [];
     this.social = Social.fromData(data.social)
     // console.info(this.name, ' social ', data.social, this.social)

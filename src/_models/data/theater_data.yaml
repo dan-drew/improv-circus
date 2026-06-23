@@ -1,19 +1,28 @@
 mut:
   name: "Made Up Theater"
+  link: "https://www.madeuptheater.com"
   location:
+    street: 4000 Bay St Ste B
     city: Fremont
     state: CA
-  link: "https://www.madeuptheater.com"
+    zip: "94538"
+    lat: 37.53292346440664
+    lng: -121.95938138851035
 
 csz_san_jose:
   name: "ComedySportz San Jose"
+  link: "https://cszsanjose.com"
   location:
+    street: 5440-D Thornwood Drive
     city: San Jose
     state: CA
-  link: "https://cszsanjose.com"
+    zip: "95123"
+    lat: 37.25390028746726
+    lng: -121.86049567317468
 
 all_out:
   name: "All Out Comedy Theater"
+  link: "https://www.alloutcomedytheater.com"
   location:
     street: 2550 Telegraph Avenue
     city: Oakland
@@ -21,4 +30,14 @@ all_out:
     zip: "94612"
     lat: 37.804444
     lng: -122.271111
-  link: "https://www.alloutcomedytheater.com"
+
+endgames:
+  name: Endgames Improv
+  link: https://www.endgamesimprov.com/
+  location:
+    street: 2965 Mission St
+    city: San Francisco
+    state: CA
+    zip: "94110"
+    lat: 37.74963806955513
+    lng: -122.4180237731617

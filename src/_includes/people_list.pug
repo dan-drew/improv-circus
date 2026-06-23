@@ -1,5 +1,6 @@
 include person_card
 
 mixin people_list(people = null)
-  each person in (people || allPlayers)
-    +person_card(person)
+  .person_gallery
+    each person in (people || allPlayers)
+      +person_card(person)
