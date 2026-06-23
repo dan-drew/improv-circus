@@ -29,6 +29,7 @@ export function getSiteData() {
   cached.allPlayers = Object.values(cached.players)
 
   console.info('site data: ', cached)
+  console.info('generated: ', new Date().toString())
 
   return cached;
 }

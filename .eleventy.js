@@ -1,6 +1,5 @@
 import pugPlugin from '@11ty/eleventy-plugin-pug';
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
-// import YAML from "yaml";
 
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(pugPlugin);
@@ -11,7 +10,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/images')
   eleventyConfig.addPassthroughCopy('src/scripts')
   eleventyConfig.setOutputDirectory('dist')
-  eleventyConfig.addWatchTarget('src/_models', { resetConfig: true })
-  eleventyConfig.addWatchTarget('src/_models/data', { resetConfig: true })
-	// eleventyConfig.addDataExtension("yaml", (contents) => YAML.parse(contents));
+  eleventyConfig.addWatchTarget('src/_models/', { resetConfig: true })
+  eleventyConfig.addWatchTarget('src/_models/data/', { resetConfig: true })
 }
