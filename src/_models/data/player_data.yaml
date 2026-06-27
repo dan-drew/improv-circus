@@ -2,13 +2,13 @@
 dan:
   name: Dan Drew
   theaters: [all_out, csz_san_jose]
-  image: dan.png
+  image: dan.jpg
   bio: |
-    Blah blah blah blah...
-    Blah blah blah blah...
-    Blah blah blah blah...
-    Blah blah blah blah...
-    Blah blah blah blah...
+    Dan’s been doing improv since 2001, though not continuously — he occasionally wandered off to do other things, 
+    as one does. He’s performed both competitive short form and long form on teams at ComedySportz and All Out, 
+    mixing character voices, crisp game play, and the dry British/Canadian humour you get from growing up on 
+    Monty Python and Kids in the Hall. He’s also known for "challenging" his teammates with surprise songs, 
+    improvised poetry, or whatever else seems amusing in the moment. They love it. They do.
   location: Oakland
   home_town: Toronto
   improv_since: 2001
@@ -76,3 +76,11 @@ brendan:
   name: Brendan
   image: wembley.png
   theaters: [all_out]
+
+kari:
+  name: Kari
+  image: red.png
+
+mary:
+  name: Mary
+  image: red.png

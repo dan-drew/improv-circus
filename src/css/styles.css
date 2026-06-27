@@ -864,7 +864,7 @@ svg.circus_heading {
   }
 }
 
-[data-show-status="past"] .show_active {
+[data-show-status="past"] /*.show_active*/ {
   display: none !important;
 }
 
