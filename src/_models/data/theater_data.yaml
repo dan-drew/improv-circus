@@ -41,3 +41,14 @@ endgames:
     zip: "94110"
     lat: 37.74963806955513
     lng: -122.4180237731617
+
+provocation:
+  name: Provocation Theater
+  link: https://provocationtheater.com/
+  location:
+    street: 2177 Bancroft Way
+    city: Berkeley
+    state: CA
+    zip: "94704"
+    lat: 37.864444
+    lng: -122.258333

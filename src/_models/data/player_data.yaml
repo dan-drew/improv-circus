@@ -38,7 +38,7 @@ dylan:
     and often absurd sketches. And while he now spends his days 
     producing and coaching, his past is marked by a stint as a 
     tsunami hunter – a job that was as unpredictable as his shows.
-  image: dylan.jpeg
+  image: dylan.jpg
   theaters: [all_out, endgames]
   location: Oakland
   home_town: Los Angeles
@@ -64,8 +64,19 @@ matt:
 
 christian:
   name: Christian Hill
-  image: gobo.png
-  theaters: [all_out]
+  image: christian.jpg
+  home_town: San Francisco
+  location: Berkeley
+  improv_since: 2021
+  bio: |
+    Christian has lived most of his life in the San Francisco Bay Area and gets disoriented if not around 
+    mountains or large bodies of water. He began his formal improv education at All Out Comedy Theater in 
+    2021 and has performed on AOCT House teams since 2022. From working “in the booth” for dozens of shows 
+    in the theater since 2023, to teaching, hosting open jams to performing standup, Christian has been 
+    standing in front of the improv/comedy firehose full blast. When he’s not going down some other rabbit 
+    hole, you can find him wrangling a feral teenager and learning how to cohabitate with an apex predator 
+    named Moose.
+  theaters: [all_out, provocation, endgames]
 
 sara:
   name: Sara

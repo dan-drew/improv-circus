@@ -458,21 +458,29 @@ footer {
     font-size: var(--font-size-2xl);
   }
 
-  .nav-links {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background-color: var(--bg-primary);
-    flex-direction: column;
-    padding: var(--space-md);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: none;
+  .nav-container {
+    gap: var(--space-sm);
   }
 
-  .nav-links.active {
-    display: flex;
+  .nav-links {
+    gap: var(--space-sm);
   }
+
+  /*.nav-links {*/
+  /*  position: fixed;*/
+  /*  top: 60px;*/
+  /*  left: 0;*/
+  /*  right: 0;*/
+  /*  background-color: var(--bg-primary);*/
+  /*  flex-direction: column;*/
+  /*  padding: var(--space-md);*/
+  /*  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
+  /*  display: none;*/
+  /*}*/
+
+  /*.nav-links.active {*/
+  /*  display: flex;*/
+  /*}*/
 
   .mobile-menu-toggle {
     display: block;
@@ -941,8 +949,8 @@ svg.circus_heading {
 
   .hero {
     display: flex;
-    justify-content: space-between;
-    gap: 1ch;
+    justify-content: space-evenly;
+    gap: var(--space-md);
     line-height: 1;
     text-align: center;
     padding: var(--space-lg) var(--space-md);
@@ -951,7 +959,28 @@ svg.circus_heading {
     font-size: var(--font-size-5xl);
     background: #0008;
     border-radius: var(--space-lg);
+
+    .break {
+      display: block;
+    }
   }
+
+  @media (max-width: 750px) {
+    .hero {
+      flex-direction: column;
+      background: none;
+      padding: 0;
+      gap: var(--space-sm);
+
+      .break {
+        &:before {
+          content: " ";
+        }
+        display: inline;
+      }
+    }
+  }
+
 
   p { 
     margin: 0;
