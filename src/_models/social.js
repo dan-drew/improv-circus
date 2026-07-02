@@ -1,5 +1,5 @@
 /**
- * @typedef {"instagram" | "facebook" | "tiktok" | "x"} SocialApp
+ * @typedef {"instagram" | "facebook" | "tiktok" | "x" | "web"} SocialApp
  */
 
 /**
@@ -20,7 +20,15 @@
 const socialUserToLink = {
   instagram: (username) => `https://www.instagram.com/${username.substring(1)}`,
   facebook: (username) => username,
-  tiktok: (username) => `https://www.tiktok.com/@${username}`
+  tiktok: (username) => `https://www.tiktok.com/@${username}`,
+  web: (username) => username,
+}
+
+/**
+ * @type {Partial<Record<SocialApp, string>>}
+ */
+const socialIcons = {
+  web: 'globe'
 }
 
 const DEFAULT_META_TITLE = 'Improv Circus'
@@ -29,6 +37,7 @@ const DEFAULT_META_IMAGE = '/images/improv-circus.png'
 export class Social {
   constructor(app, username) {
     this.app = app;
+    this.icon = socialIcons[app] ?? app;
     this.username = username;
     this.link = socialUserToLink[app](username);
   }

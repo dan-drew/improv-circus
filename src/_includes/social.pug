@@ -2,7 +2,7 @@ include icon
 
 mixin social(info)
   a.social_link(target='_blank', href=info.link)
-    +icon(info.app, info.username)
+    +icon(info.icon, info.username)
 
 mixin social_list(socials)
   for it in socials

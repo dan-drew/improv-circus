@@ -90,7 +90,23 @@ brendan:
 
 kari:
   name: Kari
-  image: red.png
+  bio: |
+    Kari Noelle is an improviser and Meisner trained actor with experience in films, indie content, and live 
+    performances. She studied and performed at Leela and Endgames Improv, and learned under a variety of coaches 
+    from BATs, UCB and Second City. She’s collaborated and produced with diverse teams in the Bay Area, and you 
+    can see more of her work on the web. Just google her! Kari has other hobbies too, but she is mostly having 
+    a blast with All Out Comedy's Main Stage and her indie team Juicy Fruits.
+  image: kari.jpg
+  theaters:
+    - all_out
+    - provocation
+    - endgames
+  improv_since: 2013
+  location: East Bay
+  home_town: Fairfax Station, VA
+  social:
+    instagram: '@kari.noelle.actor'
+    web: https://www.karinoelle.com
 
 mary:
   name: Mary
