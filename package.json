@@ -7,7 +7,8 @@
     "start": "TZ=UTC pnpx @11ty/eleventy --serve --watch --port=8111",
     "prebuild": "rm -rf dist",
     "build": "TZ=UTC pnpx @11ty/eleventy",
-    "predeploy": "SITE_URL=https://improv-circus.com pnpm build",
+    "build:production": "SITE_URL=https://improv-circus.com pnpm build",
+    "predeploy": "pnpm run build:production",
     "deploy": "cd terraform && terraform init && terraform apply -auto-approve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +21,7 @@
     "@11ty/eleventy-plugin-pug": "^1.0.0",
     "markdown-it": "^14.2.0",
     "pug": "^3.0.4",
+    "sitemap": "^9.0.1",
     "yaml": "^2.9.0"
   }
 }

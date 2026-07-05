@@ -4,7 +4,7 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(pugPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-  eleventyConfig.setTemplateFormats('pug,md');
+  eleventyConfig.setTemplateFormats('pug,md,11ty.js');
   eleventyConfig.setInputDirectory('src');
   eleventyConfig.addPassthroughCopy('src/css')
   eleventyConfig.addPassthroughCopy('src/images')

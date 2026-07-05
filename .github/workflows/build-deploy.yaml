@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: 22.x
     - uses: pnpm/action-setup@v6
-    - run: pnpm run build
+    - run: pnpm run build:production
 
     - id: timestamp
       name: Build timestamp
