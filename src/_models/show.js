@@ -2,7 +2,7 @@ import { Player } from "./player.js";
 import { Theater } from "./theater.js";
 import { Social } from "./social.js";
 import { DateWithZone } from "./dateWithZone.js";
-import {imageUrl, isoDate, shortDate} from "./modelUtils.js";
+import { imageUrl } from "./modelUtils.js";
 
 /**
  * @typedef {Object} ShowType
@@ -71,6 +71,88 @@ export class Show {
         `📍 ${this.theater.name}`,
       ].filter(it => !!it).join("\n"),
     })
+  }
+
+  /**
+   * Build JSON-LD data for a show page
+   * @param {{url: string, organization?: Record<string, any>}} site
+   * @return {string}
+   */
+  jsonLD(site) {
+    const baseUrl = site.url.replace(/\/$/, "");
+    const eventUrl = `${baseUrl}${this.pageLink}`;
+    const imageUrls = [this.bannerImage, this.image]
+      .filter(Boolean)
+      .map(path => `${baseUrl}${path}`);
+    const postalAddress = {
+      "@type": "PostalAddress",
+      addressLocality: this.theater.location.city,
+      addressRegion: this.theater.location.state,
+      postalCode: this.theater.location.zip,
+      streetAddress: this.theater.location.street,
+      addressCountry: "US",
+    };
+    const location = {
+      "@type": "Place",
+      name: this.theater.name,
+      url: this.theater.link,
+      address: Object.fromEntries(Object.entries(postalAddress).filter(([, value]) => !!value)),
+    };
+
+    if (this.theater.location.lat !== undefined && this.theater.location.lng !== undefined) {
+      location.geo = {
+        "@type": "GeoCoordinates",
+        latitude: this.theater.location.lat,
+        longitude: this.theater.location.lng,
+      };
+    }
+
+    const eventData = {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "@id": `${eventUrl}#event`,
+      url: eventUrl,
+      name: this.name,
+      description: this.description,
+      image: imageUrls,
+      organizer: site.organization ?? {
+        "@type": "Organization",
+        name: "Improv Circus",
+        url: baseUrl,
+        logo: `${baseUrl}/images/improv-circus.png`,
+        email: "info@improv-circus.com",
+      },
+      startDate: this.when.iso,
+      eventStatus: "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      audience: {
+        "@type": "Audience",
+        audienceType: "San Francisco Bay Area families, kids, teens, and adults",
+      },
+      location,
+      performer: this.players.map(player => {
+        const performer = {
+          "@type": "Person",
+          name: player.name,
+          image: `${baseUrl}${player.image}`,
+        };
+        if (player.bioText) {
+          performer.description = player.bioText;
+        }
+        return performer;
+      }),
+    };
+
+    if (this.tickets?.link || this.tickets?.cost) {
+      eventData.offers = {
+        "@type": "Offer",
+        url: this.tickets?.link ?? eventUrl,
+        availability: "https://schema.org/InStock",
+        ...(this.tickets?.cost ? { description: this.tickets.cost } : {}),
+      };
+    }
+
+    return JSON.stringify(eventData, undefined, 2);
   }
 
   /**

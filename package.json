@@ -7,7 +7,7 @@
     "start": "TZ=UTC pnpx @11ty/eleventy --serve --watch --port=8111",
     "prebuild": "rm -rf dist",
     "build": "TZ=UTC pnpx @11ty/eleventy",
-    "predeploy": "pnpm build",
+    "predeploy": "SITE_URL=https://improv-circus.com pnpm build",
     "deploy": "cd terraform && terraform init && terraform apply -auto-approve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

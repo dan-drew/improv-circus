@@ -8,8 +8,9 @@ block title
   =show.title
 
 block meta
-  - console.info(show)
   +meta(show)
+  script(type="application/ld+json")
+    != show.jsonLD(site)
 
 block content
   .show_page(data-show-time=show.when.iso, data-show-tz=show.when.timeZone)

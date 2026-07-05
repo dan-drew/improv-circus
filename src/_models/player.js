@@ -28,6 +28,7 @@ export class Player {
     this.name = data.name;
     this.nickname = data.nickname ?? data.name.split(' ')[0];
     this.bio = data.bio ? markdown(data.bio) : undefined;
+    this.bioText = data.bio;
     this.image = imageUrl('people', data.image ?? 'default.png');
     this.location = data.location
     this.homeTown = data.home_town
