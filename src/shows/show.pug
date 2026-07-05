@@ -29,6 +29,6 @@ block content
 
     .show_description
       p: strong= show.headline
-      p= show.description
+      != show.descriptionHtml
 
     +people_list(show.players)

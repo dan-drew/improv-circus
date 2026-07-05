@@ -3,7 +3,7 @@ dan:
   name: Dan Drew
   theaters: [all_out, csz_san_jose]
   image: dan.jpg
-  bio: |
+  bio: >
     Dan’s been doing improv since 2001, though not continuously — he occasionally wandered off to do other things, 
     as one does. He’s performed both competitive short form and long form on teams at ComedySportz and All Out, 
     mixing character voices, crisp game play, and the dry British/Canadian humour you get from growing up on 
@@ -32,7 +32,7 @@ kathy:
 
 dylan:
   name: Dylan
-  bio: |
+  bio: >
     Dylan is a comedian, educator, and musician in the Bay Area. 
     His offbeat sense of humor can be seen in his improv, standup 
     and often absurd sketches. And while he now spends his days 
@@ -68,7 +68,7 @@ christian:
   home_town: San Francisco
   location: Berkeley
   improv_since: 2021
-  bio: |
+  bio: >
     Christian has lived most of his life in the San Francisco Bay Area and gets disoriented if not around 
     mountains or large bodies of water. He began his formal improv education at All Out Comedy Theater in 
     2021 and has performed on AOCT House teams since 2022. From working “in the booth” for dozens of shows 
@@ -90,7 +90,7 @@ brendan:
 
 kari:
   name: Kari
-  bio: |
+  bio: >
     Kari Noelle is an improviser and Meisner trained actor with experience in films, indie content, and live 
     performances. She studied and performed at Leela and Endgames Improv, and learned under a variety of coaches 
     from BATs, UCB and Second City. She’s collaborated and produced with diverse teams in the Bay Area, and you 

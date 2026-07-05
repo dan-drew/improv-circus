@@ -1,9 +1,10 @@
 # $schema: ./show_types.schema.yaml
 wry_vs_dry:
   name: Wry vs. Dry
-  headline: Come and join us for head-to-head improv mayhem!
+  headline: Head-to-head Improv Comedy!
   description: |
-    Watch two hilarious improv teams battle it out for laughs and points based on your suggestions! 
-    Games! Singing! Puns! Crazy characters! Who will win? You decide!
+    Come one, come all for a hilarious evening of competitive improv comedy! Cheer on team Funnypenny and team Punny Galore as they square off for your laughs and points based on your suggestions! Games! Singing! Puns! Crazy characters! Who will win? You decide!
+    
+    This show is for everyone: Bring your kids! Bring Nana and Poppop! Bring that crazy Uncle who collects Cabbage Patch Kids and Funko Pops! Bring co-workers in desperate need of a morale event! All are welcome!!!
   image: wry_vs_dry.png
   banner_image: wry_vs_dry_banner.png

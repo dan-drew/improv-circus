@@ -2,7 +2,7 @@ import { Player } from "./player.js";
 import { Theater } from "./theater.js";
 import { Social } from "./social.js";
 import { DateWithZone } from "./dateWithZone.js";
-import { imageUrl } from "./modelUtils.js";
+import {imageUrl, markdown} from "./modelUtils.js";
 
 /**
  * @typedef {Object} ShowType
@@ -52,6 +52,7 @@ export class Show {
     this.name = data.name ?? type.name;
     this.headline = data.headline ?? type.headline
     this.description = data.description ?? type.description ?? '';
+    this.descriptionHtml = markdown(this.description);
     this.image = imageUrl('shows', data.image ?? type.image);
     this.bannerImage = imageUrl('shows', data.banner_image ?? type.banner_image ?? data.image ?? type.image);
     this.theater = theaters[data.theater];
