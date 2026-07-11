@@ -872,11 +872,11 @@ svg.circus_heading {
   }
 }
 
-[data-show-status="past"] /*.show_active*/ {
+.show_list [data-show-status="past"] /*.show_active*/ {
   display: none !important;
 }
 
-[data-show-status="active"] .show_past {
+[data-show-status="active"] .show_past, [data-show-status="past"] .show_active {
   display: none !important;
 }
 

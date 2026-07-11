@@ -1,5 +1,6 @@
 include show_card
 
 mixin show_list(shows, limit=50)
-  each show in shows.slice(0, limit)
-    +show_card(show)
+  .show_list
+    each show in shows.slice(0, limit)
+      +show_card(show)

@@ -3,7 +3,7 @@ type: array
 items:
   type: object
   additionalProperties: false
-  required: [type, slug, when, theater, tickets]
+  required: [type, when, theater, players]
   properties:
     name:
       type: string
@@ -17,19 +17,48 @@ items:
       type: string
       format: uri
     when:
-      type: string
-      format: date-time
+      type: object
+      additionalProperties: false
+      required: [date, time]
+      properties:
+        date:
+          type: string
+          format: date
+        time:
+          type: string
+          pattern: ^\d{2}:\d{2}$
+        timeZone:
+          type: string
+    duration:
+      type: integer
+      minimum: 1
     theater:
       type: string
       pattern: ^[a-z_]*$
-    tickets:
+    ticket_info:
       type: object
+      additionalProperties: false
       properties:
-        cost:
+        description:
           type: string
         link:
           type: string
           format: uri
+    tickets:
+      type: array
+      items:
+        type: object
+        additionalProperties: false
+        required: [cost]
+        properties:
+          cost:
+            type: number
+            minimum: 0
+          description:
+            type: string
+          link:
+            type: string
+            format: uri
     description: 
       type: string
     image:

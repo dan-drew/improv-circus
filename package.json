@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
+  "engines": {
+    "node": "^26.5.0"
+  },
   "scripts": {
     "start": "TZ=UTC pnpx @11ty/eleventy --serve --watch --port=8111",
     "prebuild": "rm -rf dist",

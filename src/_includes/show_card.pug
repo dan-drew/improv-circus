@@ -11,5 +11,9 @@ mixin show_card(show)
     .card_content
       p: strong= show.headline
       != show.descriptionHtml
+      if show.ticketInfo.description
+        p.show_active
+          +icon('ticket-perforated')
+          = show.ticketInfo.description
     .card_footer
       +theater_info(show.theater)

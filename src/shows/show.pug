@@ -3,6 +3,7 @@ include /theater_info
 include /people_list
 include /show_tickets
 include /meta
+include /icon
 
 block title
   =show.title
@@ -30,5 +31,10 @@ block content
     .show_description
       p: strong= show.headline
       != show.descriptionHtml
+      if show.ticketInfo.description
+        p.show_active
+          +icon('ticket-perforated')
+          | &nbsp;
+          = show.ticketInfo.description
 
     +people_list(show.players)

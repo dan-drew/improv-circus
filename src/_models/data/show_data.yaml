@@ -1,17 +1,33 @@
 -
   type: wry_vs_dry
   when: { date: "2026-08-15", time: "18:30" }
+  duration: 80
   theater: all_out
-  tickets:
-    cost: $10 online, $12 at the door
+#  ticket_info:
+#    description: "$10 online, $12 at the door"
 #    link: https://example.com/notvalid
+#  tickets:
+#    - cost: 10
+#      description: 'Online'
+#      link: https://example.com/notvalid
+#    - cost: 12
+#      description: 'At the door'
+#      link: https://example.com/notvalid
   players: [dan, tim, dylan, christian, mark, brendan, ray, kari, mary]
 -
   type: wry_vs_dry
   link: "https://www.alloutcomedytheater.com/calendarcomedyshowsandimprovclasses/2026/3/22/wry-vs-dry"
   when: { date: "2026-03-22", time: "19:00" }
+  duration: 80
   theater: all_out
+  ticket_info:
+    description: "$10 online, $12 at the door"
+    link: https://example.com/notvalid
   tickets:
-    cost: $10 online, $12 at the door
-#    link: https://example.com/notvalid
+    - cost: 10
+      description: 'Online'
+      link: https://example.com/notvalid
+    - cost: 12
+      description: 'At the door'
+      link: https://example.com/notvalid
   players: [dan, tim, yap, dylan, matt, christian, kathy, mark, sara]

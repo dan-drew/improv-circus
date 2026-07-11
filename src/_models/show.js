@@ -15,7 +15,14 @@ import {imageUrl, markdown} from "./modelUtils.js";
 
 /**
  * @typedef {Object} TicketData
- * @property {string} cost
+ * @property {number} cost
+ * @property {string} [description]
+ * @property {string} [link]
+ */
+
+/**
+ * @typedef {Object} TicketInfo
+ * @property {string} [description]
  * @property {string} [link]
  */
 
@@ -28,11 +35,13 @@ import {imageUrl, markdown} from "./modelUtils.js";
  * @property {string} [headline]
  * @property {string} [image]
  * @property {string} [banner_image]
- * @property {string} [when]
+ * @property {{date: string, time: string, timeZone?: string}} when
+ * @property {number} [duration]
  * @property {string} theater
  * @property {string} [theater_show_link]
  * @property {string[]} players
- * @property {TicketData} [tickets]
+ * @property {TicketInfo} [ticket_info]
+ * @property {TicketData[]} [tickets]
  */
 
 export class Show {
@@ -58,6 +67,16 @@ export class Show {
     this.theater = theaters[data.theater];
     this.theaterShowLink = data.theater_show_link;
     this.tickets = data.tickets;
+    this.duration = data.duration ?? 80;
+    this.endWhen = this.when.add(this.duration);
+    const derivedTicketDescription = this.tickets
+      ?.map(ticket => [`$${ticket.cost}`, ticket.description].filter(Boolean).join(" "))
+      .join(", ");
+    const derivedTicketLink = this.tickets?.find(ticket => !!ticket.link)?.link;
+    this.ticketInfo = {
+      description: data.ticket_info?.description ?? derivedTicketDescription,
+      link: data.ticket_info?.link ?? derivedTicketLink,
+    };
     this.players = data.players.map(key => players[key]);
     this.pageLink = `/shows/${this.slug}`;
     this.permaLink = `${this.pageLink}/index.html`;
@@ -68,7 +87,7 @@ export class Show {
       location: this.theater.location,
       description: [
         this.description,
-        this.tickets?.cost ? `🎟️ ${this.tickets.cost}` : undefined,
+        this.ticketInfo.description ? `🎟️ ${this.ticketInfo.description}` : undefined,
         `📍 ${this.theater.name}`,
       ].filter(it => !!it).join("\n"),
     })
@@ -124,6 +143,7 @@ export class Show {
         email: "info@improv-circus.com",
       },
       startDate: this.when.iso,
+      endDate: this.endWhen.iso,
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       audience: {
@@ -144,13 +164,16 @@ export class Show {
       }),
     };
 
-    if (this.tickets?.link || this.tickets?.cost) {
-      eventData.offers = {
+    if (this.tickets?.length) {
+      eventData.offers = this.tickets.map(ticket => ({
         "@type": "Offer",
-        url: this.tickets?.link ?? eventUrl,
+        url: ticket.link ?? eventUrl,
         availability: "https://schema.org/InStock",
-        ...(this.tickets?.cost ? { description: this.tickets.cost } : {}),
-      };
+        price: ticket.cost,
+        priceCurrency: "USD",
+        validFrom: this.when.iso,
+        ...(ticket.description ? { description: ticket.description } : {}),
+      }));
     }
 
     return JSON.stringify(eventData, undefined, 2);

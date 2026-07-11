@@ -9,57 +9,25 @@
 export class DateWithZone {
   static DEFAULT_TIME_ZONE = "America/Los_Angeles";
   static LOCALE = "en-US";
-  static DAY_MS = 24 * 60 * 60 * 1000;
-  static MINUTE_MS = 60 * 1000;
-  static _localShortDateTimeFormat = new Intl.DateTimeFormat(DateWithZone.LOCALE, {
-    dateStyle: "medium",
-    timeStyle: "short",
-    timeZone: DateWithZone.DEFAULT_TIME_ZONE,
-  });
-  static _localOffsetFormat = new Intl.DateTimeFormat(DateWithZone.LOCALE, {
-    timeZone: DateWithZone.DEFAULT_TIME_ZONE,
-    hour: "2-digit",
-    minute: "2-digit",
-    hourCycle: "h23",
-    timeZoneName: "shortOffset",
-  });
+  static _shortDateTimeFormats = new Map();
 
-  static localShortDateParts(date) {
-    return Object.fromEntries(DateWithZone._localShortDateTimeFormat.formatToParts(date).map(part => [part.type, part.value]));
+  static shortDateTimeFormat(timeZone) {
+    if (!DateWithZone._shortDateTimeFormats.has(timeZone)) {
+      DateWithZone._shortDateTimeFormats.set(timeZone, new Intl.DateTimeFormat(DateWithZone.LOCALE, {
+        dateStyle: "medium",
+        timeStyle: "short",
+        timeZone,
+      }));
+    }
+    return DateWithZone._shortDateTimeFormats.get(timeZone);
   }
 
-  static parseOffsetMinutes(timeZoneName) {
-    if (timeZoneName === "GMT" || timeZoneName === "UTC") {
-      return 0;
-    }
-    const match = timeZoneName.match(/^GMT([+-])(\d{1,2})(?::?(\d{2}))?$/);
-    if (!match) {
-      throw new Error(`Unsupported offset format: ${timeZoneName}`);
-    }
-    const sign = match[1] === "+" ? 1 : -1;
-    const hours = Number(match[2]);
-    const minutes = Number(match[3] ?? "0");
-    return sign * ((hours * 60) + minutes);
+  static shortDateParts(date, timeZone) {
+    return Object.fromEntries(DateWithZone.shortDateTimeFormat(timeZone).formatToParts(date).map(part => [part.type, part.value]));
   }
 
-  static localOffsetMinutes(date) {
-    const timeZoneName = DateWithZone._localOffsetFormat.formatToParts(date).find(part => part.type === "timeZoneName")?.value;
-    if (!timeZoneName) {
-      throw new Error("Missing local timezone offset");
-    }
-    return DateWithZone.parseOffsetMinutes(timeZoneName);
-  }
-
-  static utcDateForLocalDateTime(year, month, day, hour, minute) {
-    const localAsUtcMs = Date.UTC(year, month - 1, day, hour, minute, 0, 0);
-    let utcMs = localAsUtcMs;
-    for (let i = 0; i < 4; i += 1) {
-      const offsetMinutes = DateWithZone.localOffsetMinutes(new Date(utcMs));
-      const nextUtcMs = localAsUtcMs - (offsetMinutes * DateWithZone.MINUTE_MS);
-      if (nextUtcMs === utcMs) break;
-      utcMs = nextUtcMs;
-    }
-    return new Date(utcMs);
+  static pad2(num) {
+    return String(num).padStart(2, "0");
   }
 
   /**
@@ -67,18 +35,19 @@ export class DateWithZone {
    * @param {WhenData} when
    */
   constructor({date, time, timeZone = DateWithZone.DEFAULT_TIME_ZONE}) {
-    const [year, month, day] = date.split("-").map(Number);
-    const [hour24, minute] = time.split(":").map(Number);
-    const utcDate = DateWithZone.utcDateForLocalDateTime(year, month, day, hour24, minute);
-    const parts = DateWithZone.localShortDateParts(utcDate);
+    this.zonedDateTime = Temporal.PlainDateTime
+      .from(`${date}T${time}:00`)
+      .toZonedDateTime(timeZone);
+    const utcDate = new Date(this.zonedDateTime.epochMilliseconds);
+    const parts = DateWithZone.shortDateParts(utcDate, timeZone);
 
     this.iso = utcDate.toISOString();
     this._utcDate = utcDate;
-    this.year = year;
-    this.month = month;
-    this.day = day;
-    this.hour24 = hour24;
-    this.minute = minute;
+    this.year = this.zonedDateTime.year;
+    this.month = this.zonedDateTime.month;
+    this.day = this.zonedDateTime.day;
+    this.hour24 = this.zonedDateTime.hour;
+    this.minute = this.zonedDateTime.minute;
     this.timeZone = timeZone;
     this.shortDateTime = `${parts.month} ${parts.day} ${parts.hour}:${parts.minute}${parts.dayPeriod}`
     this.isoDate = `${this.year.toString().padStart(4, "0")}-${this.month.toString().padStart(2, "0")}-${this.day.toString().padStart(2, "0")}`;
@@ -88,6 +57,20 @@ export class DateWithZone {
     if (this.hour === 0) this.hour = 12;
 
     Object.freeze(this);
+  }
+
+  /**
+   * Create a new DateWithZone shifted by a number of minutes.
+   * @param {number} minutes
+   * @returns {DateWithZone}
+   */
+  add(minutes) {
+    const shifted = this.zonedDateTime.add({ minutes });
+    return new DateWithZone({
+      date: shifted.toPlainDate().toString(),
+      time: `${DateWithZone.pad2(shifted.hour)}:${DateWithZone.pad2(shifted.minute)}`,
+      timeZone: this.timeZone,
+    });
   }
 
   toString() {
