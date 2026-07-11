@@ -2,7 +2,7 @@
 dan:
   name: Dan Drew
   theaters: [all_out, csz_san_jose]
-  image: dan.jpg
+  image: dan.png
   bio: >
     Dan’s been doing improv since 2001, though not continuously — he occasionally wandered off to do other things, 
     as one does. He’s performed both competitive short form and long form on teams at ComedySportz and All Out, 
@@ -17,17 +17,17 @@ dan:
 
 ray:
   name: Ray Cornell
-  image: gobo.png
+  image: ray.png
   theaters: [csz_san_jose]
 
 tim:
   name: Tim Whetham
-  image: wembley.png
+  image: tim.png
   theaters: [csz_san_jose]
 
 kathy:
   name: Kathy
-  image: red.png
+  image: kathy.png
   theaters: [all_out]
 
 dylan:
@@ -48,18 +48,18 @@ dylan:
 
 yap:
   name: William Yap
-  image: gobo.png
+  image: yap.png
   nickname: Yap
   theaters: [csz_san_jose, mut]
 
 mark:
   name: Mark Gardiner
-  image: wembley.png
+  image: mark_gardiner.png
   theaters: [mut]
 
 matt:
   name: Matt Greene
-  image: gobo.png
+  image: matt_greene.png
   theaters: [csz_san_jose]
 
 christian:
@@ -80,12 +80,12 @@ christian:
 
 sara:
   name: Sara
-  image: red.png
+  image: sara.png
   theaters: [csz_san_jose]
 
 brendan:
   name: Brendan
-  image: wembley.png
+  image: brendan.png
   theaters: [all_out]
 
 kari:
@@ -110,4 +110,4 @@ kari:
 
 mary:
   name: Mary
-  image: red.png
+  image: generic-female.png
