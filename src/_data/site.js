@@ -15,8 +15,9 @@ export default {
     email: "info@improv-circus.com",
   },
   social: [
-    new Social('instagram', '@improv.circus'),
+    new Social('instagram', 'improv.circus'),
     new Social('facebook', 'improv.circus'),
-    new Social('youtube', '@improv-circus'),
+    new Social('tiktok', 'improv.circus'),
+    new Social('youtube', 'improv-circus'),
   ]
 };

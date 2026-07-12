@@ -13,7 +13,7 @@ dan:
   home_town: Toronto
   improv_since: 2001
   social:
-    instagram: '@ddrew555'
+    instagram: ddrew555
 
 ray:
   name: Ray Cornell
@@ -44,7 +44,7 @@ dylan:
   home_town: Los Angeles
   improv_since: 2016
   social:
-    instagram: '@dylanraycalypso'
+    instagram: dylanraycalypso
 
 yap:
   name: William Yap
@@ -105,7 +105,7 @@ kari:
   location: East Bay
   home_town: Fairfax Station, VA
   social:
-    instagram: '@kari.noelle.actor'
+    instagram: kari.noelle.actor
     web: https://www.karinoelle.com
 
 mary:

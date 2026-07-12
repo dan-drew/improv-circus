@@ -18,11 +18,11 @@
  * @type {Record<SocialApp, function(string): string>}
  */
 const socialUserToLink = {
-  instagram: (username) => `https://www.instagram.com/${username.substring(1)}`,
+  instagram: (username) => `https://www.instagram.com/${username}`,
   facebook: (username) => `https://www.facebook.com/${username}`,
   tiktok: (username) => `https://www.tiktok.com/@${username}`,
   web: (username) => username,
-  youtube: (username) => `https://www.youtube.com/${username}`,
+  youtube: (username) => `https://www.youtube.com/@${username}`,
 }
 
 /**
