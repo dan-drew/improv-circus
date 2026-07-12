@@ -86,7 +86,7 @@ sara:
 brendan:
   name: Brendan
   image: brendan.png
-  theaters: [all_out, provocation]
+  theaters: [all_out]
 
 kari:
   name: Kari
