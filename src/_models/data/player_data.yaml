@@ -111,3 +111,9 @@ kari:
 mary:
   name: Mary
   image: generic-female.png
+
+lauren:
+  name: Lauren
+  image: generic-female.png
+  theaters:
+    - all_out
