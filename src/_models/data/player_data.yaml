@@ -117,3 +117,9 @@ lauren:
   image: lauren.png
   theaters:
     - all_out
+
+mike:
+  name: Mike
+  image: mike_vinokurov.png
+  theaters:
+    - mut
