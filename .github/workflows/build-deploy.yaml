@@ -28,7 +28,7 @@ jobs:
       name: Build timestamp
       run: echo "cleaned=$( echo ${{ github.event.head_commit.timestamp }} | tr -cd '[:alnum:]')" >> $GITHUB_OUTPUT
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       name: Create deployment artifact
       with:
         name: "site-${{ steps.timestamp.outputs.cleaned }}"
@@ -39,7 +39,7 @@ jobs:
     - name: Upload pages
       if: ${{ github.repository_owner == 'dan-drew' }}
       id: deployment
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v5
       with:
         path: dist/
 
@@ -62,4 +62,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
