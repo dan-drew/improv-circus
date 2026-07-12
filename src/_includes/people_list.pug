@@ -2,5 +2,14 @@ include person_card
 
 mixin people_list(people = null)
   .person_gallery
-    each person in (people || allPlayers)
-      +person_card(person)
+    - if (!people) people = allPlayers
+    - const bio = people.filter(p => Boolean(p.bio))
+    - const noBio = people.filter(p => !Boolean(p.bio))
+    .with-bio
+      each person in bio
+        +person_card(person)
+
+    if noBio.length > 0
+      .without-bio
+        each person in noBio
+          +person_card(person)

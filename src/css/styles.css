@@ -246,44 +246,52 @@ header, footer {
   flex-direction: row;
   align-items: center;
   gap: var(--space-xl);
-}
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  /*noinspection CssNoGenericFontName*/
-  font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-accent);
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    /*noinspection CssNoGenericFontName*/
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-accent);
 
-  &:hover, &:active {
-    color: inherit;
+    &:hover, &:active {
+      color: inherit;
+    }
+
+    img {
+      height: 32px;
+    }
   }
 
-  img {
-    height: 32px;
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-xl);
+    list-style: none;
+    align-items: center;
   }
-}
 
+  .nav-links a {
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
+    transition: color var(--transition-fast);
+  }
 
-.nav-links {
-  display: flex;
-  gap: var(--space-xl);
-  list-style: none;
-  align-items: center;
-}
+  .nav-links a:hover {
+    color: var(--text-primary);
+  }
 
-.nav-links a {
-  color: var(--text-secondary);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-base);
-  transition: color var(--transition-fast);
-}
-
-.nav-links a:hover {
-  color: var(--text-primary);
+  .social {
+    flex: 1;
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+    justify-content: right;
+  }
 }
 
 .mobile-menu-toggle {
@@ -601,7 +609,8 @@ footer {
 }
 
 .card {
-  --card-padding: var(--space-md);
+  --card-x-padding: var(--space-md);
+  --card-y-padding: var(--space-sm);
   --card-radius: var(--space-xl);
 
   background: #00000088;
@@ -622,12 +631,12 @@ footer {
   }
 
   & > *:not(.card_right) {
-    padding-right: var(--card-padding);
-    padding-top: var(--card-padding);
+    padding-right: var(--card-x-padding);
+    padding-top: var(--card-x-padding);
   }
 
   .card_footer, .card_image {
-    padding-bottom: var(--card-padding);
+    padding-bottom: var(--card-y-padding);
   }
 
   .card_image {
@@ -636,7 +645,7 @@ footer {
     max-width: 100%;
     max-height: 100%;
     border-radius: var(--card-radius);
-    padding-left: var(--card-padding);
+    padding-left: var(--card-x-padding);
     justify-self: center;
     overflow: hidden;
   }
@@ -656,7 +665,7 @@ footer {
 
   .card_right {
     grid-area: right;
-    padding: 0 0 var(--card-padding) 0;
+    padding: 0 0 var(--card-x-padding) 0;
   }
 }
 
@@ -666,11 +675,20 @@ footer {
     grid-template-rows: auto;
     grid-template-columns: 1fr auto;
     align-items: start;
-    gap: var(--card-padding);
-    padding: var(--card-padding);
+    /*column-gap: var(--card-x-padding);*/
+    /*row-gap: var(--card-y-padding);*/
+    padding: var(--card-y-padding) var(--card-x-padding);
 
     .card_header, .card_content, .card_footer, .card_right, .card_image {
       padding: 0;
+    }
+
+    .card_header, .card_content, .card_footer {
+      padding-top: var(--card-y-padding);
+    }
+
+    .card_header, .card_footer {
+      justify-self: center;
     }
 
     .card_image {
@@ -742,8 +760,8 @@ footer {
 
 .show_card {
   .show_when {
-    background: linear-gradient(to right, #0000, #000 var(--card-padding), #000);
-    padding: var(--card-padding);
+    background: linear-gradient(to right, #0000, #000 var(--card-x-padding), #000);
+    padding: var(--card-y-padding) var(--card-x-padding);
   }
 }
 
@@ -806,12 +824,18 @@ footer {
 }
 
 .person_gallery {
-  column-width: clamp(350px, 500px);
-  column-gap: var(--space-sm);
+  .with-bio {
+    column-width: clamp(350px, 50vw, 500px);
+    column-gap: var(--space-sm);
+  }
 
   .person_card {
     margin-bottom: var(--space-sm);
     break-inside: avoid;
+  }
+
+  .without-bio {
+    column-width: clamp(200px, 15vw, 40vw);
   }
 }
 
@@ -894,7 +918,7 @@ svg.circus_heading {
     background-size: cover;
     backdrop-filter: blur(10px) brightness(0.6);
     width: 100%;
-    height: 30vh;
+    height: 35vh;
 
     img {
       position: relative;
@@ -985,4 +1009,15 @@ svg.circus_heading {
   p { 
     margin: 0;
   }
+}
+
+.follow {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-4xl);
+  padding-top: var(--space-sm);
 }

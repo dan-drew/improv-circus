@@ -64,7 +64,7 @@ matt:
 
 christian:
   name: Christian Hill
-  image: christian.jpg
+  image: christian.png
   home_town: San Francisco
   location: Berkeley
   improv_since: 2021
@@ -86,7 +86,7 @@ sara:
 brendan:
   name: Brendan
   image: brendan.png
-  theaters: [all_out]
+  theaters: [all_out, provocation]
 
 kari:
   name: Kari
@@ -114,6 +114,6 @@ mary:
 
 lauren:
   name: Lauren
-  image: generic-female.png
+  image: lauren.png
   theaters:
     - all_out

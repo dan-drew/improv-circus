@@ -1,3 +1,5 @@
+import { Social } from "../_models/social.js";
+
 const DEFAULT_SITE_URL = "http://localhost:8111";
 const siteUrl = process.env.SITE_URL ?? DEFAULT_SITE_URL;
 
@@ -12,4 +14,9 @@ export default {
     logo: `${siteUrl}/images/improv-circus.png`,
     email: "info@improv-circus.com",
   },
+  social: [
+    new Social('instagram', '@improv.circus'),
+    new Social('facebook', 'improv.circus'),
+    new Social('youtube', '@improv-circus'),
+  ]
 };

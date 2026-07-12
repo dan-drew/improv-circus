@@ -1,5 +1,5 @@
 /**
- * @typedef {"instagram" | "facebook" | "tiktok" | "x" | "web"} SocialApp
+ * @typedef {"instagram" | "facebook" | "tiktok" | "x" | "youtube" | "web"} SocialApp
  */
 
 /**
@@ -19,9 +19,10 @@
  */
 const socialUserToLink = {
   instagram: (username) => `https://www.instagram.com/${username.substring(1)}`,
-  facebook: (username) => username,
+  facebook: (username) => `https://www.facebook.com/${username}`,
   tiktok: (username) => `https://www.tiktok.com/@${username}`,
   web: (username) => username,
+  youtube: (username) => `https://www.youtube.com/${username}`,
 }
 
 /**

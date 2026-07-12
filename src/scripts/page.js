@@ -100,7 +100,7 @@ class Page {
 
   initPage() {
     document.querySelectorAll('[data-show-time]').forEach(target => this.updateShowInfo(target))
-    document.querySelectorAll('.person_gallery').forEach(target => this.shuffleChildren(target))
+    document.querySelectorAll('.person_gallery > .with-bio, .person_gallery > .without-bio').forEach(target => this.shuffleChildren(target))
   }
 }
 
