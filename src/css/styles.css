@@ -626,8 +626,8 @@ footer {
   align-items: start;
   justify-items: start;
 
-  &:not(> .card_right) {
-    grid-template-areas: "image header header" "image content content" "image footer footer";
+  &[onclick] {
+    cursor: pointer;
   }
 
   & > *:not(.card_right) {
@@ -661,11 +661,29 @@ footer {
 
   .card_footer {
     grid-area: footer;
+    align-self: end;
   }
 
   .card_right {
     grid-area: right;
     padding: 0 0 var(--card-x-padding) 0;
+  }
+}
+
+@container card (width >= 600px) {
+  .card {
+    &:not(:has(> .card_right)):has(> .card_content) {
+      grid-template-areas: "image header header" "image content content" "image footer footer";
+    }
+
+    &:not(:has(> .card_content)) {
+      grid-template-rows: auto auto;
+      grid-template-areas: "image header right" "image footer right";
+
+      &:not(:has(> .card_right)) {
+        grid-template-areas: "image header header" "image footer footer";
+      }
+    }
   }
 }
 
@@ -693,6 +711,18 @@ footer {
 
     .card_image {
       max-height: 25vh;
+    }
+
+    &:not(:has(> .card_right)):has(> .card_content) {
+    grid-template-areas: "image image" "header header" "content content" "footer footer";
+    }
+
+    &:not(:has(> .card_content)) {
+      grid-template-areas: "image image" "header right" "footer footer";
+
+      &:not(:has(> .card_right)) {
+        grid-template-areas: "image image" "header header" "footer footer";
+      }
     }
   }
 }

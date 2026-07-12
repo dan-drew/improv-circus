@@ -2,18 +2,22 @@ include card
 include theater_info
 
 mixin show_card(show)
-  +card('show_card')(data-show-time=show.when.iso, data-show-tz=show.when.timeZone)
+  +card('show_card')(
+    data-show-time=show.when.iso,
+    data-show-tz=show.when.timeZone
+    onclick=`window.location.assign('${show.pageLink}')`
+    )
     h2.card_header: a(href=show.pageLink)= (show.name)
     img.card_image(src=show.image, alt=show.name)
     .card_right.show_when
       .show_day
       .show_time
     .card_content
-      p: strong= show.headline
-      != show.descriptionHtml
-      if show.ticketInfo.description
-        p.show_active
-          +icon('ticket-perforated')
-          = show.ticketInfo.description
+      = show.headline
+    //  != show.descriptionHtml
+    //  if show.ticketInfo.description
+    //    p.show_active
+    //      +icon('ticket-perforated')
+    //      = show.ticketInfo.description
     .card_footer
       +theater_info(show.theater)
