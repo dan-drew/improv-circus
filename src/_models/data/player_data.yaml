@@ -110,7 +110,27 @@ kari:
 
 mary:
   name: Mary
-  image: generic-female.png
+  image: mary_matabor.png
+  location: Oakland
+  home_town: Campbell, CA
+  improv_since: 2007
+  theaters:
+    - all_out
+    - provocation
+#    - '2727_ca'
+#    - matabor_playhouse
+    - sacramento_comedy_spot
+  social:
+    instagram: [marymatabor, chickflickimprov]
+  bio: >
+    Mary Matabor got her improv start with Pan Theater’s Awkward Face and has dabbled with an array of troupes 
+    and side projects ever since. She has not yet quit improv, it’s just been lazily on her to-do list. Chick Flick, 
+    which she co-founded, is a true love so that makes it hard. She also likes Puppet Party pretty good. Ms. Matabor 
+    has mc'd and performed with troupes Ragged Wing, Wondertown and Puppette Party, among others, at assorted 
+    festivals for the snacks, and is formerly of the main stage troupe at All Out Comedy Theater. She contains a 
+    deep and abiding desire not to engage with people, which she undermines monthly by inventing entire 
+    relationships — marriages, rivalries, decades of unresolved tension — with strangers, from scratch, on a spotlit 
+    stage. She will vacate the theater immediately after the show ends.
 
 lauren:
   name: Lauren

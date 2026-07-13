@@ -3,7 +3,7 @@
  */
 
 /**
- * @typedef {Record<SocialApp, string>} SocialData
+ * @typedef {Record<SocialApp, string | string[]>} SocialData
  */
 
 /**
@@ -49,7 +49,28 @@ export class Social {
    * @return {Social[], undefined}
    */
   static fromData(data) {
-    return data ? Object.entries(data).map(([app, username]) => new Social(app, username)) : undefined;
+    if (data) {
+      /** @type {Social[]} */
+      const results = []
+      Object.entries(data).forEach(([app, username]) => {
+        results.push(...this.forApp(app, username))
+      })
+      return results
+    }
+    return undefined;
+  }
+
+  /**
+   * Create a social list from social data
+   * @param {SocialApp} app
+   * @param {string, string[]} username
+   * @return {Social[]}
+   */
+  static forApp(app, username) {
+    if (Array.isArray(username)) {
+      return username.map(user => new Social(app, user))
+    }
+    return [new Social(app, username)]
   }
 
   /**

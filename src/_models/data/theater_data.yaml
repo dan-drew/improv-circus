@@ -52,3 +52,25 @@ provocation:
     zip: "94704"
     lat: 37.864444
     lng: -122.258333
+
+sacramento_comedy_spot:
+  name: Sacramento Comedy Spot
+  link: https://saccomedyspot.com/
+  location:
+    street: '1050 20th St #130'
+    city: Sacramento
+    state: CA
+    zip: "95811"
+    lat: 38.576386198295474
+    lng: -121.48030997427688
+
+#2727_ca:
+#  name: 2727 CA
+#  link: https://2727ca.com/
+#  location:
+#    street: 10000 N. 100th Ave
+#    city: San Francisco
+#    state: CA
+#    zip: "94105"
+#    lat: 37.779444
+#    lng: -122.419444
