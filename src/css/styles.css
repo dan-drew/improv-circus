@@ -170,7 +170,7 @@ h6 {
   font-size: var(--font-size-base);
 }
 
-p {
+p:not(:last-child) {
   margin-bottom: var(--space-sm);
 }
 
@@ -564,6 +564,8 @@ footer {
 ************************************************/
 
 .theater_logo {
+  display: inline-block;
+
   a {
     text-decoration: none;
     color: inherit;
@@ -632,7 +634,7 @@ footer {
 
   & > *:not(.card_right) {
     padding-right: var(--card-x-padding);
-    padding-top: var(--card-x-padding);
+    padding-top: var(--card-y-padding);
   }
 
   .card_footer, .card_image {
@@ -821,15 +823,19 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    column-gap: var(--space-md);
+    row-gap: var(--space-xs);
 
     .link_group {
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: var(--space-sm);
+      column-gap: var(--space-sm);
       font-family: var(--font-sans);
 
-      &:not(:first-child) {
+      /* &:not(:first-child) {
         padding-left: var(--space-sm);
         border-left: 1px solid var(--gray-700);
       }
@@ -837,7 +843,7 @@ footer {
       &:not(:last-child) {
         padding-right: var(--space-sm);
         border-right: 1px solid var(--gray-700);
-      }
+      } */
     }
   }
 

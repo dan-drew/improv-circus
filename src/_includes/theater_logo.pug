@@ -1,4 +1,13 @@
+mixin theater_image(theater)
+  if theater.icon
+    != theater.icon
+  else
+    img(src=theater.logo, alt=theater.name)
+
 mixin theater_logo(theater, size='normal')
   .theater_logo(class="theater_logo_" + size, title=theater.name)
-    a(target="_blank", href=theater.link)
-      img(src=theater.logo, alt=theater.name)
+    if theater.link
+      a(target="_blank", href=theater.link)
+        +theater_image(theater)
+    else
+      +theater_image(theater)

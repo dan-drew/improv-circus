@@ -86,7 +86,12 @@ sara:
 brendan:
   name: Brendan
   image: brendan.png
-  theaters: [all_out]
+  theaters: [all_out, endgames]
+  home_town: Pittsburgh
+  location: Oakland
+  improv_since: 2008
+  bio: >
+    Comedian doing improv for too long to be able to use it as a midlife crisis
 
 kari:
   name: Kari
@@ -113,12 +118,12 @@ mary:
   image: mary_matabor.png
   location: Oakland
   home_town: Campbell, CA
-  improv_since: 2007
+  improv_since: 2008
   theaters:
     - all_out
     - provocation
-#    - '2727_ca'
-#    - matabor_playhouse
+    - '2727'
+    - matabor
     - sacramento_comedy_spot
   social:
     instagram: [marymatabor, chickflickimprov]

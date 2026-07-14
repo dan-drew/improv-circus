@@ -13,6 +13,7 @@
  * @property {string} name
  * @property {LocationData} location
  * @property {string} link
+ * @property {string} [icon]
  */
 import {imageUrl} from "./modelUtils.js";
 
@@ -27,6 +28,11 @@ export class Theater {
     this.name = data.name;
     this.location = data.location
     this.link = data.link
-    this.logo = imageUrl('theaters', `${key}.png`)
+
+    if (data.icon) {
+      this.icon = data.icon
+    } else {
+      this.logo = imageUrl('theaters', `${key}.png`)
+    }
   }
 }

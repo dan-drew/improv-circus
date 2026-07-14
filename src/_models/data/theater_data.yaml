@@ -64,13 +64,16 @@ sacramento_comedy_spot:
     lat: 38.576386198295474
     lng: -121.48030997427688
 
-#2727_ca:
-#  name: 2727 CA
-#  link: https://2727ca.com/
-#  location:
-#    street: 10000 N. 100th Ave
-#    city: San Francisco
-#    state: CA
-#    zip: "94105"
-#    lat: 37.779444
-#    lng: -122.419444
+'2727':
+ name: 2727 California
+ link: https://www.2727.today
+ location:
+   street: 2727 California Street
+   city: Berkeley
+   state: CA
+   zip: "94703"
+   lat: 37.858212670437815
+   lng: -122.27766096119993
+
+matabor:
+ name: Matabor Playhouse
