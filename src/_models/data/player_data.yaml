@@ -51,6 +51,18 @@ yap:
   image: yap.png
   nickname: Yap
   theaters: [csz_san_jose, mut]
+  home_town: Milpitas, CA
+  location: Fremont, CA
+  improv_since: 2013
+  social:
+    instagram: TheDapperYapper
+  bio: >
+    Yap began his performing career with a summer job at California’s Great America as a costume character. 
+    Simultaneously, Yap signed up for his first improv class at Ohlone College and has since taken a multitude 
+    of classes at ComedySportz and Made Up Theatre, and workshops and intensives at Improv Utopia and The Annoyance. 
+    Over the course of 9 seasons at CGA, he performed in various shows and has been a monkey, Gingerbread Man and 
+    a French Candy General at the amusement park. Yap is now a proud cast member of Made Up Theatre and 
+    ComedySportz San Jose, and a troupe member of Worlds Collide, Bottle Episode, and Improv Circus!
 
 mark:
   name: Mark Gardiner
