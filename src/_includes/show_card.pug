@@ -13,11 +13,11 @@ mixin show_card(show)
       .show_day
       .show_time
     .card_content
-      = show.headline
-    //  != show.descriptionHtml
-    //  if show.ticketInfo.description
-    //    p.show_active
-    //      +icon('ticket-perforated')
-    //      = show.ticketInfo.description
+      p= show.headline
+      if show.tickets
+        p.show_active
+          +icon('ticket-perforated')
+          | &nbsp;
+          = show.tickets.description
     .card_footer
       +theater_info(show.theater)
