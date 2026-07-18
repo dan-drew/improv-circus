@@ -5,6 +5,9 @@ const siteUrl = process.env.SITE_URL ?? DEFAULT_SITE_URL;
 
 export default {
   title: "Improv Circus",
+  description: "Improv Circus is a travelling troupe of hilarious improvisers with decades of experience" +
+    " performing across the nation. We do it all: short form games in \"Who's Line Is It Anyway?\" tradition," +
+    " competitive short form, long form and musical.",
   url: siteUrl,
   organization: {
     "@type": "Organization",

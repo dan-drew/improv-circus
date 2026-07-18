@@ -9,10 +9,7 @@ block content
     img.logo(src="/images/improv-circus.png", alt=site.title)
 
     .about-hero
-      div.
-        Improv Circus is a travelling troupe of hilarious improvisers with decades of experience
-        performing across the nation. We do it all: short form games in &ldquo;Who's Line Is It Anyway?&rdquo; tradition,
-        competitive short form, long form and musical.
+      div=site.description
 
       .follow
         +social_list(site.social)

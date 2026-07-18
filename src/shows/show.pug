@@ -13,6 +13,9 @@ block meta
   script(type="application/ld+json")
     != show.jsonLD(site)
 
+block description
+  meta(name="description" content=show.description)
+
 block content
   .show_page(data-show-time=show.when.iso, data-show-tz=show.when.timeZone)
     .show_image(style=`background-image: url("${show.bannerImage}")`)
