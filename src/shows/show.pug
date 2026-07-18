@@ -31,10 +31,10 @@ block content
     .show_description
       p: strong= show.headline
       != show.descriptionHtml
-      if show.ticketInfo.description
+      if show.tickets
         p.show_active
           +icon('ticket-perforated')
           | &nbsp;
-          = show.ticketInfo.description
+          = show.tickets.description
 
     +people_list(show.players)

@@ -14,16 +14,17 @@ import {imageUrl, markdown} from "./modelUtils.js";
  */
 
 /**
- * @typedef {Object} TicketData
+ * @typedef {Object} TicketOffer
  * @property {number} cost
+ * @property {'online' | 'in-person'} type
  * @property {string} [description]
- * @property {string} [link]
  */
 
 /**
  * @typedef {Object} TicketInfo
- * @property {string} [description]
- * @property {string} [link]
+ * @property {string} description
+ * @property {string} link
+ * @property {TicketOffer[]} offers
  */
 
 /**
@@ -40,9 +41,10 @@ import {imageUrl, markdown} from "./modelUtils.js";
  * @property {string} theater
  * @property {string} [theater_show_link]
  * @property {string[]} players
- * @property {TicketInfo} [ticket_info]
- * @property {TicketData[]} [tickets]
+ * @property {TicketInfo} [tickets]
  */
+
+const TICKETS_VALID_FROM_MINUTES = 60 * 24 * 60
 
 export class Show {
   /**
@@ -69,14 +71,6 @@ export class Show {
     this.tickets = data.tickets;
     this.duration = data.duration ?? 80;
     this.endWhen = this.when.add(this.duration);
-    const derivedTicketDescription = this.tickets
-      ?.map(ticket => [`$${ticket.cost}`, ticket.description].filter(Boolean).join(" "))
-      .join(", ");
-    const derivedTicketLink = this.tickets?.find(ticket => !!ticket.link)?.link;
-    this.ticketInfo = {
-      description: data.ticket_info?.description ?? derivedTicketDescription,
-      link: data.ticket_info?.link ?? derivedTicketLink,
-    };
     this.players = data.players.map(key => players[key]);
     this.pageLink = `/shows/${this.slug}`;
     this.permaLink = `${this.pageLink}/index.html`;
@@ -87,7 +81,7 @@ export class Show {
       location: this.theater.location,
       description: [
         this.description,
-        this.ticketInfo.description ? `🎟️ ${this.ticketInfo.description}` : undefined,
+        this.tickets ? `🎟️ ${this.tickets.description}` : undefined,
         `📍 ${this.theater.name}`,
       ].filter(it => !!it).join("\n"),
     })
@@ -146,10 +140,6 @@ export class Show {
       endDate: this.endWhen.iso,
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-      audience: {
-        "@type": "Audience",
-        audienceType: "San Francisco Bay Area families, kids, teens, and adults",
-      },
       location,
       performer: this.players.map(player => {
         const performer = {
@@ -164,14 +154,17 @@ export class Show {
       }),
     };
 
-    if (this.tickets?.length) {
-      eventData.offers = this.tickets.map(ticket => ({
+    if (this.tickets) {
+      eventData.offers = this.tickets.offers.map(ticket => ({
         "@type": "Offer",
         url: ticket.link ?? eventUrl,
-        availability: "https://schema.org/InStock",
+        availability: `https://schema.org/${ticket.type === 'online' ? 'OnlineOnly' : 'InStoreOnly'}`,
+        description: ticket.description,
         price: ticket.cost,
         priceCurrency: "USD",
-        validFrom: this.when.iso,
+        validFrom: this.when.add(-TICKETS_VALID_FROM_MINUTES).iso,
+        validThrough: this.when.iso,
+        isFamilyFriendly: true,
         ...(ticket.description ? { description: ticket.description } : {}),
       }));
     }

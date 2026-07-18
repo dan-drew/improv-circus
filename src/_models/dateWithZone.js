@@ -42,7 +42,6 @@ export class DateWithZone {
     const parts = DateWithZone.shortDateParts(utcDate, timeZone);
 
     this.iso = utcDate.toISOString();
-    this._utcDate = utcDate;
     this.year = this.zonedDateTime.year;
     this.month = this.zonedDateTime.month;
     this.day = this.zonedDateTime.day;

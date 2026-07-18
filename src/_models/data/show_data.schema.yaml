@@ -1,0 +1,57 @@
+$schema: "http://json-schema.org/draft-07/schema"
+type: array
+additionalItems:
+  type: object
+  required: [type, when, duration, theater, players]
+  properties:
+    type:
+      type: string
+    when:
+      type: object
+      additionalProperties: false
+      required: [date, time]
+      properties:
+        date:
+          type: string
+          format: date
+        time:
+          type: string
+          format: time
+    duration:
+      type: integer
+      minimum: 10
+      maximum: 180
+    theater:
+      type: string
+    players:
+      type: array
+      items:
+        type: string
+      minItems: 1
+    tickets:
+      type: object
+      additionalProperties: false
+      properties:
+        description:
+          type: string
+        link:
+          type: string
+          pattern: '^https?://'
+        offers:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [cost, type]
+            properties:
+              cost:
+                type: number
+                minimum: 0
+                maximum: 100
+              description:
+                type: string
+              type:
+                type: string
+                oneOf:
+                  - const: online
+                  - const: in-store
