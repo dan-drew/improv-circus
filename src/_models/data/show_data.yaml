@@ -6,7 +6,7 @@
   theater: all_out
   tickets:
     description: "Adults: $10 online, $12 at the door. Kids 12 and under: $5 online, $7 at the door."
-    link: https://www.alloutcomedytheater.com/calendarcomedyshowsandimprovclasses/2026/8/15/wry-vs-dry
+    link: https://events.humanitix.com/wry-vs-dry-head-to-head-improv-comedy-for-kids/tickets
     offers:
       - cost: 10
         type: online
