@@ -94,6 +94,15 @@ sara:
   name: Sara
   image: sara.png
   theaters: [csz_san_jose]
+  home_town: Finland
+  location: Mountain View
+  social:
+    instagram: saravee.md
+  bio: >
+    For the past three years, Sara Vee has served as the Musical Director for San Jose ComedySportz. 
+    Having also played on-field with the CSz Minor League, she knows the ropes from both sides of the keys. 
+    Beyond the ComedySportz turf, Sara has worked as a musical director for multiple musical improv groups, 
+    accompanying both long-form and short-form shows, as well as leading specialized musical workshops.
 
 brendan:
   name: Brendan
@@ -120,7 +129,7 @@ kari:
     - endgames
   improv_since: 2013
   location: East Bay
-  home_town: Fairfax Station, VA
+  home_town: Fairfax Station
   social:
     instagram: kari.noelle.actor
     web: https://www.karinoelle.com
