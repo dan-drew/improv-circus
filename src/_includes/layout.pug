@@ -1,37 +1,46 @@
 include social
 
 html
-    head
-        title
-          block title
-            = site.title
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="last-modified", content=build.timestamp)
-        meta(http-equiv='content-language' content='en-us')
-        block description
-          meta(name="description" content=site.description)
-        block meta
-        link(rel="canonical" href=site.url + page.url)
-        link(rel="stylesheet" href="/css/styles.css")
-        link(rel="icon" href="/images/improv-circus.png")
-        //link(rel="preconnect", href="https://fonts.googleapis.com")
-        //link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
-        script(src='/scripts/page.js')
-    body
-        header
-          nav.container.nav-container
-            a.logo(href="/")
-              img(src="/images/improv-circus.png", alt=site.title)
-              span= site.title
-            ul.nav-links
-              li: a(href="/#shows") Shows
-              li: a(href="/#players") Players
+  head
+    // Google Analytics
+    script(async src="https://www.googletagmanager.com/gtag/js?id=G-LDRBHCEFT0")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-LDRBHCEFT0');
 
-            .social
-              +social_list(site.social)
+    title
+      block title
+        = site.title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="last-modified", content=build.timestamp)
+    meta(http-equiv='content-language' content='en-us')
+    block description
+      meta(name="description" content=site.description)
+    block meta
+    link(rel="canonical" href=site.url + page.url)
+    link(rel="stylesheet" href="/css/styles.css")
+    link(rel="icon" href="/images/improv-circus.png")
+    script(src='/scripts/page.js')
 
-        div.container
-          block content
+  body
+    header
+      nav.container.nav-container
+        a.logo(href="/")
+          img(src="/images/improv-circus.png", alt=site.title)
+          span= site.title
+        ul.nav-links
+          li: a(href="/#shows") Shows
+          li: a(href="/#players") Players
 
-        footer
-          div!= `&copy; ${new Date().getFullYear()} ${site.title}`
+        .social
+          +social_list(site.social)
+
+    div.container
+      block content
+
+    footer
+      div!= `&copy; ${new Date().getFullYear()} ${site.title}`
