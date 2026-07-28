@@ -27,8 +27,20 @@ additionalProperties:
       type: object
       properties:
         instagram:
-          type: string
+          anyOf:
+            - type: string
+            - type: array
+              items:
+                type: string
         facebook:
-          type: string
+          anyOf:
+            - type: string
+            - type: array
+              items:
+                type: string
         x:
-          type: string
+          anyOf:
+            - type: string
+            - type: array
+              items:
+                type: string

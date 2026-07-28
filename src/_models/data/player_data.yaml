@@ -169,3 +169,28 @@ mike:
   image: mike_vinokurov.png
   theaters:
     - mut
+
+grant:
+  name: Grant Ewing
+  image: grant.png
+  theaters: [mut]
+  bio: >
+    Grant (He/They) has been an active performer and director in the Bay Area for over 20 years. He currently directs 
+    the Theatre Arts Program at Newark Memorial High School, most recently producing a musical production Alice in 
+    Wonderland and StarKid’s new Sstone age musical; “Firebringer” and Noël Coward’s improbable farce “Blithe Spirit”. 
+    In addition to directing and teaching, Grant regularly performs with Made Up Theatre, Worlds Collide, 
+    Flash Mob Musical, B.A.T.S., and Phasers on Stun as a musical director and performer.
+
+david:
+  name: David Moore
+  image: david.png
+  theaters: [provocation, all_out]
+  location: Berkeley
+  bio: >
+    David is the founder of Spats Improv in Berkeley CA, and teaches improv across the Bay Area at Provocation Theatre, 
+    All Out Comedy, and on occasion Improv Central. David delights in introducing folks to the joyful and rebellious 
+    nature of improv, and knows that with the right tools anyone can shine on stage. David has had dueling obsessions 
+    with UCB style game, and Second city short form, which has led him to performing at SF Sketchfest and the premier 
+    queer comedy festival of the Bay Area: Yas! And Fest in 2025 and 2026.
+  social:
+    instagram: spatsimprov
