@@ -167,8 +167,15 @@ lauren:
 mike:
   name: Mike
   image: mike_vinokurov.png
+  home_town: Moscow
+  location: Fremont
+  improv_since: 2020
   theaters:
     - mut
+  bio: >
+    Mike has performed improv shows across the SF Bay Area since 2022. He’s been told on numerous occasions by 
+    unrelated individuals that he reminds them of Chevy Chase. Mike resists this comparison at all costs, and 
+    if pushed will shout a silly absurdism and attempt to storm out before slipping and comedically falling.
 
 grant:
   name: Grant Ewing

@@ -20,7 +20,7 @@
       - cost: 7
         type: in-store
         description: 'Kids'
-  players: [dan, tim, dylan, christian, mark, brendan, ray, kari, mary, lauren]
+  players: [dan, tim, dylan, christian, mark, brendan, ray, kari, mary, lauren, mike, grant]
 -
   type: wry_vs_dry
   link: "https://www.alloutcomedytheater.com/calendarcomedyshowsandimprovclasses/2026/3/22/wry-vs-dry"
