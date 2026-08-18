@@ -98,9 +98,46 @@ class Page {
     target.dataset.showStatus = temporalStatus === 'past' ? 'past' : 'active'
   }
 
+  trackEvent(eventName, params = {}) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, {
+        page_location: window.location.pathname,
+        ...params
+      })
+    }
+  }
+
+  bindTicketClicks() {
+    document.querySelectorAll('.tickets.show_active[href]').forEach(link => {
+      link.addEventListener('click', () => {
+        this.trackEvent('tickets_click', {
+          event_category: 'engagement',
+          event_label: link.dataset.showName || 'tickets',
+          show_name: link.dataset.showName || 'unknown',
+          ticket_url: link.href
+        })
+      })
+    })
+  }
+
+  bindSocialClicks() {
+    document.querySelectorAll('.social_link[href]').forEach(link => {
+      link.addEventListener('click', () => {
+        this.trackEvent('social_click', {
+          event_category: 'engagement',
+          event_label: link.dataset.platform || 'social',
+          platform: link.dataset.platform || 'unknown',
+          destination: link.href
+        })
+      })
+    })
+  }
+
   initPage() {
     document.querySelectorAll('[data-show-time]').forEach(target => this.updateShowInfo(target))
     document.querySelectorAll('.person_gallery > .with-bio, .person_gallery > .without-bio').forEach(target => this.shuffleChildren(target))
+    this.bindTicketClicks()
+    this.bindSocialClicks()
   }
 }
 

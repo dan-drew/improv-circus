@@ -1,7 +1,7 @@
 mixin show_tickets(show, showOver=true)
   .show_tickets
     if show.tickets
-      a.tickets.show_active(href=show.tickets.link)
+      a.tickets.show_active(href=show.tickets.link, data-show-name=show.name)
         | Buy Tickets
     else
       .tickets.show_active

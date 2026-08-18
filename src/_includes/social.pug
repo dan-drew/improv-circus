@@ -1,7 +1,7 @@
 include icon
 
 mixin social(info)
-  a.social_link(target='_blank', href=info.link)
+  a.social_link(target='_blank', href=info.link, data-platform=info.app)
     +icon(info.icon, info.username)
 
 mixin social_list(socials)
