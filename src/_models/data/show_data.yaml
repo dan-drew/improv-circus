@@ -1,6 +1,28 @@
 # $schema: ./show_data.schema.yaml
 -
   type: wry_vs_dry
+  when: { date: "2026-09-19", time: "18:30" }
+  duration: 70
+  theater: all_out
+  tickets:
+    description: "Adults $10, Kids $5 online. $12/$7 at the door."
+    # link: https://events.humanitix.com/wry-vs-dry-head-to-head-improv-comedy-for-kids/tickets
+    offers:
+      - cost: 10
+        type: online
+        description: 'Adults'
+      - cost: 12
+        type: in-store
+        description: 'Adults'
+      - cost: 5
+        type: online
+        description: 'Kids'
+      - cost: 7
+        type: in-store
+        description: 'Kids'
+  players: []
+-
+  type: wry_vs_dry
   when: { date: "2026-08-15", time: "18:30" }
   duration: 80
   theater: all_out
