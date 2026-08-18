@@ -3,6 +3,7 @@ include /show_list.pug
 include /people_list.pug
 include /circus_heading
 include /social
+include /youtube.pug
 
 block content
   .home
@@ -14,6 +15,8 @@ block content
       .follow
         +social_list(site.social)
 
+    +youtube
+
     h1.text-shadow
       a.anchor(id='shows')
       | ~ Shows ~
@@ -24,3 +27,4 @@ block content
       | ~ Players ~
 
     +people_list
+

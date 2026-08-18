@@ -521,25 +521,6 @@ footer {
   }
 }
 
-/* ===================================
-   YOUTUBE
-   =================================== */
-
-.youtube-container {
-  display: flex;
-  padding: 2vh 10vw;
-  align-items: center;
-  background: #00000044;
-
-  iframe {
-    border-radius: var(--space-sm);
-    aspect-ratio: 16/9;
-    height: 50vh;
-    border: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
 /***********************************************
   HOME
@@ -613,7 +594,7 @@ footer {
 .card {
   --card-x-padding: var(--space-md);
   --card-y-padding: var(--space-sm);
-  --card-radius: var(--space-xl);
+  --card-radius: var(--space-md);
 
   background: #00000088;
   /*background: rgba(0, 0, 0, 0.2);*/
@@ -646,7 +627,7 @@ footer {
     object-fit: contain;
     max-width: 100%;
     max-height: 100%;
-    border-radius: var(--card-radius);
+    border-radius: var(--space-lg);
     padding-left: var(--card-x-padding);
     justify-self: center;
     overflow: hidden;
@@ -932,6 +913,12 @@ svg.circus_heading {
   }
 }
 
+.show_list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
 .show_list [data-show-status="past"] /*.show_active*/ {
   display: none !important;
 }
@@ -1056,4 +1043,11 @@ svg.circus_heading {
   font-family: var(--font-sans);
   font-size: var(--font-size-4xl);
   padding-top: var(--space-sm);
+}
+
+iframe.youtube {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: var(--space-sm);
 }
