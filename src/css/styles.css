@@ -917,6 +917,10 @@ svg.circus_heading {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+
+  & > .card_container:has(.show_card[data-show-status="active"]):nth-child(n+3) {
+    display: none;
+  }
 }
 
 .show_list [data-show-status="past"] /*.show_active*/ {
