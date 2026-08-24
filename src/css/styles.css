@@ -559,6 +559,8 @@ footer {
 
 .theater_logo {
   display: inline-block;
+  --logo-size: 50px;
+  --logo-corner-radius: 5px;
 
   a {
     text-decoration: none;
@@ -566,19 +568,18 @@ footer {
   }
 
   img {
-    width: 50px;
+    width: var(--logo-size);
+    border-radius: var(--logo-corner-radius);
   }
 
   &.theater_logo_small {
-    img {
-      width: 20px;
-    }
+    --logo-size: 20px;
+    --logo-corner-radius: 3px;
   }
 
   &.theater_logo_large {
-    img {
-      width: 100px;
-    }
+    --logo-size: 100px;
+    --logo-corner-radius: 10px;
   }
 }
 

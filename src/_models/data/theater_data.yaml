@@ -77,3 +77,36 @@ sacramento_comedy_spot:
 
 matabor:
  name: Matabor Playhouse
+
+magnet:
+  name: Magnet Theater
+  link: https://magnettheater.com/
+  location:
+    street: 254 W 29th St
+    city: New York
+    state: NY
+    zip: "10001"
+    lat: 40.746667
+    lng: -73.991111
+
+ucb:
+  name: Upright Citizens Brigade
+  link: https://ucbcomedy.com/
+  location:
+    street: 307 W 26th St
+    city: New York
+    state: NY
+    zip: "10001"
+    lat: 40.746667
+    lng: -73.991111
+
+improv_boston:
+  name: ImprovBoston
+  link: https://improvboston.com/
+  location:
+    street: 40 Prospect St
+    city: Cambridge
+    state: MA
+    zip: "02139"
+    lat: 42.373611
+    lng: -71.110833

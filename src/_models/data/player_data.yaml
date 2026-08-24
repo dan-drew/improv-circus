@@ -205,7 +205,7 @@ david:
 tom:
   name: Tom Dunlap
   image: tom.png
-  theaters: [all_out, endgames]
+  theaters: [magnet, all_out, endgames, ucb, improv_boston]
   home_town: New Hampshire
   location: Oakland
   improv_since: 2009
