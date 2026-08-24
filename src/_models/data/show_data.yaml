@@ -20,7 +20,7 @@
       - cost: 7
         type: in-store
         description: 'Kids'
-  players: [yap, dylan]
+  players: [yap, dylan, christian, brendan, mike, sara, david]
 -
   type: wry_vs_dry
   when: { date: "2026-10-17", time: "18:30" }

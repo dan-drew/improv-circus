@@ -201,3 +201,25 @@ david:
     queer comedy festival of the Bay Area: Yas! And Fest in 2025 and 2026.
   social:
     instagram: spatsimprov
+
+tom:
+  name: Tom Dunlap
+  image: tom.png
+  theaters: [all_out, endgames]
+  home_town: New Hampshire
+  location: Oakland
+  improv_since: 2009
+  bio: |
+    Tom Dunlap is a stand-up, improviser, sketch performer, improv coach, and former Swedish professional baseball player. 
+    He's been performing since 2007, performing stand-up all over the country, with appearances on Sirius Satellite Radio, 
+    New York 1 TV, The Boston Chronicle, The Comedy Studio's Comic-in-Residence Program, the Women in Comedy Festival, 
+    Chicago Sketchfest, the Rochester Comedy Festival, and the Hoboken Comedy Festival. He co-created Grandma's Basement, 
+    a four-night-a-week comedy venue behind Fenway Park that was voted Boston's Best Alternative Comedy Showcase and 
+    Best Open Mic. 
+    
+    Tom is currently thrilled to have played with many Bay Area improv teams, including Improv Circus, After Bedtime Stories, 
+    No Brakes, A Lot To Unpack, House Party, and Cattywampus! Before landing in the Bay Area, Tom performed on 
+    Wonderland — the Magnet Theater's longest-running musical house team — and sketch team Baby Shoes which performed in 
+    multiple festivals, and many indy teams in NYC. Tom was trained as an improv instructor by Armando Diaz, has coached 
+    narrative musical house teams, long-form improv teams, and studied under Will Hines, Jordan Klepper, Craig Cackowski, 
+    Tara Copeland, Neil Casey, Rick Andrews, Peter McNerney, Amy Goerlich, Michael Lutton, and many more.

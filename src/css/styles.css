@@ -184,6 +184,19 @@ a:hover {
   color: var(--primary-dark);
 }
 
+.content_toggle {
+  padding: 0;
+  border: 0;
+  color: var(--primary-color);
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.content_toggle:hover {
+  color: var(--primary-dark);
+}
+
 a.anchor {
   position: absolute;
   margin-top: calc((var(--header-height) + var(--space-md)) * -1);

@@ -1,4 +1,8 @@
-mixin card(card_class)
+mixin card(card_class, options = {})
   .card_container
-    .card(class=card_class)&attributes(attributes)
+    .card(
+      class=card_class
+      data-truncate-content-at=options.truncateContentAt
+      data-truncate-content-over=options.truncateContentOver
+    )&attributes(attributes)
       block

@@ -4,7 +4,7 @@ include card
 include icon
 
 mixin person_card(person)
-  +card('person_card')
+  +card('person_card', { truncateContentAt: 60, truncateContentOver: 70 })
     img.card_image(alt=person.name, src=person.image)
 
     h2.card_header= person.nickname

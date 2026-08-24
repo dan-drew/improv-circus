@@ -133,9 +133,70 @@ class Page {
     })
   }
 
+  bindContentToggles() {
+    document.querySelectorAll('.card[data-truncate-content-at]').forEach((card, index) => {
+      const content = card.querySelector(':scope > .card_content')
+      const truncateAt = Number(card.dataset.truncateContentAt)
+      const truncateOver = Number(card.dataset.truncateContentOver || truncateAt)
+
+      if (!content || !Number.isInteger(truncateAt) || truncateAt < 1 || !Number.isInteger(truncateOver) || truncateOver < truncateAt) {
+        return
+      }
+
+      const words = content.innerText.trim().split(/\s+/)
+      if (words.length <= truncateOver) {
+        return
+      }
+
+      const fullContent = document.createElement('div')
+      fullContent.id = `truncated-card-content-${index}`
+      fullContent.className = 'content_full'
+      fullContent.append(...content.childNodes)
+
+      const summary = document.createElement('span')
+      summary.className = 'content_summary'
+      summary.append(`${words.slice(0, truncateAt).join(' ')}… `)
+
+      const createToggle = (label, expanded, onClick) => {
+        const toggle = document.createElement('button')
+        toggle.className = 'content_toggle'
+        toggle.type = 'button'
+        toggle.textContent = label
+        toggle.setAttribute('aria-expanded', String(expanded))
+        toggle.setAttribute('aria-controls', fullContent.id)
+        toggle.addEventListener('click', event => {
+          event.stopPropagation()
+          onClick()
+        })
+        return toggle
+      }
+
+      let showMore
+      let showLess
+      showMore = createToggle('show more', false, () => {
+        summary.hidden = true
+        fullContent.hidden = false
+        showLess.focus()
+      })
+      showLess = createToggle('show less', true, () => {
+        fullContent.hidden = true
+        summary.hidden = false
+        showMore.focus()
+      })
+
+      summary.append(showMore)
+      const lastBlock = fullContent.lastElementChild
+      const toggleContainer = lastBlock?.tagName === 'P' ? lastBlock : fullContent
+      toggleContainer.append(' ', showLess)
+      fullContent.hidden = true
+      content.append(summary, fullContent)
+    })
+  }
+
   initPage() {
     document.querySelectorAll('[data-show-time]').forEach(target => this.updateShowInfo(target))
     document.querySelectorAll('.person_gallery > .with-bio, .person_gallery > .without-bio').forEach(target => this.shuffleChildren(target))
+    this.bindContentToggles()
     this.bindTicketClicks()
     this.bindSocialClicks()
   }
