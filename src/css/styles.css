@@ -249,7 +249,7 @@ header {
 }
 
 header, footer {
-  background-color: hwb(from var(--bg-primary) h w b / 50%);
+  background-color: #220000cc;
   backdrop-filter: blur(10px);
   padding: var(--space-sm) 0;
 }
@@ -377,10 +377,28 @@ header, footer {
   font-size: var(--font-size-3xl);
   max-width: 900px;
   text-align: center;
-  padding: var(--space-md) var(--space-xl);
+  padding: 0 var(--space-xl);
   text-shadow: var(--text-shadow);
   justify-self: center;
   /*background: linear-gradient(135deg, var(--gray-50) 0%, var(--bg-primary) 100%);*/
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-3xl);
+    padding: var(--space-xs) var(--space-xl);
+    border-radius: var(--space-sm);
+    background-color: #660000;
+    border: 2px solid var(--primary-color);
+    filter: drop-shadow(1px 1px 3px black);
+  }
 }
 
 
