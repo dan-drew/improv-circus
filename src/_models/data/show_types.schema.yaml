@@ -6,6 +6,8 @@ additionalProperties:
   properties:
     name:
       type: string
+    slug:
+      type: string
     image:
       type: string
       pattern: "^[a-zA-Z0-9_-]+.(png|jpg|jpeg)$"
@@ -14,3 +16,36 @@ additionalProperties:
       pattern: "^[a-zA-Z0-9_-]+.(png|jpg|jpeg)$"
     description:
       type: string
+    duration:
+      type: integer
+      minimum: 10
+      maximum: 180
+    theater:
+      type: string
+    tickets:
+      type: object
+      additionalProperties: false
+      properties:
+        description:
+          type: string
+        link:
+          type: string
+          pattern: '^https?://'
+        offers:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [cost, type]
+            properties:
+              cost:
+                type: number
+                minimum: 0
+                maximum: 100
+              description:
+                type: string
+              type:
+                type: string
+                oneOf:
+                  - const: online
+                  - const: in-store

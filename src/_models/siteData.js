@@ -12,9 +12,13 @@ export function getSiteData() {
   }
 
   const theaterData = loadYaml("./data/theater_data.yaml");
+  console.info('Theaters: ', theaterData)
   const playerData = loadYaml("./data/player_data.yaml");
+  console.info('Players: ', playerData)
   const showTypes = loadYaml("./data/show_types.yaml");
+  console.info('Show types: ', showTypes)
   const showData = loadYaml("./data/show_data.yaml");
+  console.info('Shows: ', showData)
 
   const theaters = mapFactory({ theaterData }, "theaterData", Theater);
   const players = mapFactory({ playerData, theaters }, "playerData", Player);
@@ -28,7 +32,6 @@ export function getSiteData() {
 
   cached.allPlayers = Object.values(cached.players)
 
-  console.info('site data: ', cached)
   console.info('generated: ', new Date().toString())
 
   return cached;

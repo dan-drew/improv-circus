@@ -7,10 +7,14 @@ import {imageUrl, markdown} from "./modelUtils.js";
 /**
  * @typedef {Object} ShowType
  * @property {string} name
+ * @property {string} slug
  * @property {string} description
  * @property {string} headline
  * @property {string} image
  * @property {string} banner_image
+ * @property {number} duration
+ * @property {string} theater
+ * @property {TicketInfo} [tickets]
  */
 
 /**
@@ -39,7 +43,6 @@ import {imageUrl, markdown} from "./modelUtils.js";
  * @property {{date: string, time: string, timeZone?: string}} when
  * @property {number} [duration]
  * @property {string} theater
- * @property {string} [theater_show_link]
  * @property {string[]} players
  * @property {TicketInfo} [tickets]
  */
@@ -59,17 +62,16 @@ export class Show {
     const type = showTypes[data.type];
     /** @type {DateWithZone} */
     this.when = new DateWithZone(data.when);
-    this.slug = data.slug ?? Show.slug(data.type, this.when);
+    this.slug = data.slug ?? Show.slug(type.slug, this.when);
     this.name = data.name ?? type.name;
     this.headline = data.headline ?? type.headline
     this.description = data.description ?? type.description ?? '';
     this.descriptionHtml = markdown(this.description);
     this.image = imageUrl('shows', data.image ?? type.image);
     this.bannerImage = imageUrl('shows', data.banner_image ?? type.banner_image ?? data.image ?? type.image);
-    this.theater = theaters[data.theater];
-    this.theaterShowLink = data.theater_show_link;
-    this.tickets = data.tickets;
-    this.duration = data.duration ?? 80;
+    this.theater = theaters[data.theater ?? type.theater];
+    this.tickets = data.tickets ?? type.tickets;
+    this.duration = data.duration ?? type.duration ?? 80;
     this.endWhen = this.when.add(this.duration);
     this.players = data.players.map(key => players[key]);
     this.pageLink = `/shows/${this.slug}`;

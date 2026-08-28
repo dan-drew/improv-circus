@@ -22,9 +22,9 @@
   "dependencies": {
     "@11ty/eleventy": "^3.1.5",
     "@11ty/eleventy-plugin-pug": "^1.0.0",
+    "js-yaml": "^5.4.1",
     "markdown-it": "^14.2.0",
     "pug": "^3.0.4",
-    "sitemap": "^9.0.1",
-    "yaml": "^2.9.0"
+    "sitemap": "^9.0.1"
   }
 }

@@ -14,6 +14,9 @@ importers:
       '@11ty/eleventy-plugin-pug':
         specifier: ^1.0.0
         version: 1.0.0
+      js-yaml:
+        specifier: ^5.4.1
+        version: 5.4.1
       markdown-it:
         specifier: ^14.2.0
         version: 14.2.0
@@ -23,9 +26,6 @@ importers:
       sitemap:
         specifier: ^9.0.1
         version: 9.0.1
-      yaml:
-        specifier: ^2.9.0
-        version: 2.9.0
 
 packages:
 
@@ -442,6 +442,10 @@ packages:
     resolution: {integrity: sha512-ePWsvanv0DWuDRsW8dnt+R4jQ31SCRCQ7hhNcPXZPsoBZiemuZNYGf7adZdqX2D86j6rvKp3RpCxVTSb8WQlOw==}
     hasBin: true
 
+  js-yaml@5.4.1:
+    resolution: {integrity: sha512-28R/k+NAjeuf7+CKlTxWZVExJGwVVLwY06DgEnOMz2gEpfNkDcD7QvyiVPT0xy0XXhU8vHsd4Ot42OOPdJG7dQ==}
+    hasBin: true
+
   jstransformer@1.0.0:
     resolution: {integrity: sha512-C9YK3Rf8q6VAPDCCU9fnqo3mAfOH6vUGnMcP4AQAYIEpWtfGLpwOTmZ+igtdK5y+VvI2n3CyYSzy4Qh34eq24A==}
 
@@ -743,11 +747,6 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
-
-  yaml@2.9.0:
-    resolution: {integrity: sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA==}
-    engines: {node: '>= 14.6'}
-    hasBin: true
 
 snapshots:
 
@@ -1204,6 +1203,10 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
+  js-yaml@5.4.1:
+    dependencies:
+      argparse: 2.0.1
+
   jstransformer@1.0.0:
     dependencies:
       is-promise: 2.2.2
@@ -1488,5 +1491,3 @@ snapshots:
       babel-walk: 3.0.0-canary-5
 
   ws@8.21.0: {}
-
-  yaml@2.9.0: {}

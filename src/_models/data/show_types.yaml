@@ -1,10 +1,39 @@
 # $schema: ./show_types.schema.yaml
-wry_vs_dry:
+wry_vs_dry_aot: &wry_vs_dry_aot
   name: Wry vs. Dry
-  headline: Head-to-head Improv Comedy!
+  slug: wry-vs-dry
+  headline: Family-friendly Improv Comedy!
   description: |
-    Come one, come all for a hilarious evening of competitive improv comedy! Cheer on team Funnypenny and team Punny Galore as they square off for your laughs and points based on your suggestions! Games! Singing! Puns! Crazy characters! Who will win? You decide!
+    Come one, come all for a hilarious evening of competitive improv comedy! 
+    Cheer on team Funnypenny and team Punny Galore as they square off for your 
+    laughs and points based on your suggestions! Games! Singing! Puns! 
+    Crazy characters! Who will win? You decide!
     
-    This show is for everyone: Bring your kids! Bring Nana and Poppop! Bring that crazy Uncle who collects Cabbage Patch Kids and Funko Pops! Bring co-workers in desperate need of a morale event! All are welcome!!!
+    This show is for everyone: Bring your kids! Bring Nana and Poppop! 
+    Bring that crazy Uncle who collects Cabbage Patch Kids and Funko Pops! 
+    Co-workers in desperate need of a morale event?! All are welcome!!!
+  image: wry_vs_dry_aot_sat1.jpg
+  banner_image: wry_vs_dry_banner_aot_sat1.jpg
+  duration: 70
+  theater: all_out
+  tickets:
+    description: "Kids $5, Adults $10 online. $7/$12 at the door."
+    link: https://www.alloutcomedytheater.com/wry-vs-dry-comedy-for-kids
+    offers:
+      - cost: 10
+        type: online
+        description: 'Adults'
+      - cost: 12
+        type: in-store
+        description: 'Adults'
+      - cost: 5
+        type: online
+        description: 'Kids'
+      - cost: 7
+        type: in-store
+        description: 'Kids'
+
+wry_vs_dry_aot_sat3:
+  <<: *wry_vs_dry_aot
   image: wry_vs_dry.png
   banner_image: wry_vs_dry_banner.png

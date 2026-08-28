@@ -1,9 +1,10 @@
 import markdownIt from "markdown-it";
 import { readFileSync } from "node:fs";
-import YAML from "yaml";
+import * as yaml from "js-yaml";
 
 const _markdown = markdownIt('commonmark')
 const SHORT_DATE_TIME_FORMAT = new Intl.DateTimeFormat(navigator.languages, { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' })
+const YAML_SCHEMA = yaml.CORE_SCHEMA.withTags(yaml.mergeTag);
 
 /**
  *
@@ -20,7 +21,10 @@ export function markdown(val) {
 }
 
 export function loadYaml(relativePath) {
-  return YAML.parse(readFileSync(new URL(relativePath, import.meta.url), "utf8"));
+  return yaml.load(
+    readFileSync(new URL(relativePath, import.meta.url), "utf8"), 
+    { schema: YAML_SCHEMA }
+  );
 }
 
 function padZero(num, size) {
