@@ -10,10 +10,10 @@ import {imageUrl, markdown} from "./modelUtils.js";
  * @property {string} slug
  * @property {string} description
  * @property {string} headline
- * @property {string} image
- * @property {string} banner_image
+ * @property {string} [image]
+ * @property {string} [banner_image]
  * @property {number} duration
- * @property {string} theater
+ * @property {string} [theater]
  * @property {TicketInfo} [tickets]
  */
 
@@ -77,6 +77,8 @@ export class Show {
     this.pageLink = `/shows/${this.slug}`;
     this.permaLink = `${this.pageLink}/index.html`;
     this.title = `Improv Circus presents: ${this.name} - ${this.when.shortDateTime}`;
+
+    console.assert(!!this.theater, `Theater ${data.theater ?? type.theater} not found`)
 
     this.meta = Social.meta(this, {
       title: this.title,

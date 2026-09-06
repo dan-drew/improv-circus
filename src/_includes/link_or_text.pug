@@ -1,0 +1,5 @@
+mixin link_or_text(link, text)
+  if link
+    a(target="_blank", href=link)= text
+  else
+    = text

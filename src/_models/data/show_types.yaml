@@ -1,5 +1,5 @@
 # $schema: ./show_types.schema.yaml
-wry_vs_dry_aot: &wry_vs_dry_aot
+wry_vs_dry: &wry_vs_dry
   name: Wry vs. Dry
   slug: wry-vs-dry
   headline: Family-friendly Improv Comedy!
@@ -12,9 +12,12 @@ wry_vs_dry_aot: &wry_vs_dry_aot
     This show is for everyone: Bring your kids! Bring Nana and Poppop! 
     Bring that crazy Uncle who collects Cabbage Patch Kids and Funko Pops! 
     Co-workers in desperate need of a morale event?! All are welcome!!!
+  duration: 70
+
+wry_vs_dry_aot: &wry_vs_dry_aot
+  <<: *wry_vs_dry
   image: wry_vs_dry_aot_sat1.jpg
   banner_image: wry_vs_dry_banner_aot_sat1.jpg
-  duration: 70
   theater: all_out
   tickets:
     description: "Kids $5, Adults $10 online. $7/$12 at the door."

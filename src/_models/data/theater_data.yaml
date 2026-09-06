@@ -24,6 +24,7 @@ all_out:
   name: "All Out Comedy Theater"
   link: "https://www.alloutcomedytheater.com"
   location:
+    link: https://maps.app.goo.gl/GLWGYNahLBKPeBso7
     street: 2550 Telegraph Avenue
     city: Oakland
     state: CA
@@ -76,7 +77,7 @@ sacramento_comedy_spot:
    lng: -122.27766096119993
 
 matabor:
- name: Matabor Playhouse
+  name: Matabor Playhouse
 
 magnet:
   name: Magnet Theater
@@ -110,3 +111,23 @@ improv_boston:
     zip: "02139"
     lat: 42.373611
     lng: -71.110833
+
+live_wire: &livewire
+  name: Live Wire
+  logo: live_wire
+  link: https://www.instagram.com/livewire.hq/
+
+chanticleers: &chanticleers
+  location:
+    name: Chanticleers Theatre
+    link: https://maps.app.goo.gl/X68fYbSZYs4KUJb78
+    street: 3683 Quail Ave
+    city: Castro Valley
+    state: CA
+    zip: '94546'
+    lat: 37.7093416652644
+    lng: -122.08886313198457
+
+live_wire_chanticleers:
+  <<: *livewire
+  <<: *chanticleers

@@ -1,9 +1,15 @@
 include theater_logo
+include link_or_text
 
 mixin theater_info(theater)
   .theater_info
     +theater_logo(theater)
     .theater_content
-      .theater_name= theater.name
+      .theater_name
+        +link_or_text(theater.link, theater.name)
+        if theater.location.name
+          = ' @ '
+          +link_or_text(theater.location.link, theater.location.name)
+
       .theater_location
-        = `${theater.location.street}, ${theater.location.city} ${theater.location.state}, ${theater.location.zip}`
+        +link_or_text(theater.location.link, theater.location.full)

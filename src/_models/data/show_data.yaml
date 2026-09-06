@@ -2,7 +2,14 @@
 -
   type: wry_vs_dry_aot_sat3
   when: { date: "2026-09-19", time: "18:30" }
-  players: [yap, dylan, christian, brendan, mike, sara, david, kari, mark, tom]
+  players: [yap, dylan, christian, brendan, mike, sara, david, kari, tom]
+-
+  type: wry_vs_dry
+  when: { date: "2026-10-10", time: "18:00" }
+  players: [yap, dylan, mary, tom]
+  theater: live_wire_chanticleers
+  image: wry_vs_dry_live_wire_20261010.jpg
+  banner_image: wry_vs_dry_banner_live_wire_20261010.jpg
 -
   type: wry_vs_dry_aot_sat3
   when: { date: "2026-10-17", time: "18:30" }
