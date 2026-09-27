@@ -96,6 +96,10 @@ class Page {
 
     target.dataset.showTemporal = temporalStatus
     target.dataset.showStatus = temporalStatus === 'past' ? 'past' : 'active'
+
+    if (temporalStatus === 'past') {
+      target.parentElement.remove();
+    }
   }
 
   trackEvent(eventName, params = {}) {

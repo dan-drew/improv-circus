@@ -955,7 +955,7 @@ svg.circus_heading {
   flex-direction: column;
   gap: var(--space-sm);
 
-  & > .card_container:has(.show_card[data-show-status="active"]):nth-child(n+3) {
+  & > .card_container:has(.show_card[data-show-status="active"]):nth-child(n+5) {
     display: none;
   }
 }

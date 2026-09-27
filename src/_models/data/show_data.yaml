@@ -6,22 +6,42 @@
 -
   type: wry_vs_dry
   when: { date: "2026-10-10", time: "18:00" }
-  players: [yap, dylan, mary, tom]
+  players: [yap, mary, tom, ray, christian]
   theater: live_wire_chanticleers
   image: wry_vs_dry_live_wire_20261010.jpg
   banner_image: wry_vs_dry_banner_live_wire_20261010.jpg
+  tickets:
+    description: $12
+    link: https://www.eventbrite.com/e/short-circuits-a-family-friendly-improv-show-tickets-1999655950778
+    offers:
+      - cost: 12
+        type: online
+        description: ''
+
 -
   type: wry_vs_dry_aot_sat3
+  name: Wry vs. Dry feat. Puppet Party
+  headline: !
+  description: |
+    Come one, come all for a hilarious evening of competitive improv comedy! 
+    Cheer on team Funnypenny and team Punny Galore as they square off for your 
+    laughs and points based on your suggestions! Games! Singing! Puns! 
+    Crazy characters! Who will win? You decide!
+    
+    This show is for everyone: Bring your kids! Bring Nana and Poppop! 
+    Bring that crazy Uncle who collects Cabbage Patch Kids and Funko Pops! 
+    Co-workers in desperate need of a morale event?! All are welcome!!!
   when: { date: "2026-10-17", time: "18:30" }
-  players: []
+  players: [dylan, lauren, dan, mary, david, tom, brendan, christian]
 -
   type: wry_vs_dry_aot
   when: { date: "2026-11-07", time: "18:30" }
-  players: []
+  players: [dan]
 -
   type: wry_vs_dry_aot
+  name: Wry vs. Dry feat. Chick Flick
   when: { date: "2026-12-05", time: "18:30" }
-  players: []
+  players: [dan, mary]
 
 #
 # OLD SHOWS
