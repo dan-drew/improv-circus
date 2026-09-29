@@ -223,3 +223,18 @@ tom:
     multiple festivals, and many indy teams in NYC. Tom was trained as an improv instructor by Armando Diaz, has coached 
     narrative musical house teams, long-form improv teams, and studied under Will Hines, Jordan Klepper, Craig Cackowski, 
     Tara Copeland, Neil Casey, Rick Andrews, Peter McNerney, Amy Goerlich, Michael Lutton, and many more.
+
+ming:
+  name: Ming Wong
+  image: ming.png
+  theaters: [all_out]
+  location: Oakland
+  improv_since: 2022
+  bio: |
+    Ming is an improviser, singer, teacher, coach and sketch writer. He teaches musical improv at All Out Comedy, 
+    where he also plays on the mainstage cast of the Sitcom, and Knockoff Broadway: the Improvised Musical. 
+    He trained at All Out Comedy, Leela, Provocation Theater, and Endgames. He currently coaches the All Out Comedy 
+    musical house team, House Party, as well as a number of independent teams. He has also performed improv at 
+    festivals including SF Sketchfest, Bay Area Musical Improv Festival, Yas And Fest, and recently at the first 
+    ImprovCon in San Diego. He was a founding member of the Fledglings, a musical improv team that is undefeated at Thunderdome! 
+  
