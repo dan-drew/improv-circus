@@ -1021,7 +1021,7 @@ svg.circus_heading {
     font-size: var(--font-size-2xl);
   }
 
-  .person_gallery {
+  .show_players {
     grid-area: team;
   }
 }

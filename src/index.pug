@@ -30,5 +30,5 @@ block content
       a.anchor(id='players')
       | ~ Players ~
 
-    +people_list
+    +people_list(allPlayers.filter(player => !player.team))
 

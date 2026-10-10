@@ -28,6 +28,11 @@ additionalItems:
       items:
         type: string
       minItems: 1
+    guest_players:
+      type: array
+      items:
+        type: string
+      minItems: 1
     tickets:
       type: object
       additionalProperties: false

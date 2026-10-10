@@ -1,7 +1,7 @@
 include person_card
 
-mixin people_list(people = null)
-  .person_gallery
+mixin people_list(people = null, preserveOrder = false)
+  .person_gallery(data-preserve-order=preserveOrder ? "true" : undefined)
     - if (!people) people = allPlayers
     - const bio = people.filter(p => Boolean(p.bio))
     - const noBio = people.filter(p => !Boolean(p.bio))

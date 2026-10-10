@@ -40,4 +40,7 @@ block content
           | &nbsp;
           = show.tickets.description
 
-    +people_list(show.players)
+    .show_players
+      if show.guestPlayers.length > 0
+        +people_list(show.guestPlayers, true)
+      +people_list(show.players)

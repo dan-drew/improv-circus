@@ -5,6 +5,8 @@ additionalProperties:
   additionalProperties: false
   required: [name, image]
   properties:
+    team:
+      type: boolean
     name:
       type: string
     nickname:

@@ -1,6 +1,6 @@
 ---
 name: add-player
-description: Add an Improv Circus player from pasted player information and an attached or local headshot, creating the YAML entry and matching transparent and theater-background portraits.
+description: Add an Improv Circus player from pasted player information and an attached or local image, creating the YAML entry and matching portraits or a square team logo.
 ---
 
 # Add a player
@@ -10,8 +10,9 @@ Work from the project root. Add the player locally; committing, publishing, and 
 ## Intake and profile
 
 - Read `src/_models/data/player_data.yaml`, its sibling `player_data.schema.yaml`, `theater_data.yaml`, and `src/_models/social.js` for current conventions. The actual player file is `player_data.yaml`; do not create a separate `player.yaml`.
-- Accept free-form pasted information plus either an attached image or a local image path. Require a display name and usable photo; ask for missing required inputs or ambiguous facts. Omit unavailable optional fields rather than guessing.
-- Use a lowercase, filesystem-safe first-name key and matching filename stem by default. Use a surname suffix for collisions with another person. Check names, keys, and both destination filenames before writing. If the person already exists or an output would overwrite an existing asset, ask whether to update or replace it before doing so.
+- Accept free-form pasted information plus either an attached image or a local image path. Require a display name and usable image; ask for missing required inputs or ambiguous facts. Omit unavailable optional fields rather than guessing.
+- When the supplied information identifies the player as a team, set `team: true` and treat the supplied image as a team logo. Teams support all regular player fields and use the same site presentation. Omit the flag for individuals unless explicitly supplied.
+- Use a lowercase, filesystem-safe first-name key and matching filename stem by default. Use a surname suffix for collisions with another person. For teams, use a filesystem-safe key based on the team name. Check names, keys, and the applicable destination filenames before writing. If the person already exists or an output would overwrite an existing asset, ask whether to update or replace it before doing so.
 - Map supplied details to `name`, `nickname`, `bio`, `location`, `home_town`, `improv_since` (numeric year), `theaters`, and `social`. Normalize supported social URLs into the handles expected by the model; retain full personal website URLs. Do not add social platforms the renderer cannot handle. Do not publish private contact information or add new schema fields without instruction.
 - Match unambiguous theater names to existing IDs. Ask about unknown or ambiguous affiliations; do not silently discard them or create theater records.
 
@@ -21,7 +22,11 @@ Preserve the supplied biography's voice, point of view, wording, facts, and para
 
 If corrections are needed, show the original and proposed text (or a clear diff) and ask the user to approve those specific changes. Explain that this approval is required by this skill's biography rule. Do not apply corrections until approved; silence is not approval. Continue independent photo work while awaiting a response. If declined, use the original. If there are no corrections, use the original without requesting approval. If no biography was supplied, omit it.
 
-## Portraits
+## Images
+
+For a team, create only `src/images/people/<stem>.png`: an exactly 1024 × 1024 square version of the supplied logo. Use the built-in image editing tool and inspect local input images first. Preserve the logo's lettering, artwork, colors, and background; use padding or framing as needed to fit the full logo without clipping or distortion. Preserve existing transparency. Do not generate a transparent companion, remove or replace the background, or apply the portrait/theater treatment. Verify dimensions and visually inspect the finished logo. Follow the output-copying and tool-availability guidance below, then continue to integration.
+
+### Individual portraits
 
 Use the built-in image generation/editing tool for image edits. Inspect local input images with the image viewer before editing. Use local reference paths when available; for pasted images, include the smallest set of recent conversation images containing the target and needed references. Identify the supplied player as the edit target and existing players as background/style references only. Never transfer a reference player's face or clothing.
 
@@ -40,10 +45,10 @@ Copy the selected tool outputs into the project destinations. Keep existing sour
 
 ## Integrate and verify
 
-Once both portraits are saved and any biography corrections are resolved, append the player entry using surrounding YAML conventions. Set `image: <stem>.png`; the transparent image is a companion asset, not the site's player image. Preserve unrelated entries and formatting.
+Once the applicable images (one logo for a team, both portraits for an individual) are saved and any biography corrections are resolved, append the player entry using surrounding YAML conventions. Set `image: <stem>.png`; for individuals, the transparent image is a companion asset, not the site's player image. Preserve unrelated entries and formatting.
 
-Check that YAML parses, the key is unique, supplied theater IDs resolve, and the image reference exists. Respect the current schema and runtime model; flag relevant discrepancies instead of expanding this task into unrelated fixes. Verify both files are PNG, exactly 1024 × 1024, the cutout contains both transparent and visible pixels, and the site photo is fully opaque. Use available image metadata tools for dimensions and alpha checks and visually inspect the files; do not infer actual transparency from appearance alone.
+Check that YAML parses, the key is unique, supplied theater IDs resolve, and the image reference exists. Respect the current schema and runtime model; flag relevant discrepancies instead of expanding this task into unrelated fixes. Verify every deliverable is PNG and exactly 1024 × 1024. For individuals, verify the cutout contains both transparent and visible pixels and the site photo is fully opaque; for teams, verify the original logo and background are preserved without requiring opacity or a companion asset. Use available image metadata tools for dimensions and alpha checks and visually inspect the files; do not infer actual transparency from appearance alone.
 
 Run the site's Eleventy build with `pnpm exec eleventy` under `TZ=UTC` (equivalent build engine without the package script's `prebuild` deletion of `dist`). Report any build limitation accurately. Review the diff for unrelated changes.
 
-Finish with the player key, data-file link, links/previews of both images, the verification result, and whether approved bio corrections were applied. Leave the changes uncommitted and unpublished unless separately requested.
+Finish with the player key, data-file link, links/previews of the generated image(s), the verification result, and whether approved bio corrections were applied. Leave the changes uncommitted and unpublished unless separately requested.

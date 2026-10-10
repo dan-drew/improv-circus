@@ -69,3 +69,8 @@ items:
       items:
         type: string
         pattern: ^[a-z_]*$
+    guest_players:
+      type: array
+      items:
+        type: string
+        pattern: ^[a-z_]*$

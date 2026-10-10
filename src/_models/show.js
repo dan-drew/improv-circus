@@ -44,6 +44,7 @@ import {imageUrl, markdown} from "./modelUtils.js";
  * @property {number} [duration]
  * @property {string} theater
  * @property {string[]} players
+ * @property {string[]} [guest_players]
  * @property {TicketInfo} [tickets]
  */
 
@@ -74,6 +75,7 @@ export class Show {
     this.duration = data.duration ?? type.duration ?? 80;
     this.endWhen = this.when.add(this.duration);
     this.players = data.players.map(key => players[key]);
+    this.guestPlayers = (data.guest_players ?? []).map(key => players[key]);
     this.pageLink = `/shows/${this.slug}`;
     this.permaLink = `${this.pageLink}/index.html`;
     this.title = `Improv Circus presents: ${this.name} - ${this.when.shortDateTime}`;
@@ -145,9 +147,9 @@ export class Show {
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       location,
-      performer: this.players.map(player => {
+      performer: [...this.guestPlayers, ...this.players].map(player => {
         const performer = {
-          "@type": "Person",
+          "@type": player.team ? "PerformingGroup" : "Person",
           name: player.name,
           image: `${baseUrl}${player.image}`,
         };

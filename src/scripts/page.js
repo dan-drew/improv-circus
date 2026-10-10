@@ -199,7 +199,7 @@ class Page {
 
   initPage() {
     document.querySelectorAll('[data-show-time]').forEach(target => this.updateShowInfo(target))
-    document.querySelectorAll('.person_gallery > .with-bio, .person_gallery > .without-bio').forEach(target => this.shuffleChildren(target))
+    document.querySelectorAll('.person_gallery:not([data-preserve-order="true"]) > .with-bio, .person_gallery:not([data-preserve-order="true"]) > .without-bio').forEach(target => this.shuffleChildren(target))
     this.bindContentToggles()
     this.bindTicketClicks()
     this.bindSocialClicks()

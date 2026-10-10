@@ -4,6 +4,7 @@ import {imageUrl, markdown} from "./modelUtils.js";
 
 /**
  * @typedef {Object} PlayerData
+ * @property {boolean} [team]
  * @property {string} name
  * @property {string} [nickname]
  * @property {string} [bio]
@@ -25,6 +26,7 @@ export class Player {
    */
   constructor(key, data, {theaters}) {
     this.key = key;
+    this.team = data.team ?? false;
     this.name = data.name;
     this.nickname = data.nickname ?? data.name.split(' ')[0];
     this.bio = data.bio ? markdown(data.bio) : undefined;

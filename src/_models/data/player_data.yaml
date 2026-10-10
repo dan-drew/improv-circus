@@ -238,3 +238,23 @@ ming:
     festivals including SF Sketchfest, Bay Area Musical Improv Festival, Yas And Fest, and recently at the first 
     ImprovCon in San Diego. He was a founding member of the Fledglings, a musical improv team that is undefeated at Thunderdome! 
   
+
+chick_flick:
+  name: Chick Flick
+  team: true
+  image: chick_flick.png
+  bio: >-
+    We're an all-woman improv troupe that is a little goofy, a little whimsical, a little romantic, and a lot of fun!
+  social:
+    instagram: chickflickimprov
+
+puppet_party:
+  name: Puppet Party
+  team: true
+  location: Oakland
+  image: puppet_party.png
+  theaters: [all_out]
+  bio: >-
+    A Bay Area comedy show featuring improvisors, stand-ups, and most importantly... puppets.
+  social:
+    instagram: puppetpartypresents
