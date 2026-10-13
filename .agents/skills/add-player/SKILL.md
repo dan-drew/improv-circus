@@ -14,7 +14,7 @@ Work from the project root. Add the player locally; committing, publishing, and 
 - When the supplied information identifies the player as a team, set `team: true` and treat the supplied image as a team logo. Teams support all regular player fields and use the same site presentation. Omit the flag for individuals unless explicitly supplied.
 - Use a lowercase, filesystem-safe first-name key and matching filename stem by default. Use a surname suffix for collisions with another person. For teams, use a filesystem-safe key based on the team name. Check names, keys, and the applicable destination filenames before writing. If the person already exists or an output would overwrite an existing asset, ask whether to update or replace it before doing so.
 - Map supplied details to `name`, `nickname`, `bio`, `location`, `home_town`, `improv_since` (numeric year), `theaters`, and `social`. Normalize supported social URLs into the handles expected by the model; retain full personal website URLs. Do not add social platforms the renderer cannot handle. Do not publish private contact information or add new schema fields without instruction.
-- Match unambiguous theater names to existing IDs. Ask about unknown or ambiguous affiliations; do not silently discard them or create theater records.
+- Training credits do not count as theater affiliations; keep them in the supplied biography without adding them to `theaters`. Match explicit, unambiguous theater affiliations to existing IDs. Ask about unknown or ambiguous affiliations; do not silently discard them or create theater records.
 
 ### Biography approval
 
@@ -23,6 +23,8 @@ Preserve the supplied biography's voice, point of view, wording, facts, and para
 If corrections are needed, show the original and proposed text (or a clear diff) and ask the user to approve those specific changes. Explain that this approval is required by this skill's biography rule. Do not apply corrections until approved; silence is not approval. Continue independent photo work while awaiting a response. If declined, use the original. If there are no corrections, use the original without requesting approval. If no biography was supplied, omit it.
 
 ## Images
+
+Request 1024-square output, then check the actual dimensions. When the image tool returns another size, always resize locally to exactly 1024 × 1024 before considering a generation retry; do not retry generation or ask for approval solely to correct dimensions. Use ImageMagick or an equivalent local image tool for this normalization, preserving PNG alpha and leaving source files untouched. Resize square outputs proportionally; for nonsquare outputs, preserve proportions and use appropriate padding rather than stretching or clipping the subject or logo. Verify dimensions and transparency again after resizing. Continue using the built-in image tool for substantive image edits.
 
 For a team, create only `src/images/people/<stem>.png`: an exactly 1024 × 1024 square version of the supplied logo. Use the built-in image editing tool and inspect local input images first. Preserve the logo's lettering, artwork, colors, and background; use padding or framing as needed to fit the full logo without clipping or distortion. Preserve existing transparency. Do not generate a transparent companion, remove or replace the background, or apply the portrait/theater treatment. Verify dimensions and visually inspect the finished logo. Follow the output-copying and tool-availability guidance below, then continue to integration.
 
@@ -39,7 +41,7 @@ Create these two real PNG files in `src/images/people/`:
 
 Preserve identity, facial features, skin texture, hair, accessories, clothing, and expression. Allow modest exposure, color, and sharpness corrections; no beauty retouching or invented body details. Center the face naturally with room above the hair; use matching framing for both images. If the input cannot support this crop, ask for a framing decision or a better source rather than inventing missing anatomy.
 
-Request 1024-square output in each prompt and verify the actual results. If a result has the wrong dimensions, request a corrected output through the image tool; do not accept the reference dimensions as the target. Inspect both outputs for identity drift, edge quality, framing, and style. Correct a specific defect if needed; after two unsuccessful corrective attempts, report the remaining issue and ask how to proceed.
+Normalize dimensions locally as described above, then inspect both outputs for identity drift, edge quality, framing, and style. Use the image tool to correct a specific visual defect if needed; after two unsuccessful corrective attempts for that defect, report the remaining issue and ask how to proceed. Dimension normalization does not count as a visual corrective attempt.
 
 Copy the selected tool outputs into the project destinations. Keep existing source files untouched and do not add source originals or discarded variants to the repository by default. If the built-in tool is unavailable, report the limitation; ask before using an API/CLI fallback rather than silently switching.
 

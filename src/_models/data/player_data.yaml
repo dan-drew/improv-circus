@@ -258,3 +258,14 @@ puppet_party:
     A Bay Area comedy show featuring improvisors, stand-ups, and most importantly... puppets.
   social:
     instagram: puppetpartypresents
+
+rafa:
+  name: Rafa Marengoni
+  image: rafa.png
+  location: Bay Area
+  bio: >-
+    Rafa is a Bay Area-based comedian, improviser, actor, and sketch writer. He’s trained at UCB, Provocation Theatre,
+    and the Sketch School, and has performed in SF’s Sketchfest, Yes Yes Fest, and Yas, And Festivals, and across
+    several venues throughout the Bay Area. Rafa is funny, really. I promise. You should see him live. Ok, but if
+    you do, lower your expectations. He’s not that funny. He’s sometimes funny. He’s been funny a few times.
+    Ask around. Or don’t.
