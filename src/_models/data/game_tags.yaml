@@ -1,0 +1,11 @@
+- { slug: audience, name: Audience Volunteer, icon: '✋' }
+- { slug: head-to-head, name: Head-to-Head, icon: '⚔️' }
+- { slug: musical, name: Musical, icon: '🎵' }
+- { slug: guessing, name: Guessing, icon: '🔍' }
+- { slug: catch-up, name: Catch-Up, icon: '🏃' }
+- { slug: interrupt, name: Host Interrupt, icon: '🛑' }
+- { slug: replay, name: Replay, icon: '🔁' }
+- { slug: standing, name: Standing, icon: '🧍' }
+- { slug: opening, name: Opening, icon: '🎬' }
+- { slug: gimmick, name: Gimmick, icon: '🎭' }
+- { slug: ending, name: Ending, icon: '🏁' }

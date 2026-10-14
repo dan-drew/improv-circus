@@ -1,0 +1,34 @@
+---
+permalink: /games/index.html
+---
+extends /layout
+
+block title
+  | Games - Improv Circus
+
+block description
+  meta(name="description" content="Explore improv games by name and category, with instructions, examples, and tips for players and hosts.")
+
+block content
+  main.games_page(data-games-index)
+    h1 Games
+    .game_filters(hidden)
+      label(for="game-search") Search games
+      input#game-search(type="search" placeholder="Search by name…" autocomplete="off")
+      .game_tags(role="group" aria-label="Filter by category")
+        each tag in games.tags
+          button.game_badge(type="button" data-game-tag=tag.slug aria-pressed="false")
+            span(aria-hidden="true")= tag.icon
+            = ' ' + tag.name
+    p.game_empty(role="status" aria-live="polite" hidden) No games found.
+    ul.game_list
+      each entry in games.entries
+        li(data-game-name=entry.name data-game-tags=entry.game.tags.map(tag => tag.slug).join(' '))
+          if entry.game.pageLink
+            a(href=entry.game.pageLink)= entry.name
+          else
+            span= entry.name
+          each tag in entry.game.tags
+            = ' '
+            span.game_tag_icon(role="img" aria-label=tag.name title=tag.name)= tag.icon
+    script(type="module" src="/scripts/games.js")

@@ -1,4 +1,8 @@
 mixin meta(data)
   if data.meta
     for it in Object.entries(data.meta)
-      meta(name=it[0], content=it[1])
+      if !['og:image', 'twitter:image'].includes(it[0])
+        if it[0].startsWith('og:')
+          meta(property=it[0], content=it[1])
+        else
+          meta(name=it[0], content=it[1])

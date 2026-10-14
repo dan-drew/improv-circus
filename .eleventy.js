@@ -12,4 +12,5 @@ export default function (eleventyConfig) {
   eleventyConfig.setOutputDirectory('dist')
   eleventyConfig.addWatchTarget('src/_models/', { resetConfig: true })
   eleventyConfig.addWatchTarget('src/_models/data/', { resetConfig: true })
+  eleventyConfig.addWatchTarget('src/games/definitions/', { resetConfig: true })
 }

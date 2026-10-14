@@ -1,0 +1,672 @@
+- slug: 185
+  names: ["185"]
+  tags: ["ending"]
+- slug: 2-chairs
+  names: ["2 Chairs"]
+  tags: ["gimmick"]
+- slug: 2-minute-expert
+  names: ["2 Minute Expert"]
+  tags: ["head-to-head"]
+- slug: 3-rooms
+  names: ["3 Rooms"]
+  tags: ["head-to-head"]
+- slug: 4-rooms
+  names: ["Four Rooms"]
+  tags: ["head-to-head"]
+- slug: 5-things
+  names: ["5 Things"]
+  tags: ["guessing", "catch-up"]
+- slug: a-capella-jam
+  names: ["A Cappella Jam"]
+  tags: ["musical"]
+- slug: abc-scene
+  names: ["ABC Scene"]
+  tags: ["gimmick"]
+- slug: accent-rollercoaster
+  names: ["Accent Rollercoaster"]
+  tags: ["interrupt"]
+- slug: acrimania
+  names: ["Acrimania"]
+  tags: ["gimmick"]
+- slug: acronym-panel
+  names: ["Acronym Panel"]
+  tags: ["gimmick"]
+- slug: actors-nightmare
+  names: ["Actor's Nightmare"]
+  tags: ["gimmick"]
+- slug: advice-panel
+  names: ["Advice Panel"]
+  tags: ["standing", "gimmick"]
+- slug: animatronic-jamboree
+  names: ["Animatronic Jamboree"]
+  tags: ["guessing", "catch-up"]
+- slug: are-you-thinking-what-i-am
+  names: ["Are You Thinking What I Am?"]
+  tags: ["gimmick"]
+- slug: arms-expert
+  names: ["Arms Expert"]
+  tags: ["standing", "audience"]
+- slug: audience-and-hammerstein
+  names: ["Audience and Hammerstein"]
+  tags: ["musical"]
+- slug: audience-freeze-tag
+  names: ["Audience Freeze Tag"]
+  tags: ["catch-up"]
+- slug: audience-sound-effects
+  names: ["Audience Sound Effects"]
+  tags: ["audience"]
+- slug: b-movie
+  names: ["B Movie"]
+  tags: ["ending", "head-to-head"]
+- slug: back-in-my-day
+  names: ["Back in My Day"]
+  tags: ["ending"]
+- slug: bad-kitty
+  names: ["Bad Kitty"]
+  tags: ["gimmick"]
+- slug: barnyard-symphony
+  names: ["Barnyard Symphony"]
+  tags: ["standing"]
+- slug: battlescene-galactia
+  names: ["Battlescene Galactica"]
+  tags: ["head-to-head"]
+- slug: beastie-rap
+  names: ["Beastie Rap"]
+  tags: ["head-to-head", "musical"]
+- slug: bedtime-story
+  names: ["Bedtime Story"]
+  tags: ["audience"]
+- slug: bff
+  names: ["BFF"]
+  tags: ["audience", "head-to-head"]
+- slug: blind-date
+  names: ["Blind Date"]
+  tags: ["gimmick"]
+- slug: blind-freeze-tag
+  names: ["Blind Freeze Tag"]
+  tags: ["head-to-head"]
+- slug: blind-line
+  names: ["Blind Line"]
+  tags: ["gimmick"]
+- slug: blitzkrieg
+  names: ["Blitzkrieg"]
+  tags: ["guessing", "catch-up"]
+- slug: blues-jam
+  names: ["Blues Jam"]
+  tags: ["musical"]
+- slug: boo-yay
+  names: ["Boo Yay"]
+  tags: ["head-to-head"]
+- slug: boo-yea-story-style
+  names: ["Boo-Yea Story Style"]
+  tags: ["head-to-head"]
+- slug: casanova
+  names: ["Casanova"]
+  tags: ["audience", "head-to-head"]
+- slug: celeb-pun-ishment
+  names: ["Celeb Pun-ishment"]
+  tags: ["ending"]
+- slug: celeb-voice-mail
+  names: ["Celeb Voice Mail"]
+  tags: ["ending"]
+- slug: celebrity-twitter
+  names: ["Celebrity Twitter"]
+  tags: ["ending"]
+- slug: chain-murder
+  names: ["Chain Murder"]
+  tags: ["audience", "guessing", "catch-up"]
+- slug: chain-shopping
+  names: ["Chain Shopping"]
+  tags: ["audience", "guessing", "catch-up"]
+- slug: changing-emo-and-stuff
+  names: ["Changing Emo and Stuff"]
+  tags: ["interrupt"]
+- slug: changing-emotions
+  names: ["Changing Emotions"]
+  tags: ["interrupt", "gimmick"]
+- slug: closed-caption
+  names: ["Closed Caption"]
+  tags: ["gimmick"]
+- slug: coffee-break
+  names: ["Coffee Break"]
+  tags: ["audience"]
+- slug: columns
+  names: ["Columns"]
+  tags: ["audience"]
+- slug: continuation
+  names: ["Continuation"]
+  tags: ["head-to-head"]
+- slug: countdown
+  names: ["Countdown"]
+  tags: ["gimmick"]
+- slug: crystal-ball
+  names: ["Crystal Ball"]
+  tags: ["catch-up"]
+- slug: da-do-rap-rap
+  names: ["Da Do Rap Rap"]
+  tags: ["musical"]
+- slug: da-do-ron-ron
+  names: ["Da Doo Ron Ron"]
+  tags: ["musical", "head-to-head"]
+- slug: date-gripe
+  names: ["Date Gripe"]
+  tags: ["standing"]
+- slug: dating-game
+  names: ["Dating Game"]
+  tags: ["guessing"]
+- slug: day-in-the-life
+  names: ["Day in the Life"]
+  tags: ["audience", "gimmick"]
+- slug: dear-diary
+  names: ["Dear Diary"]
+  tags: ["ending"]
+- slug: death-pendulum
+  names: ["Death Pendulum"]
+  tags: ["interrupt", "gimmick"]
+- slug: dime-store-novel
+  names: ["Dime Store Novel"]
+  tags: ["gimmick"]
+- slug: dinner-at-joes
+  names: ["Dinner at Joe's"]
+  tags: ["audience"]
+- slug: directors-cut
+  names: ["Director's Cut"]
+  tags: ["audience"]
+- slug: dirty-hand-randy
+  names: ["Dirty Hand Randy"]
+  tags: ["head-to-head"]
+- slug: dont-make-me-heckle
+  names: ["Don't Make Me Heckle"]
+  tags: ["gimmick"]
+- slug: doublespeak
+  names: ["Doublespeak"]
+  tags: ["interrupt", "gimmick"]
+- slug: dr-know-it-all
+  names: ["Dr. Know It All"]
+  tags: ["standing", "gimmick"]
+- slug: dr-share-a-tongue
+  names: ["Dr. Share a Tongue"]
+  tags: ["standing"]
+- slug: dubbing
+  names: ["Dubbing"]
+  tags: ["audience"]
+- slug: dubbing-opera
+  names: ["Dubbing Opera"]
+  tags: ["musical"]
+- slug: dueling-soundtracks
+  names: ["Dueling Soundtracks"]
+  tags: ["musical"]
+- slug: dvd
+  names: ["DVD"]
+  tags: ["interrupt", "gimmick"]
+- slug: dysfunction-junction
+  names: ["Dysfunction Junction"]
+  tags: ["guessing"]
+- slug: elimination-limerick
+  names: ["Elimination Limerick"]
+  tags: ["head-to-head"]
+- slug: eliminator-replay
+  names: ["Eliminator Replay"]
+  tags: ["gimmick", "replay"]
+- slug: emotional-party
+  names: ["Emotional Party"]
+  tags: ["gimmick"]
+- slug: emotional-replay
+  names: ["Emotional Replay"]
+  tags: ["gimmick", "replay"]
+- slug: emotional-rollercoaster
+  names: ["Emotional Rollercoaster"]
+  tags: ["gimmick"]
+- slug: emotional-symphony
+  names: ["Emotional Symphony"]
+  tags: ["standing", "musical"]
+- slug: extreme-5-things
+  names: ["Extreme 5 Things"]
+  tags: ["guessing"]
+- slug: eye-tunes
+  names: ["Eye Tunes"]
+  tags: ["musical"]
+- slug: fabric-of-time
+  names: ["Fabric of Time"]
+  tags: ["interrupt"]
+- slug: fairytale-newscast
+  names: ["Fairy Tale Newscast"]
+  tags: ["gimmick"]
+- slug: foot-in-mouth
+  names: ["Foot in Mouth"]
+  tags: ["ending"]
+- slug: foreign-movie
+  names: ["Foreign Movie"]
+  tags: ["audience", "gimmick"]
+- slug: forward-reverse
+  names: ["Forward/Reverse"]
+  tags: ["interrupt"]
+- slug: four-square
+  names: ["Four Square"]
+  tags: ["audience", "interrupt"]
+- slug: freeze-tag
+  names: ["Freeze Tag"]
+  tags: ["gimmick", "catch-up", "head-to-head"]
+- slug: game-o-matic
+  names: ["Game-O-Matic"]
+  tags: ["gimmick"]
+- slug: gibberish-opera
+  names: ["Gibberish Opera"]
+  tags: ["musical"]
+- slug: good-bad-worst-advice
+  names: ["Good, Bad, Worst Advice"]
+  tags: ["gimmick"]
+- slug: google-translate
+  names: ["Google Translate"]
+  tags: ["head-to-head"]
+- slug: greatest-hits
+  names: ["Greatest Hits"]
+  tags: ["musical", "gimmick"]
+- slug: guess-that-thing
+  names: ["Guess That Thing"]
+  tags: ["guessing", "head-to-head"]
+- slug: hashtag
+  names: ["Hashtag"]
+  tags: ["gimmick"]
+- slug: head-to-head-memento
+  names: ["Head to Head Memento"]
+  tags: ["head-to-head"]
+- slug: hey-morty
+  names: ["Hey Morty"]
+  tags: ["gimmick"]
+- slug: hey-waiter
+  names: ["Hey Waiter"]
+  tags: ["ending"]
+- slug: hipster
+  names: ["Hipster"]
+  tags: ["ending"]
+- slug: historical-ballet
+  names: ["Historical Ballet"]
+  tags: ["gimmick", "musical", "catch-up"]
+- slug: home-shopping
+  names: ["Home Shopping"]
+  tags: ["opening"]
+- slug: hostage-negotiator
+  names: ["Hostage Negotiator"]
+  tags: ["catch-up"]
+- slug: hyperlink
+  names: ["Hyperlink"]
+  tags: ["head-to-head"]
+- slug: i-can-do-better
+  names: ["I Can Do Better", "Anything You Can Do"]
+  tags: ["interrupt", "head-to-head"]
+- slug: i-dream-of-jeanie
+  names: ["I Dream of Jeannie"]
+  tags: ["gimmick"]
+- slug: i-kissed-a
+  names: ["I Kissed a"]
+  tags: ["ending"]
+- slug: i-need-a-ride
+  names: ["I Need a Ride"]
+  tags: ["ending"]
+- slug: i-swear
+  names: ["I Swear"]
+  tags: ["musical"]
+- slug: identity-crisis
+  names: ["Identity Crisis"]
+  tags: ["interrupt"]
+- slug: idol-american
+  names: ["Idol American"]
+  tags: ["musical"]
+- slug: inner-songalogue
+  names: ["Inner Songalogue"]
+  tags: ["musical"]
+- slug: instant-soap-opera
+  names: ["Instant Soap Opera"]
+  tags: ["gimmick"]
+- slug: instruction-manual
+  names: ["Instruction Manual"]
+  tags: ["head-to-head"]
+- slug: interpreter
+  names: ["Interpreter"]
+  tags: ["standing", "gimmick"]
+- slug: interrogation
+  names: ["Interrogation", "Crime Story"]
+  tags: ["guessing", "catch-up"]
+- slug: ipso-facto-opera
+  names: ["Ipso Facto Opera"]
+  tags: ["musical"]
+- slug: irish-drinking-song
+  names: ["Irish Drinking Song"]
+  tags: ["musical"]
+- slug: its-not-you-its-me
+  names: ["It's Not You, It's Me"]
+  tags: ["ending"]
+- slug: jam
+  names: ["Jam"]
+  tags: ["musical"]
+- slug: jam-option
+  names: ["Jam Option"]
+  tags: ["musical"]
+- slug: key-change
+  names: ["Key Change"]
+  tags: ["musical"]
+- slug: last-action-joke
+  names: ["Last Action Joke"]
+  tags: ["ending"]
+- slug: laugh-out
+  names: ["Laugh Out"]
+  tags: ["gimmick", "head-to-head"]
+- slug: let-the-seuss-loose
+  names: ["Let the Seuss Loose"]
+  tags: ["head-to-head"]
+- slug: letters-from-camp
+  names: ["Letters From Camp"]
+  tags: ["ending"]
+- slug: lie-detector
+  names: ["Lie Detector"]
+  tags: ["catch-up", "head-to-head"]
+- slug: limerick
+  names: ["Limerick"]
+  tags: ["head-to-head"]
+- slug: lounge-lizard
+  names: ["Lounge Lizard"]
+  tags: ["musical"]
+- slug: madrigal
+  names: ["Madrigal"]
+  tags: ["musical"]
+- slug: marshmallow
+  names: ["Marshmallow"]
+  tags: ["gimmick"]
+- slug: meanwhile-elsewhere
+  names: ["Meanwhile Elsewhere"]
+  tags: ["head-to-head"]
+- slug: mega-naive-replay
+  names: ["Mega Naïve Replay"]
+  tags: ["gimmick", "replay"]
+- slug: mega-replay
+  names: ["Mega Replay"]
+  tags: ["gimmick", "head-to-head", "replay"]
+- slug: mega-countdown
+  names: ["Mega Countdown"]
+  tags: ["head-to-head"]
+- slug: moral-of-the-story
+  names: ["Moral of the Story"]
+  tags: ["gimmick"]
+- slug: movie-expert
+  names: ["Movie Expert"]
+  tags: ["gimmick"]
+- slug: moving-bodies
+  names: ["Moving Bodies"]
+  tags: ["audience", "gimmick"]
+- slug: mr-so-and-so
+  names: ["Mr. So and So"]
+  tags: ["gimmick"]
+- slug: musical-comedy
+  names: ["Musical Comedy"]
+  tags: ["musical"]
+- slug: musical-replay
+  names: ["Musical Replay"]
+  tags: ["musical", "replay"]
+- slug: musical-rumble
+  names: ["Musical Rumble"]
+  tags: ["musical", "head-to-head"]
+- slug: musical-styles
+  names: ["Musical Styles"]
+  tags: ["musical"]
+- slug: my-movie
+  names: ["My Movie"]
+  tags: ["gimmick"]
+- slug: mystery-where
+  names: ["Mystery Where"]
+  tags: ["catch-up"]
+- slug: naive-expert
+  names: ["Naïve Expert"]
+  tags: ["guessing"]
+- slug: naive-replay
+  names: ["Naïve Replay"]
+  tags: ["gimmick", "replay"]
+- slug: naive-sound-effects
+  names: ["Naïve Sound Effects"]
+  tags: ["gimmick"]
+- slug: new-choice
+  names: ["New Choice"]
+  tags: ["interrupt"]
+- slug: new-fall-line-up
+  names: ["New Fall Line-Up"]
+  tags: ["ending"]
+- slug: new-phone-who-dis
+  names: ["New Phone... Who Dis?"]
+  tags: ["gimmick"]
+- slug: newscast
+  names: ["Newscast", "Newscaster"]
+  tags: ["audience", "gimmick"]
+- slug: no-time-for-musicals
+  names: ["No Time for Musicals"]
+  tags: ["musical"]
+- slug: object-freeze
+  names: ["Object Freeze"]
+  tags: ["ending"]
+- slug: opera
+  names: ["Opera"]
+  tags: ["musical"]
+- slug: oracle
+  names: ["Oracle"]
+  tags: ["catch-up"]
+- slug: oscar-winning-moment
+  names: ["Oscar-Winning Moment"]
+  tags: ["interrupt"]
+- slug: oxygen-deprivation
+  names: ["Oxygen Deprivation"]
+  tags: ["gimmick"]
+- slug: parallel-universe
+  names: ["Parallel Universe"]
+  tags: ["interrupt"]
+- slug: pavlovian-response
+  names: ["Pavlovian Response"]
+  tags: ["gimmick"]
+- slug: piano-torture
+  names: ["Piano Torture"]
+  tags: ["musical"]
+- slug: pick-a-play
+  names: ["Pick a Play"]
+  tags: ["gimmick"]
+- slug: playground-insults
+  names: ["Playground Insults"]
+  tags: ["opening", "guessing"]
+- slug: playwright
+  names: ["Playwright"]
+  tags: ["interrupt"]
+- slug: pop-up-scene
+  names: ["Pop-Up Scene"]
+  tags: ["gimmick"]
+- slug: pundemonium
+  names: ["Pundemonium"]
+  tags: ["ending"]
+- slug: questions-only
+  names: ["Questions Only"]
+  tags: ["gimmick"]
+- slug: qwazy-qwest
+  names: ["Qwazy Qwest"]
+  tags: ["catch-up"]
+- slug: radio
+  names: ["Radio"]
+  tags: ["gimmick", "head-to-head"]
+- slug: rap-battle
+  names: ["Rap Battle"]
+  tags: ["musical"]
+- slug: rap-madrigal
+  names: ["Rap Madrigal"]
+  tags: ["musical"]
+- slug: replay
+  names: ["Replay"]
+  tags: ["gimmick", "replay"]
+- slug: replay-at-bernies
+  names: ["Replay at Bernie’s", "Weekend at Bernie’s"]
+  tags: ["gimmick", "replay"]
+- slug: replay-pile-up
+  names: ["Replay Pile Up"]
+  tags: ["gimmick", "replay"]
+- slug: revolving-doors
+  names: ["Revolving Doors"]
+  tags: ["gimmick"]
+- slug: rhyming-verse
+  names: ["Rhyming Verse"]
+  tags: ["head-to-head"]
+- slug: roll-for-initiative
+  names: ["Roll for Initiative"]
+  tags: ["gimmick"]
+- slug: scantron
+  names: ["Scantron"]
+  tags: ["interrupt"]
+- slug: scene-in-reverse
+  names: ["Scene in Reverse"]
+  tags: ["gimmick"]
+- slug: scene-on-book
+  names: ["Scene on Book"]
+  tags: ["audience", "gimmick"]
+- slug: shakespeare
+  names: ["Shakespeare"]
+  tags: ["gimmick"]
+- slug: shakespeare-switch
+  names: ["Shakespeare Switch"]
+  tags: ["interrupt"]
+- slug: shopping-channel
+  names: ["Shopping Channel"]
+  tags: ["guessing", "gimmick"]
+- slug: shopping-spree
+  names: ["Shopping Spree"]
+  tags: ["guessing", "catch-up"]
+- slug: siamese-scene
+  names: ["Siamese Scene"]
+  tags: ["audience", "gimmick"]
+- slug: sideline-dating
+  names: ["Sideline Dating"]
+  tags: ["opening", "guessing"]
+- slug: sideline-debate
+  names: ["Sideline Debate"]
+  tags: ["opening", "guessing"]
+- slug: sideline-karaoke
+  names: ["Sideline Karaoke"]
+  tags: ["musical"]
+- slug: sideline-pick-up
+  names: ["Sideline Pick-Up"]
+  tags: ["opening"]
+- slug: sing-for-your-supper
+  names: ["Sing for Your Supper"]
+  tags: ["head-to-head"]
+- slug: sing-it
+  names: ["Sing It"]
+  tags: ["musical", "interrupt"]
+- slug: sit-stand-kneel-lie
+  names: ["Sit, Stand, Kneel, Lie"]
+  tags: ["gimmick"]
+- slug: six-lines
+  names: ["Six Lines"]
+  tags: ["catch-up"]
+- slug: six-things
+  names: ["Six Things"]
+  tags: ["head-to-head"]
+- slug: slide-show
+  names: ["Slide Show"]
+  tags: ["audience", "gimmick"]
+- slug: slo-mo-olympics
+  names: ["Slo-Mo Olympics"]
+  tags: ["gimmick"]
+- slug: slo-mo
+  names: ["Slo-Mo"]
+  tags: ["gimmick"]
+- slug: slogans
+  names: ["Slogans"]
+  tags: ["interrupt"]
+- slug: smackdown
+  names: ["Smackdown"]
+  tags: ["ending"]
+- slug: speed-date
+  names: ["Speed Date"]
+  tags: ["ending"]
+- slug: spelling-bee
+  names: ["Spelling Bee"]
+  tags: ["standing", "gimmick"]
+- slug: stage-directions
+  names: ["Stage Directions"]
+  tags: ["gimmick"]
+- slug: sticker-doodles
+  names: ["Sticker Doodles"]
+  tags: ["gimmick"]
+- slug: story
+  names: ["Story"]
+  tags: ["head-to-head"]
+- slug: studio-audience
+  names: ["Studio Audience"]
+  tags: ["gimmick"]
+- slug: sub-text
+  names: ["Sub-Text"]
+  tags: ["gimmick"]
+- slug: superhero
+  names: ["Superhero"]
+  tags: ["gimmick"]
+- slug: switch-interview
+  names: ["Switch Interview"]
+  tags: ["head-to-head"]
+- slug: tag-team
+  names: ["Tag Team"]
+  tags: ["head-to-head"]
+- slug: tag-team-monologue
+  names: ["Tag Team Monologue"]
+  tags: ["standing"]
+- slug: talk-radio
+  names: ["Talk Radio"]
+  tags: ["audience", "gimmick"]
+- slug: ted-talks
+  names: ["TED Talks"]
+  tags: ["gimmick"]
+- slug: teleprompter
+  names: ["Teleprompter"]
+  tags: ["gimmick"]
+- slug: three-headed-broadway-star
+  names: ["Three-Headed Broadway Star"]
+  tags: ["musical"]
+- slug: town-hall-meeting
+  names: ["Town Hall Meeting"]
+  tags: ["head-to-head"]
+- slug: traffic-stop
+  names: ["Traffic Stop"]
+  tags: ["ending"]
+- slug: trial-by-combat
+  names: ["Trial by Combat"]
+  tags: ["gimmick"]
+- slug: try-that-on-for-size
+  names: ["Try That on for Size"]
+  tags: ["opening"]
+- slug: what-are-you-doing
+  names: ["What Are You Doing?"]
+  tags: ["opening"]
+- slug: what-you-got
+  names: ["What You Got"]
+  tags: ["opening", "head-to-head", "musical"]
+- slug: what-if
+  names: ["What-If"]
+  tags: ["gimmick"]
+- slug: whatdja-get
+  names: ["Whatdja Get"]
+  tags: ["ending"]
+- slug: wiki-scene
+  names: ["Wiki Scene"]
+  tags: ["gimmick", "head-to-head"]
+- slug: wikipedia-psychotherapist
+  names: ["Wikipedia Psychotherapist"]
+  tags: ["head-to-head"]
+- slug: word-at-a-time-express
+  names: ["Word at a Time Express"]
+  tags: ["opening"]
+- slug: word-up-from-our-sponsor
+  names: ["Word Up from Our Sponsor"]
+  tags: ["musical"]
+- slug: world-without-a-letter
+  names: ["World Without a Letter"]
+  tags: ["gimmick", "head-to-head"]
+- slug: worlds-worst
+  names: ["World’s Worst"]
+  tags: ["ending"]
+- slug: you-can-say-that-again
+  names: ["You Can Say That Again"]
+  tags: ["audience"]
+- slug: zombies
+  names: ["Zombies"]
+  tags: ["gimmick", "replay"]

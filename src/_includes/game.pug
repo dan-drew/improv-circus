@@ -1,0 +1,36 @@
+extends /layout
+
+block title
+  = game.fullName
+
+block description
+  meta(name="description" content=`How to play ${game.fullName}: improv game instructions, examples, and tips.`)
+
+block content
+  main.game_page
+    a(href="/games/") ← All games
+    h1= game.fullName
+    .game_badges(aria-label="Game categories")
+      each tag in game.tags
+        span.game_badge
+          span(aria-hidden="true")= tag.icon
+          = ' ' + tag.name
+    .game_instructions!= content
+    if game.relatedGames.length
+      section
+        h2 Related Games
+        ul
+          each related in game.relatedGames
+            li
+              if related.pageLink
+                a(href=related.pageLink)= related.fullName
+              else
+                = related.fullName
+    if game.videos.length
+      section
+        h2 Videos
+        each video in game.videos
+          .game_video
+            h3= video.title
+            iframe.youtube(src=video.embed title=video.title loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+            a(href=video.youtube) Watch on YouTube

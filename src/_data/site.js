@@ -9,6 +9,7 @@ export default {
     " performing across the nation. We do it all: short form games in \"Who's Line Is It Anyway?\" tradition," +
     " competitive short form, long form and musical.",
   url: siteUrl,
+  socialImage: `${siteUrl}/images/improv-circus-profile.png`,
   organization: {
     "@type": "Organization",
     "@id": `${siteUrl}/#organization`,
