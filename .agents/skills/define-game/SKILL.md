@@ -29,6 +29,7 @@ Work from the project root. Make local content changes; committing or publishing
 - Preserve the user's supplied rules, house variations, and requested scope. For a recognized game, draft missing guidance and useful tips as needed. Ask about unknown or ambiguous rules rather than inventing a version. Existing partial-update requests do not authorize rewriting the entire page.
 - Use only the eleven existing category slugs from `game_tags.yaml`; infer categories from clear game mechanics. Do not add new categories unless requested.
 - Optional frontmatter `relatedGames` is a list of existing catalog slugs. Catalog-only games are valid related games and render as text. Reference the matching variant; do not create placeholder games merely to satisfy a reference.
+- Always obtain explicit user confirmation of specific related games before adding or changing `relatedGames`; do not assume relationships from similar names, tags, mechanics, or research. User-supplied related games count as confirmation. Preserve existing relationships on unrelated edits, and omit unconfirmed suggestions while completing the rest of the definition.
 - Optional frontmatter `videos` is a list of objects with `title`, `youtube`, and optional `start`/`end` in integer seconds. Example:
 
 ```yaml

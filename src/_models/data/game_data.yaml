@@ -312,7 +312,7 @@
   tags: ["interrupt"]
 - slug: idol-american
   names: ["Idol American"]
-  tags: ["musical"]
+  tags: ["head-to-head", "musical"]
 - slug: inner-songalogue
   names: ["Inner Songalogue"]
   tags: ["musical"]
