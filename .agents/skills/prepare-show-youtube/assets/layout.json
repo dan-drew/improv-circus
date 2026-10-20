@@ -1,0 +1,44 @@
+{
+  "showLogo": {
+    "x": 55,
+    "y": 910,
+    "width": 160,
+    "height": 120
+  },
+  "brandLogo": {
+    "x": 1705,
+    "y": 947,
+    "width": 160,
+    "height": 83
+  },
+  "title": {
+    "x": 240,
+    "y": 910,
+    "width": 1000,
+    "height": 120,
+    "fontSize": 92,
+    "minFontSize": 40,
+    "fill": "#f3ed1d",
+    "stroke": 2,
+    "shadow": 5
+  },
+  "venue": {
+    "x": 1260,
+    "y": 932,
+    "width": 425,
+    "height": 48,
+    "fontSize": 34
+  },
+  "date": {
+    "x": 1260,
+    "y": 980,
+    "width": 425,
+    "height": 45,
+    "fontSize": 28,
+    "stroke": 0.5,
+    "strokeColor": "#808080"
+  },
+  "websiteTitle": {
+    "width": 680
+  }
+}

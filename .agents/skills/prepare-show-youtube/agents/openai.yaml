@@ -1,0 +1,3 @@
+interface:
+  display_name: "Prepare Show for YouTube"
+  short_description: "Trim, brand and normalize show recordings for YouTube"

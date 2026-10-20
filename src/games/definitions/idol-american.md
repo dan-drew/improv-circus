@@ -1,5 +1,10 @@
 ---
 gameSlug: idol-american
+videos:
+  - title: 'Improv Circus presents: Wry vs. Dry feat. Puppet Party — Oct 17th, 2026'
+    youtube: https://www.youtube.com/watch?v=HXXk9UtzSSQ
+    start: 2274
+    end: 2865
 ---
 ## How to Play
 

@@ -1,6 +1,11 @@
 ---
 gameSlug: chain-shopping
 relatedGames: [chain-murder, interrogation]
+videos:
+  - title: 'Improv Circus presents: Wry vs. Dry feat. Puppet Party — Oct 17th, 2026'
+    youtube: https://www.youtube.com/watch?v=HXXk9UtzSSQ
+    start: 1571
+    end: 2274
 ---
 ## How to Play
 

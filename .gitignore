@@ -2,3 +2,6 @@ dist/
 node_modules/
 **/*:Zone.Identifier
 marketing*
+videos*
+tmp/*
+!**/.keep

@@ -1,6 +1,11 @@
 ---
 gameSlug: what-you-got
 relatedGames: [beastie-rap, rap-battle, da-do-ron-ron]
+videos:
+  - title: 'Improv Circus presents: Wry vs. Dry feat. Puppet Party — Oct 17th, 2026'
+    youtube: https://www.youtube.com/watch?v=HXXk9UtzSSQ
+    start: 217
+    end: 659
 ---
 ## How to Play
 

@@ -31,6 +31,4 @@ block content
         h2 Videos
         each video in game.videos
           .game_video
-            h3= video.title
             iframe.youtube(src=video.embed title=video.title loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
-            a(href=video.youtube) Watch on YouTube
